@@ -1,3 +1,7 @@
+
+要先安装，否则无法打开文件
+brew install fcitx-remote-for-osx --with-input-method=baidu-pinyin
+
 * 子龙山人的 Emacs 配置
 Hacking 始于 2013 年。
 
