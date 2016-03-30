@@ -368,6 +368,7 @@ in `dotspacemacs/user-config'."
 layers configuration."
 
   (setq-default evil-escape-key-sequence "fd")
+  (global-set-key (kbd "C-h") 'delete-backward-char)
 
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
