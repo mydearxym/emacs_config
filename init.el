@@ -367,9 +367,50 @@ in `dotspacemacs/user-config'."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
+  ;; mydearxym
   (setq-default evil-escape-key-sequence "fd")
+
   (global-set-key (kbd "C-h") 'delete-backward-char)
+  (global-set-key (kbd "C-l") 'recenter)
+  (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
+
+  (with-eval-after-load 'helm
+    (define-key helm-map (kbd "C-h") 'delete-backward-char)
+    (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char))
+
+  (with-eval-after-load 'company
+    (define-key company-active-map (kbd "C-h") 'delete-backward-char))
+
+  (global-set-key (kbd "C-e") 'end-of-line)
+  (with-eval-after-load 'evil
+    (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
+    (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
+    (define-key evil-insert-state-map (kbd "C-f") 'evil-forward-char)
+
+    (define-key evil-normal-state-map (kbd "C-b") 'evil-backward-char)
+    (define-key evil-visual-state-map (kbd "C-b") 'evil-backward-char)
+    (define-key evil-insert-state-map (kbd "C-b") 'evil-backward-char)
+
+    (define-key evil-normal-state-map (kbd "C-y") 'scroll-up-line)
+    (define-key evil-insert-state-map (kbd "C-y") 'scroll-up-line)
+
+    (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
+    (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
+    (define-key evil-insert-state-map (kbd "C-p") 'evil-scroll-up)
+    (define-key evil-insert-state-map (kbd "C-n") 'evil-scroll-down)
+    (define-key evil-visual-state-map (kbd "C-p") 'evil-scroll-up)
+    (define-key evil-visual-state-map (kbd "C-n") 'evil-scroll-down)
+
+    (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-line)
+    (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
+
+
+  (global-hl-line-mode t)
+  (global-linum-mode t)
+  (column-number-mode t)
   (smartparens-global-mode t)
+
+  ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
