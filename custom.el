@@ -7,7 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(ahs-case-fold-search nil)
  '(ahs-default-range (quote ahs-range-whole-buffer))
- '(ahs-idle-interval 0.25)
+ '(ahs-idle-interval 0)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
  '(beacon-blink-delay 0.3)
