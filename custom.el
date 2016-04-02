@@ -72,6 +72,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ahs-definition-face ((t (:foreground "gainsboro" :slant normal))))
+ '(ahs-face ((t (:foreground "gainsboro"))))
+ '(ahs-plugin-bod-face ((t (:foreground "gainsboro"))))
+ '(ahs-plugin-defalt-face ((t (:foreground "gainsboro"))))
+ '(ahs-plugin-whole-buffer-face ((t (:foreground "gainsboro"))))
  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "green"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
