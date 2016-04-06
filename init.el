@@ -374,6 +374,9 @@ layers configuration."
   (global-set-key (kbd "C-l") 'recenter)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
+  ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
+  ;; (global-set-key (kbd "C-.") 'spacemacs/next-useful-buffer)
+
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "C-h") 'delete-backward-char)
     (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char))
@@ -383,6 +386,8 @@ layers configuration."
 
   (global-set-key (kbd "C-e") 'end-of-line)
   (with-eval-after-load 'evil
+    (define-key evil-normal-state-map (kbd "gcc") 'evilnc-comment-or-uncomment-lines)
+
     (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
     (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
     (define-key evil-insert-state-map (kbd "C-f") 'evil-forward-char)
