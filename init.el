@@ -57,7 +57,8 @@ values."
      yaml
      ;; (ruby :variables ruby-version-manager 'rvm)
      python
-     lua
+     ;; lua
+     themes-megapack
      html
      command-log
      javascript
@@ -71,7 +72,7 @@ values."
      ;; elfeed
      ranger
      ;; racket
-     gtags
+     ;; gtags
      (spacemacs-layouts :variables layouts-enable-autosave t
                         layouts-autosave-delay 300)
      ;; eyebrowse
@@ -199,7 +200,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(brin
+                         solarized-dark
                          solarized-light
                          leuven
                          ;; sanityinc-tomorrow-day
@@ -372,6 +374,7 @@ layers configuration."
 
   (global-set-key (kbd "C-h") 'delete-backward-char)
   (global-set-key (kbd "C-l") 'recenter)
+  (global-set-key (kbd "C-j") 'newline-and-indent)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
   ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
@@ -418,6 +421,11 @@ layers configuration."
 
 
   ;; (add-hook 'js2-mode-hook 'web-mode)
+  (setq-default js2-basic-offset 2)
+  (setq javascript-indent-level 2)
+  (setq-default indent-tabs-mode nil)
+
+
   (require 'web-mode)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))

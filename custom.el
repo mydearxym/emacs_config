@@ -7,7 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(ahs-case-fold-search nil)
  '(ahs-default-range (quote ahs-range-whole-buffer))
- '(ahs-idle-interval 0)
+ '(ahs-idle-interval 0.5)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
  '(beacon-blink-delay 0.3)
@@ -73,7 +73,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:foreground "gainsboro" :slant normal))))
- '(ahs-face ((t (:foreground "gainsboro"))))
+ '(ahs-face ((t (:underline t))))
  '(ahs-plugin-bod-face ((t (:foreground "gainsboro"))))
  '(ahs-plugin-defalt-face ((t (:foreground "gainsboro"))))
  '(ahs-plugin-whole-buffer-face ((t (:foreground "gainsboro"))))
@@ -84,9 +84,13 @@
  '(helm-ls-git-modified-and-staged-face ((t (:foreground "dark cyan"))))
  '(helm-ls-git-modified-not-staged-face ((t (:foreground "dark cyan"))))
  '(helm-ls-git-renamed-modified-face ((t (:foreground "dark cyan"))))
+ '(hl-line ((t (:background "gray17"))))
  '(iedit-occurrence ((t (:inherit cursor))))
  '(js2-error ((t (:foreground "light sea green"))))
  '(js2-external-variable ((t (:foreground "gray52"))))
- '(sp-show-pair-match-face ((t (:background "#272822" :foreground "gray" :inverse-video t :weight normal)))))
+ '(sp-show-pair-match-face ((t (:background "#272822" :foreground "gray" :inverse-video t :weight normal))))
+ '(web-mode-html-attr-name-face ((t (:foreground "DarkOrange3"))))
+ '(web-mode-html-tag-face ((t (:foreground "steel blue"))))
+ '(web-mode-variable-name-face ((t (:foreground "DarkSlateGray4")))))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
