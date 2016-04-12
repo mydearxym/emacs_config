@@ -7,7 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(ahs-case-fold-search nil)
  '(ahs-default-range (quote ahs-range-whole-buffer))
- '(ahs-idle-interval 0.5)
+ '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
  '(beacon-blink-delay 0.3)
@@ -74,9 +74,9 @@
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:foreground "gainsboro" :slant normal))))
  '(ahs-face ((t (:underline t))))
- '(ahs-plugin-bod-face ((t (:foreground "gainsboro"))))
- '(ahs-plugin-defalt-face ((t (:foreground "gainsboro"))))
- '(ahs-plugin-whole-buffer-face ((t (:foreground "gainsboro"))))
+ '(ahs-plugin-bod-face ((t nil)))
+ '(ahs-plugin-defalt-face ((t (:underline t))))
+ '(ahs-plugin-whole-buffer-face ((t (:underline t))))
  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "green"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
