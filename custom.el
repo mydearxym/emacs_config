@@ -90,7 +90,7 @@
  '(js2-external-variable ((t (:foreground "gray52"))))
  '(sp-show-pair-match-face ((t (:background "#272822" :foreground "gray" :inverse-video t :weight normal))))
  '(web-mode-html-attr-name-face ((t (:foreground "DarkOrange3"))))
- '(web-mode-html-tag-face ((t (:foreground "steel blue"))))
+ '(web-mode-html-tag-face ((t (:foreground "cornflower blue"))))
  '(web-mode-variable-name-face ((t (:foreground "DarkSlateGray4")))))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
