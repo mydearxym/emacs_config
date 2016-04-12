@@ -92,7 +92,7 @@ values."
      (shell :variables
             shell-default-position 'full
             shell-default-shell 'ansi-term
-            shell-default-term-shell "/bin/zsh")
+            shell-default-term-shell "/usr/local/bin/fish")
      (chinese :variables chinese-default-input-method 'wubi
               chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
@@ -415,6 +415,19 @@ layers configuration."
   (global-linum-mode t)
   (column-number-mode t)
   (smartparens-global-mode t)
+
+
+  ;; (add-hook 'js2-mode-hook 'web-mode)
+  (require 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (if (equal web-mode-content-type "javascript")
+                  (web-mode-set-content-type "jsx")
+                (message "now set to: %s" web-mode-content-type))))
+  (setq web-mode-content-types-alist
+        '(("jsx" . "\\.js[x]?\\'")))
 
   ;; mydearxym end
 
