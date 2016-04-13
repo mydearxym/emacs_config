@@ -88,8 +88,9 @@
  '(iedit-occurrence ((t (:inherit cursor))))
  '(js2-error ((t (:foreground "light sea green"))))
  '(js2-external-variable ((t (:foreground "gray52"))))
- '(sp-show-pair-match-face ((t (:background "#272822" :foreground "gray" :inverse-video t :weight normal))))
- '(web-mode-html-attr-name-face ((t (:foreground "DarkOrange3"))))
+ '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
+ '(web-mode-html-attr-name-face ((t (:foreground "dark salmon"))))
+ '(web-mode-html-tag-bracket-face ((t (:foreground "cornflower blue"))))
  '(web-mode-html-tag-face ((t (:foreground "cornflower blue"))))
  '(web-mode-variable-name-face ((t (:foreground "DarkSlateGray4")))))
 ;; Do not write anything past this comment. This is where Emacs will
