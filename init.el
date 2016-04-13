@@ -412,7 +412,7 @@ layers configuration."
     (define-key evil-visual-state-map (kbd "C-p") 'evil-scroll-up)
     (define-key evil-visual-state-map (kbd "C-n") 'evil-scroll-down)
 
-    (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-line)
+    (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-visual-line)
     (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
 
 
