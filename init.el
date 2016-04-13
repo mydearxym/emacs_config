@@ -393,6 +393,7 @@ layers configuration."
   (with-eval-after-load 'evil
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
+    (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
 
     (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
@@ -443,6 +444,7 @@ layers configuration."
                 (message "now set to: %s" web-mode-content-type))))
   (setq web-mode-content-types-alist
         '(("jsx" . "\\.js[x]?\\'")))
+
 
   ;; mydearxym end
 
