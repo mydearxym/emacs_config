@@ -375,6 +375,7 @@ layers configuration."
   (global-set-key (kbd "C-h") 'delete-backward-char)
   (global-set-key (kbd "C-l") 'recenter)
   (global-set-key (kbd "C-j") 'newline-and-indent)
+  ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
   ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
