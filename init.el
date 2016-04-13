@@ -145,6 +145,7 @@ values."
                                     doc-view
                                     lorem-ipsum
                                     solarized-theme
+                                    beacon
                                     )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
