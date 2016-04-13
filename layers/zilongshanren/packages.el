@@ -130,7 +130,7 @@
     ;; show tab;  use untabify to convert tab to whitespace
     ;; (setq spacemacs-show-trailing-whitespace nil)
 
-    (setq-default tab-width 4)
+    (setq-default tab-width 2)
     ;; set-buffer-file-coding-system -> utf8 to convert dos to utf8
     ;; (setq inhibit-eol-conversion t)
     (add-hook 'prog-mode-hook 'whitespace-mode)

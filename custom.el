@@ -85,7 +85,7 @@
  '(helm-ls-git-modified-and-staged-face ((t (:foreground "dark cyan"))))
  '(helm-ls-git-modified-not-staged-face ((t (:foreground "dark cyan"))))
  '(helm-ls-git-renamed-modified-face ((t (:foreground "dark cyan"))))
- '(hl-line ((t (:background "gray17"))))
+ '(hl-line ((t (:background "gray23"))))
  '(iedit-occurrence ((t (:inherit cursor))))
  '(js2-error ((t (:foreground "light sea green"))))
  '(js2-external-variable ((t (:foreground "gray52"))))
