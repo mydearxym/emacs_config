@@ -42,6 +42,7 @@ values."
      spacemacs-helm
      spacemacs-ivy
      better-defaults
+     react
      github
      (version-control :variables version-control-diff-tool 'git-gutter+
                       version-control-global-margin t)
@@ -396,9 +397,11 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
     ;; (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
-    (define-key evil-normal-state-map (kbd "C-.") 'ivy-switch-buffer)
+    (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
     (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
+    (define-key evil-visual-state-map (kbd ",t") 'spacemacs/align-repeat-equal)
+    (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat)
 
     (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
     (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
@@ -440,7 +443,7 @@ layers configuration."
   (setq web-mode-code-indent-offset 2)
 
 
-  (require 'web-mode)
+  ;; (require 'web-mode)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
   (add-hook 'web-mode-hook
@@ -451,6 +454,9 @@ layers configuration."
   (setq web-mode-content-types-alist
         '(("jsx" . "\\.js[x]?\\'")))
 
+  (push '("\\.js\\'" . react-mode) auto-mode-alist)
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
+  (flycheck-add-mode 'javascript-eslint 'react-mode)
 
   ;; mydearxym end
 
