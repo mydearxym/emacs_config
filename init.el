@@ -393,6 +393,7 @@ layers configuration."
   (with-eval-after-load 'evil
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
+    (define-key evil-normal-state-map (kbd "C-.") 'ivy-switch-buffer)
     (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
 
