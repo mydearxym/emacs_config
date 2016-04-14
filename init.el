@@ -394,7 +394,8 @@ layers configuration."
   (global-set-key (kbd "C-e") 'end-of-line)
   (with-eval-after-load 'evil
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
-    (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
+    ;; (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
     (define-key evil-normal-state-map (kbd "C-.") 'ivy-switch-buffer)
     (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
