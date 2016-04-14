@@ -379,6 +379,8 @@ layers configuration."
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
+  ;; (global-set-key (kbd "S-return") 'spacemacs/alternate-buffer-in-persp)
+
   ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
   ;; (global-set-key (kbd "C-.") 'spacemacs/next-useful-buffer)
 
@@ -417,6 +419,8 @@ layers configuration."
 
     (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-visual-line)
     (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
+
+
 
 
   (global-hl-line-mode t)

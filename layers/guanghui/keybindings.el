@@ -24,7 +24,8 @@
 
 (define-key 'help-command (kbd "C-i") 'info-display-manual)
 
-(global-set-key [(shift return)] 'zilongshanren/smart-open-line)
+;; (global-set-key [(shift return)] 'zilongshanren/smart-open-line)
+(global-set-key [(shift return)] 'spacemacs/alternate-buffer-in-persp)
 
 (define-key global-map (kbd "<f1>") 'zilongshanren/hotspots)
 (define-key global-map (kbd "C-c y") 'youdao-dictionary-search-at-point+)
