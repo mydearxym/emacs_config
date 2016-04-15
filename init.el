@@ -396,6 +396,7 @@ layers configuration."
   (with-eval-after-load 'evil
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
+    ;; (define-key evil-insert-state-map (kbd "C-w") 'backward-delete-word)
     ;; (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
     (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
     (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
@@ -425,13 +426,10 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
 
 
-
-
   (global-hl-line-mode t)
   (global-linum-mode t)
   (column-number-mode t)
   (smartparens-global-mode t)
-
 
   ;; (add-hook 'js2-mode-hook 'web-mode)
   (setq-default js2-basic-offset 2)
@@ -442,21 +440,22 @@ layers configuration."
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
 
-
   ;; (require 'web-mode)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
   (add-hook 'web-mode-hook
-            (lambda ()
-              (if (equal web-mode-content-type "javascript")
-                  (web-mode-set-content-type "jsx")
-                (message "now set to: %s" web-mode-content-type))))
+      (lambda ()
+        (if (equal web-mode-content-type "javascript")
+            (web-mode-set-content-type "jsx")
+            (message "now set to: %s" web-mode-content-type))))
   (setq web-mode-content-types-alist
         '(("jsx" . "\\.js[x]?\\'")))
 
+  ;; (push '("\\.js\\'" . web-mode) auto-mode-alist)
   (push '("\\.js\\'" . react-mode) auto-mode-alist)
+
   (flycheck-add-mode 'javascript-eslint 'web-mode)
-  (flycheck-add-mode 'javascript-eslint 'react-mode)
+  ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
 
   ;; mydearxym end
 

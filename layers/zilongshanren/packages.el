@@ -415,7 +415,7 @@ open and unsaved."
 
 (defun zilongshanren/post-init-hungry-delete ()
   ;; (add-hook 'prog-mode-hook 'hungry-delete-mode)
-  (global-hungry-delete-mode t)
+  (global-hungry-delete-mode -1)
   )
 
 
