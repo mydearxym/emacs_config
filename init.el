@@ -392,7 +392,7 @@ layers configuration."
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
-  ;; (global-set-key (kbd "C-i") 'hippie-expand)
+  (global-set-key (kbd "C-c C-j") 'ace-jump-mode)
 
   ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
   ;; (global-set-key (kbd "C-.") 'spacemacs/next-useful-buffer)
@@ -416,7 +416,7 @@ layers configuration."
     (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
 
     (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
-    (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
+    ;; (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
     (define-key evil-visual-state-map (kbd ",t") 'spacemacs/align-repeat-equal)
     (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat)
