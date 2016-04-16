@@ -373,15 +373,20 @@ layers configuration."
 
   ;; mydearxym
   (setq-default evil-escape-key-sequence "fd")
+  ;; disable auto-recenter
+  (setq scroll-step 1)
+  (setq scroll-conservatively 10000)
+  (setq auto-window-vscroll nil)
 
   (global-set-key (kbd "C-h") 'delete-backward-char)
-  (global-set-key (kbd "C-l") 'recenter)
+  (global-set-key (kbd "C-e") 'end-of-line)
+  ;; (global-set-key (kbd "C-l") 'recenter)
   (global-set-key (kbd "C-j") 'newline-and-indent)
   (global-set-key (kbd "C-s") 'helm-swoop)
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
-  ;; (global-set-key (kbd "S-return") 'spacemacs/alternate-buffer-in-persp)
+  ;; (global-set-key (kbd "C-i") 'hippie-expand)
 
   ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
   ;; (global-set-key (kbd "C-.") 'spacemacs/next-useful-buffer)
@@ -393,12 +398,17 @@ layers configuration."
   (with-eval-after-load 'company
     (define-key company-active-map (kbd "C-h") 'delete-backward-char))
 
-  (global-set-key (kbd "C-e") 'end-of-line)
+  (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
   (with-eval-after-load 'evil
+    ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
+    (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
+
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
-    ;; (define-key evil-insert-state-map (kbd "C-w") 'backward-delete-word)
-    ;; (define-key evil-normal-state-map (kbd ",.") 'er/expand-region)
+
+    (define-key evil-normal-state-map (kbd "C-l") 'recenter)
+    (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
+
     (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
     (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
@@ -457,6 +467,11 @@ layers configuration."
 
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
+
+  ;; (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))
+  ;; (add-hook 'web-mode-hook (lambda ()
+  ;;          (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))))
+
 
   ;; mydearxym end
 
