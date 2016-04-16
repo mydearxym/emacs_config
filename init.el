@@ -130,7 +130,7 @@ values."
                                     git-gutter
                                     git-gutter-fringe
                                     ;; i prefer iedit
-                                    multiple-cursors
+                                    ;; multiple-cursors
                                     ;; disable it for lispy-mode
                                     ;;https://github.com/abo-abo/lispy/issues/137
                                     ;; evil-escape
@@ -372,6 +372,12 @@ in `dotspacemacs/user-config'."
 layers configuration."
 
   ;; mydearxym
+
+  ;; multi cursors
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
   (setq-default evil-escape-key-sequence "fd")
   ;; disable auto-recenter
   (setq scroll-step 1)
@@ -455,10 +461,10 @@ layers configuration."
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
   (add-hook 'web-mode-hook
-      (lambda ()
-        (if (equal web-mode-content-type "javascript")
-            (web-mode-set-content-type "jsx")
-            (message "now set to: %s" web-mode-content-type))))
+            (lambda ()
+              (if (equal web-mode-content-type "javascript")
+                  (web-mode-set-content-type "jsx")
+                (message "now set to: %s" web-mode-content-type))))
   (setq web-mode-content-types-alist
         '(("jsx" . "\\.js[x]?\\'")))
 
