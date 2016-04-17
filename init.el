@@ -372,6 +372,10 @@ in `dotspacemacs/user-config'."
 layers configuration."
 
   ;; mydearxym
+  ;; vim surround staff
+  (global-evil-surround-mode 1)
+  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
 
   ;; multi cursors
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -472,7 +476,7 @@ layers configuration."
   (push '("\\.js\\'" . react-mode) auto-mode-alist)
 
   (flycheck-add-mode 'javascript-eslint 'web-mode)
-  ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
+  (flycheck-add-mode 'javascript-eslint 'react-mode)
 
   ;; (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))
   ;; (add-hook 'web-mode-hook (lambda ()
