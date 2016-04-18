@@ -116,6 +116,7 @@
  '(ivy-minibuffer-match-face-1 ((t (:foreground "lemon chiffon"))))
  '(js2-error ((t (:foreground "light sea green"))))
  '(js2-external-variable ((t (:foreground "gray52"))))
+ '(link ((t (:foreground "DarkSlateGray2" :underline t))))
  '(minibuffer-prompt ((t (:foreground "aquamarine"))))
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
