@@ -25,6 +25,7 @@
  '(expand-region-exclude-text-mode-expansions (quote (html-mode nxml-mode web-mode)))
  '(expand-region-reset-fast-key "r")
  '(flycheck-display-errors-delay 0.4)
+ '(global-highlight-parentheses-mode nil)
  '(golden-ratio-exclude-modes
    (quote
     ("bs-mode" "calc-mode" "ediff-mode" "dired-mode" "gud-mode" "gdb-locals-mode" "gdb-registers-mode" "gdb-breakpoints-mode" "gdb-threads-mode" "gdb-frames-mode" "gdb-inferior-io-mode" "gud-mode" "gdb-inferior-io-mode" "gdb-disassembly-mode" "gdb-memory-mode" "restclient-mode" "speedbar-mode" term-mode)))
@@ -32,6 +33,9 @@
  '(helm-gtags-update-interval-second 35)
  '(helm-ls-git-fuzzy-match t)
  '(helm-ls-git-show-abs-or-relative (quote absolute))
+ '(hl-paren-background-colors nil)
+ '(hl-paren-colors nil)
+ '(hl-paren-delay 0.5)
  '(ivy-height 18)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
  '(magit-use-overlays nil)
@@ -104,6 +108,7 @@
  '(helm-swoop-target-line-face ((t (:underline t))))
  '(helm-swoop-target-word-face ((t (:background "gray26" :foreground "moccasin"))))
  '(hl-line ((t (:background "#343D46"))))
+ '(hl-paren-face ((t nil)) t)
  '(ido-vertical-match-face ((t (:inherit font-lock-variable-name-face :underline t))))
  '(iedit-occurrence ((t (:inherit cursor))))
  '(ivy-current-match ((t (:underline t))))

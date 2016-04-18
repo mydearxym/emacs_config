@@ -332,7 +332,7 @@ values."
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
-   dotspacemacs-highlight-delimiters 'all
+   dotspacemacs-highlight-delimiters nil
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
    dotspacemacs-persistent-server nil
@@ -381,9 +381,15 @@ layers configuration."
   ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
   ;; (setq mouse-wheel-progressive-speed nil)
   ;; (setq mouse-wheel-follow-mouse t)
-  (global-highlight-parentheses-mode nil) ;; not work
+  ;; (global-highlight-parentheses-mode nil) ;; not work
 
   (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
+
+  ;; (define-globalized-minor-mode global-highlight-parentheses-mode
+  ;;   highlight-parentheses-mode
+  ;;   (lambda ()
+  ;;     (highlight-parentheses-mode -1)))
+  ;; (global-highlight-parentheses-mode -1)
 
   ;; vim surround staff
   (global-evil-surround-mode 1)
