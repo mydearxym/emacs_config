@@ -372,6 +372,17 @@ in `dotspacemacs/user-config'."
 layers configuration."
 
   ;; mydearxym
+  ;; (require 'sublimity)
+  ;; (sublimity-mode 1)
+  ;; (setq mouse-wheel-scroll-amount '(10 ((shift) . 10) ((control) . nil)))
+  ;; (setq mouse-wheel-progressive-speed 1)
+  ;; (setq scroll-step 10)
+  ;; (setq scroll-conservatively 1000)
+  ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+  ;; (setq mouse-wheel-progressive-speed nil)
+  ;; (setq mouse-wheel-follow-mouse t)
+  (global-highlight-parentheses-mode nil)
+
   ;; vim surround staff
   (global-evil-surround-mode 1)
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
