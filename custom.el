@@ -121,7 +121,7 @@
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
  '(vr/match-separator-face ((t (:foreground "red"))))
- '(web-mode-html-attr-name-face ((t (:foreground "dark salmon"))))
+ '(web-mode-html-attr-name-face ((t (:foreground "LemonChiffon4"))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "cornflower blue"))))
  '(web-mode-html-tag-face ((t (:foreground "cornflower blue"))))
  '(web-mode-variable-name-face ((t (:foreground "DarkSlateGray4")))))
