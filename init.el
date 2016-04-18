@@ -381,7 +381,9 @@ layers configuration."
   ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
   ;; (setq mouse-wheel-progressive-speed nil)
   ;; (setq mouse-wheel-follow-mouse t)
-  (global-highlight-parentheses-mode nil)
+  (global-highlight-parentheses-mode nil) ;; not work
+
+  (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
 
   ;; vim surround staff
   (global-evil-surround-mode 1)
