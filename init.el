@@ -383,6 +383,17 @@ layers configuration."
   ;; (setq mouse-wheel-follow-mouse t)
   ;; (global-highlight-parentheses-mode nil) ;; not work
 
+  ;; fuck_you
+  (modify-syntax-entry ?_ "w")
+  (add-hook 'react-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
+  ;; (defun my-underscore-hook ()
+  ;;      (modify-syntax-entry ?_ "w");; '_' is word constituent
+  ;;      (modify-syntax-entry ?_ "_");; '_' is symbol constituent
+  ;;    )
+
+  ;; (add-hook 'react-mode-hook 'my-underscore-hook t)
+
   (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
 
   ;; (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -411,7 +422,8 @@ layers configuration."
   (global-set-key (kbd "C-e") 'end-of-line)
   ;; (global-set-key (kbd "C-l") 'recenter)
   (global-set-key (kbd "C-j") 'newline-and-indent)
-  (global-set-key (kbd "C-s") 'helm-swoop)
+  (global-set-key (kbd "C-c C-s") 'helm-swoop)
+  (global-set-key (kbd "C-s") 'evil-search-word-forward)
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
@@ -431,6 +443,7 @@ layers configuration."
   (with-eval-after-load 'evil
     ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
+    (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
 
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
@@ -443,6 +456,7 @@ layers configuration."
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
     (define-key evil-visual-state-map (kbd ",t") 'spacemacs/align-repeat-equal)
     (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat)
+    (define-key evil-normal-state-map (kbd ",f") 'neotree-find-project-root)
 
     (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
     (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
@@ -457,8 +471,12 @@ layers configuration."
 
     (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
     (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
-    (define-key evil-insert-state-map (kbd "C-p") 'evil-scroll-up)
-    (define-key evil-insert-state-map (kbd "C-n") 'evil-scroll-down)
+
+    (define-key evil-insert-state-map (kbd "C-p") 'evil-previous-visual-line)
+    (define-key evil-insert-state-map (kbd "C-n") 'evil-next-visual-line)
+
+    ;; (define-key evil-insert-state-map (kbd "C-p") 'evil-scroll-up)
+    ;; (define-key evil-insert-state-map (kbd "C-n") 'evil-scroll-down)
     (define-key evil-visual-state-map (kbd "C-p") 'evil-scroll-up)
     (define-key evil-visual-state-map (kbd "C-n") 'evil-scroll-down)
 
