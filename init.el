@@ -299,7 +299,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -383,18 +383,12 @@ layers configuration."
   ;; (setq mouse-wheel-follow-mouse t)
   ;; (global-highlight-parentheses-mode nil) ;; not work
 
-  ;; fuck_you
+  (setq default-tab-width 2)
   (modify-syntax-entry ?_ "w")
   (add-hook 'react-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
-  ;; (defun my-underscore-hook ()
-  ;;      (modify-syntax-entry ?_ "w");; '_' is word constituent
-  ;;      (modify-syntax-entry ?_ "_");; '_' is symbol constituent
-  ;;    )
-
-  ;; (add-hook 'react-mode-hook 'my-underscore-hook t)
-
   (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
+
 
   ;; (define-globalized-minor-mode global-highlight-parentheses-mode
   ;;   highlight-parentheses-mode
@@ -489,7 +483,6 @@ layers configuration."
   (global-hl-line-mode t)
   (global-linum-mode t)
   (column-number-mode t)
-  (smartparens-global-mode t)
 
   ;; (add-hook 'js2-mode-hook 'web-mode)
   (setq-default js2-basic-offset 2)
@@ -499,6 +492,10 @@ layers configuration."
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+
+  ;; (setq react-mode-markup-indent-offset 2)
+  ;; (setq react-mode-css-indent-offset 2)
+  ;; (setq react-mode-code-indent-offset 2)
 
   ;; (require 'web-mode)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
@@ -516,6 +513,7 @@ layers configuration."
 
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'react-mode)
+  (add-hook 'react-mode-hook 'smartparens-mode)
 
   ;; (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))
   ;; (add-hook 'web-mode-hook (lambda ()
