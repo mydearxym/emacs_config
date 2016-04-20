@@ -34,8 +34,8 @@
  '(helm-ls-git-fuzzy-match t)
  '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(hl-paren-background-colors nil)
- '(hl-paren-colors nil)
- '(hl-paren-delay 0.5)
+ '(hl-paren-colors nil t)
+ '(hl-paren-delay 0.5 t)
  '(ivy-height 18)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
  '(magit-use-overlays nil)
@@ -124,6 +124,6 @@
  '(web-mode-html-attr-name-face ((t (:foreground "LemonChiffon4"))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue3"))))
  '(web-mode-html-tag-face ((t (:foreground "SteelBlue2"))))
- '(web-mode-variable-name-face ((t (:foreground "DarkSlateGray4")))))
+ '(web-mode-variable-name-face ((t (:foreground "cadet blue")))))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
