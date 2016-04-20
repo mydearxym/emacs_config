@@ -383,6 +383,9 @@ layers configuration."
   ;; (setq mouse-wheel-follow-mouse t)
   ;; (global-highlight-parentheses-mode nil) ;; not work
 
+  ;; (set-background-color "#385063")
+  (set-background-color "#334452")
+
   (setq default-tab-width 2)
   (modify-syntax-entry ?_ "w")
   (add-hook 'react-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
