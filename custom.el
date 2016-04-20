@@ -94,7 +94,7 @@
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
  '(company-tooltip-search ((t (:foreground "forest green" :weight bold))))
  '(company-tooltip-selection ((t (:background "dark olive green" :foreground "light gray"))))
- '(evil-search-highlight-persist-highlight-face ((t nil)))
+ '(evil-search-highlight-persist-highlight-face ((t (:inherit region :background "light goldenrod" :foreground "gray16"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "gray38"))))
  '(git-gutter-fr:added ((t (:foreground "#859900" :weight bold :width extra-expanded))))
  '(helm-ff-directory ((t (:foreground "steel blue"))))
