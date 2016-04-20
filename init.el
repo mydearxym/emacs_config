@@ -385,6 +385,7 @@ layers configuration."
 
   ;; (set-background-color "#385063")
   (set-background-color "#334452")
+  (linum-relative-global-mode t)
 
   (setq default-tab-width 2)
   (modify-syntax-entry ?_ "w")
