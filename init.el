@@ -422,7 +422,6 @@ layers configuration."
   (global-set-key (kbd "C-e") 'end-of-line)
   ;; (global-set-key (kbd "C-l") 'recenter)
   (global-set-key (kbd "C-j") 'newline-and-indent)
-  (global-set-key (kbd "C-c C-s") 'helm-swoop)
   (global-set-key (kbd "C-s") 'evil-search-word-forward)
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
@@ -442,6 +441,8 @@ layers configuration."
   (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
   (with-eval-after-load 'evil
     ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
+
+    ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
 
@@ -457,6 +458,7 @@ layers configuration."
     (define-key evil-visual-state-map (kbd ",t") 'spacemacs/align-repeat-equal)
     (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat)
     (define-key evil-normal-state-map (kbd ",f") 'neotree-find-project-root)
+    (define-key evil-normal-state-map (kbd "C-s-s") 'helm-swoop)
 
     (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
     (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
