@@ -121,9 +121,11 @@
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
  '(vr/match-separator-face ((t (:foreground "red"))))
- '(web-mode-html-attr-name-face ((t (:foreground "LemonChiffon4"))))
- '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue3"))))
+ '(web-mode-constant-face ((t (:inherit font-lock-constant-face :foreground "tomato" :slant italic))))
+ '(web-mode-function-call-face ((t (:inherit font-lock-function-name-face :foreground "cadet blue" :slant oblique))))
+ '(web-mode-html-attr-name-face ((t (:foreground "dark gray"))))
+ '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue2"))))
  '(web-mode-html-tag-face ((t (:foreground "SteelBlue2"))))
- '(web-mode-variable-name-face ((t (:foreground "cadet blue")))))
+ '(web-mode-variable-name-face ((t (:foreground "LightSkyBlue3")))))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
