@@ -440,6 +440,8 @@ layers configuration."
   (with-eval-after-load 'evil
     ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
 
+    (define-key evil-normal-state-map (kbd "p") 'yank)
+    (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
