@@ -445,6 +445,8 @@ layers configuration."
     ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
+    (define-key evil-insert-state-map (kbd "C-w") 'evil-delete-backward-word)
+    (define-key evil-normal-state-map (kbd "C-w") 'evil-delete-backward-word)
 
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
@@ -520,6 +522,18 @@ layers configuration."
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'react-mode)
   (add-hook 'react-mode-hook 'smartparens-mode)
+
+  (setq js2-bounce-indent-p t)
+
+  ;; (with-eval-after-load 'react-mode
+  ;;   (progn
+  ;;     (setq-default js2-bounce-indent nil)
+  ;;     (setq-default js-indent-level 2)
+  ;;     (setq-default js2-indent-level 2)
+  ;;     (setq-default js2-basic-offset 2)
+
+  ;;     ))
+
 
   ;; (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))
   ;; (add-hook 'web-mode-hook (lambda ()
