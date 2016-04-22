@@ -103,7 +103,7 @@
  '(helm-ls-git-modified-and-staged-face ((t (:foreground "dark cyan"))))
  '(helm-ls-git-modified-not-staged-face ((t (:foreground "dark cyan"))))
  '(helm-ls-git-renamed-modified-face ((t (:foreground "dark cyan"))))
- '(helm-match ((t (:background "gray33" :foreground "khaki"))))
+ '(helm-match ((t (:background "dim gray" :foreground "lemon chiffon"))))
  '(helm-selection ((t (:background "gray26" :underline t))))
  '(helm-separator ((t (:foreground "aquamarine"))))
  '(helm-source-header ((t (:foreground "medium aquamarine" :weight bold :family "Sans Serif"))))
