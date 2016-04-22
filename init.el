@@ -443,6 +443,7 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "p") 'yank)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
+    (define-key evil-normal-state-map (kbd "C-d") 'evil-delete-char)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
     (define-key evil-insert-state-map (kbd "C-w") 'evil-delete-backward-word)
@@ -540,6 +541,21 @@ layers configuration."
   ;;          (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))))
 
   (global-company-mode -1)
+
+  (global-set-key (kbd ",")
+                  #'(lambda ()
+                      (interactive)
+                      (insert ", ")))
+
+  (global-set-key (kbd "=")
+                  #'(lambda ()
+                      (interactive)
+                      (insert " = ")))
+
+  (global-set-key (kbd ":")
+                  #'(lambda ()
+                      (interactive)
+                      (insert " : ")))
 
   ;; mydearxym end
 
