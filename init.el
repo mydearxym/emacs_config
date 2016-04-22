@@ -539,7 +539,7 @@ layers configuration."
   ;; (add-hook 'web-mode-hook (lambda ()
   ;;          (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))))
 
-  (global-company-mode t)
+  (global-company-mode -1)
 
   ;; mydearxym end
 
