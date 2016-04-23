@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : log.ok
+# --
+log.ok('$0');

@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : log.brown
+# --
+log.brown('$0');
