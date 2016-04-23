@@ -552,10 +552,27 @@ layers configuration."
                       (interactive)
                       (insert " = ")))
 
-  (global-set-key (kbd ":")
-                  #'(lambda ()
-                      (interactive)
-                      (insert " : ")))
+  ;; (global-set-key (kbd ":")
+  ;;                 #'(lambda ()
+  ;;                     (interactive)
+  ;;                     (insert " : ")))
+  ;; disable backup
+  (setq backup-inhibited t)
+                                        ;disable auto save
+  (setq auto-save-default nil)
+  (setq make-backup-files nil)
+  ;; dired custom
+  (put 'dired-find-alternate-file 'disabled nil)
+  (with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+  (add-to-list 'load-path "~/.spacemacs.d/layers/guanghui/")
+  ;; (add-to-list 'load-path "./layers/")
+  (require 'hexo)
+
+  (defun blog ()
+    (interactive)
+    (hexo "~/blog/"))
 
   ;; mydearxym end
 
