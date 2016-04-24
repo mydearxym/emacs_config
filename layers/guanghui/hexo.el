@@ -275,7 +275,7 @@ Also see: `hexo-generate-tabulated-list-entries'"
   (if (file-exists-p dir-path)
       (cl-remove-if (lambda (x) (or
                             (not (file-exists-p x))
-                            (not (string-suffix-p ".md" x))
+                            (not (string-suffix-p ".org" x))
                             (member (file-name-base x) '("." ".."))
                             ;;(string-suffix-p "#" x) ;useless
                             (string-suffix-p "~" x)))
@@ -524,7 +524,7 @@ SUBEXP-DEPTH is 0 by default."
                  (new-name-without-ext (read-from-minibuffer
                                         (format "Rename '%s' to: " original-name-without-ext)
                                         original-name-without-ext))
-                 (new-file-path (format "%s/%s.md" pwd new-name-without-ext)))
+                 (new-file-path (format "%s/%s.org" pwd new-name-without-ext)))
             (if (file-exists-p new-file-path)
                 (progn (hexo-message "Filename '%s' already existed. Please try another name." new-name-without-ext)
                        (sit-for 5)
@@ -772,10 +772,12 @@ under theme/default/layout/"
 (defun hexo--new-interactively (hexo-command)
   (let* ((stdout (shell-command-to-string (format "%s new '%s'"
                                                   hexo-command
-                                                  (read-from-minibuffer "Article URI: "))))
+                                                  (read-from-minibuffer "文章标题: "))))
          (created-file-path (progn (string-match "Created: \\(.+\\)$" stdout)
                                    (match-string 1 stdout))))
     (find-file created-file-path)
+    ;; (read-from-minibuffer "文章标题: ")
+    ;; (find-file (format "~/blog/source/_posts/%s.org" post-name))
     (goto-char 0)
     (replace-regexp "title: .+$" (format "title: \"%s\""
                                          (read-from-minibuffer "Article Title: "
@@ -828,7 +830,7 @@ You can run this function in dired or a hexo article."
              (message "Two filenames duplicated in _posts/ and _drafts/. Abort."))))
         ((and (eq major-mode 'dired-mode)
               (hexo-find-root-dir)
-              (string-suffix-p ".md" (dired-get-file-for-visit))
+              (string-suffix-p ".org" (dired-get-file-for-visit))
               (member (hexo-get-article-parent-dir-name (dired-get-file-for-visit)) '("_posts" "_drafts")))
          (hexo--toggle-article-status (dired-get-file-for-visit)))
         (t
@@ -913,7 +915,7 @@ Please run this function in the article."
 (defun hexo-completing-read-post (&optional repo-root-dir)
   "Use `ido-completing-read' to read filename in _posts/.
 Return absolute path of the article file."
-  (format "%s/source/_posts/%s.md"
+  (format "%s/source/_posts/%s.org"
           (hexo-find-root-dir repo-root-dir)
           (ido-completing-read
            "Select Article: "
@@ -1005,7 +1007,7 @@ Return the link. If not found link under cursor, return nil."
 This is only resonable for files in _posts/."
   (let ((filename-without-ext (progn (string-match "/?\\([^/]+\\)/?$" permalink)
                                      (match-string 1 permalink))))
-    (format "%s/source/_posts/%s.md"
+    (format "%s/source/_posts/%s.org"
             (hexo-find-root-dir repo-root-dir)
             filename-without-ext)))
 

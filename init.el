@@ -566,18 +566,31 @@ layers configuration."
   (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
-  (add-to-list 'load-path "~/.spacemacs.d/layers/guanghui/")
-  ;; (add-to-list 'load-path "./layers/")
-  (require 'hexo)
-
-  (defun blog ()
+  ;; hexo 博客配置
+  (setq hexo-dir "~/blog")
+  (defun blog-deploy ()
+    "git add . & git commit & git push & hexo d -g"
     (interactive)
-    (hexo "~/blog/"))
+    (async-shell-command (format "cd %s ;git add . ;git commit -am \"update\" ; npm run deploy"
+                                 hexo-dir)))
+  (defun blog-list ()
+    "use dired open hexo source dir"
+    (interactive)
+    (ido-find-file-in-dir (format "%s/source/_posts" hexo-dir))
+    )
 
-  (with-eval-after-load 'hexo
-    (define-key hexo-mode-map (kbd "C-s-n") 'hexo-new)
-    (define-key hexo-mode-map (kbd "C-s-j") 'hexo-command-open-file))
+  (defun blog-new (post-name)
+    "create a hexo org post"
+    (interactive "sInput post name:")
+    (find-file (format "%s/source/_posts/%s.org" hexo-dir post-name))
+    (insert (format "#+TITLE: %s
+#+DATE: <%s>
+#+TAGS: 默认标签
+#+CATEGORIES: 默认分类
 
+
+写点什么吧
+"  post-name (format-time-string "%Y-%m-%d %H:%M:%S"))))
 
   ;; mydearxym end
 
