@@ -94,7 +94,7 @@ values."
      (shell :variables
             shell-default-position 'full
             shell-default-shell 'ansi-term
-            shell-default-term-shell "/usr/local/bin/fish")
+            shell-default-term-shell "/bin/bash")
      (chinese :variables chinese-default-input-method 'wubi
               chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
@@ -573,6 +573,11 @@ layers configuration."
   (defun blog ()
     (interactive)
     (hexo "~/blog/"))
+
+  (with-eval-after-load 'hexo
+    (define-key hexo-mode-map (kbd "C-s-n") 'hexo-new)
+    (define-key hexo-mode-map (kbd "C-s-j") 'hexo-command-open-file))
+
 
   ;; mydearxym end
 
