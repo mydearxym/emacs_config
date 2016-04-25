@@ -598,6 +598,8 @@ layers configuration."
 写点什么吧
 "  post-name (format-time-string "%Y-%m-%d %H:%M:%S"))))
 
+  ; flycheck check on save
+  (setq flycheck-check-syntax-automatically '(mode-enabled save))
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
