@@ -567,6 +567,12 @@ layers configuration."
     (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
   ;; hexo 博客配置
+  ;; (add-to-list 'load-path "~/.spacemacs.d/layers/guanghui/")
+  ;; (require 'hexo)
+  ;; (defun blog ()
+  ;;   (interactive)
+  ;;    (hexo "~/blog/"))
+
   (setq hexo-dir "~/blog")
   (defun blog-deploy ()
     "git add . & git commit & git push & hexo d -g"
