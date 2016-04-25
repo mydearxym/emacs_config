@@ -390,6 +390,13 @@ layers configuration."
   (setq default-tab-width 2)
   (modify-syntax-entry ?_ "w")
   (add-hook 'react-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'react-mode-hook
+            (lambda()
+              (add-hook 'write-contents-functions
+                        (lambda()
+                          (save-excursion
+                            (delete-trailing-whitespace)))
+                        nil t)))
 
   (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
 
@@ -598,7 +605,41 @@ layers configuration."
 写点什么吧
 "  post-name (format-time-string "%Y-%m-%d %H:%M:%S"))))
 
-  ; flycheck check on save
+
+  (defun zilongshanren//insert-org-or-md-img-link (prefix imagename)
+    (if (equal (file-name-extension (buffer-file-name)) "org")
+        (insert (format "[[%s][%s%s]]" imagename prefix imagename))
+      (insert (format "{%s fi %s%s %s}" "%s" prefix imagename "%s"))))
+
+  ;; ![bbb.png](/images/bbb.png)
+
+  (defun capture-screenshot (basename)
+    "Take a screenshot into a time stamped unique-named file in the
+  same directory as the org-buffer/markdown-buffer and insert a link to this file."
+    (interactive "sScreenshot name: ")
+    (if (equal basename "")
+        (setq basename (format-time-string "%Y%m%d_%H%M%S")))
+    (setq fullpath
+          (concat (file-name-directory (buffer-file-name))
+                  "../images/posts/"
+                  (file-name-base (buffer-file-name))
+                  "_"
+                  basename))
+    (setq relativepath
+          (concat (file-name-base (buffer-file-name))
+                  "_"
+                  basename
+                  ".png"))
+    (if (file-exists-p (file-name-directory fullpath))
+        (progn
+          (call-process "screencapture" nil nil nil "-s" (concat fullpath ".png"))
+          (zilongshanren//insert-org-or-md-img-link "http://guanghuiqu.qiniudn.com/" relativepath))
+      (progn
+        (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
+        (zilongshanren//insert-org-or-md-img-link "/images/" (concat basename ".png"))))
+    (insert "\n"))
+
+  ;; flycheck check on save
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
   ;; mydearxym end
 
