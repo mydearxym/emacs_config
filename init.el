@@ -607,9 +607,9 @@ layers configuration."
 
 
   (defun zilongshanren//insert-org-or-md-img-link (prefix imagename)
-    (if (equal (file-name-extension (buffer-file-name)) "org")
-        (insert (format "[[%s][%s%s]]" imagename prefix imagename))
-      (insert (format "{%s fi %s%s %s}" "%s" prefix imagename "%s"))))
+    (if (equal (file-name-extension (buffer-file-name)) "md")
+        (insert (format "[[%s][%s%s]]" imagename prefix imagename)))
+      (insert (format "{%s fi %s%s %s}" "%" prefix (concat (format-time-string "%Y.%m.%d.%H.%M") "." imagename) "%")))
 
   ;; ![bbb.png](/images/bbb.png)
 
@@ -621,23 +621,16 @@ layers configuration."
         (setq basename (format-time-string "%Y%m%d_%H%M%S")))
     (setq fullpath
           (concat (file-name-directory (buffer-file-name))
-                  "../images/posts/"
                   (file-name-base (buffer-file-name))
                   "_"
                   basename))
-    (setq relativepath
-          (concat (file-name-base (buffer-file-name))
-                  "_"
-                  basename
-                  ".png"))
-    (if (file-exists-p (file-name-directory fullpath))
-        (progn
-          (call-process "screencapture" nil nil nil "-s" (concat fullpath ".png"))
-          (zilongshanren//insert-org-or-md-img-link "http://guanghuiqu.qiniudn.com/" relativepath))
-      (progn
-        (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
-        (zilongshanren//insert-org-or-md-img-link "/images/" (concat basename ".png"))))
+    (progn
+      (call-process "screencapture" nil nil nil "-s"
+                    (concat  "/Users/xieyiming/blog/source/images/"  (format-time-string "%Y.%m.%d.%H.%M") "."  basename  ".png"))
+      ;; (call-process "screencapture" nil nil nil "-s" "/Users/xieyiming/blog/source/images/bbb.png" )
+      (zilongshanren//insert-org-or-md-img-link "/images/" (concat basename ".png")))
     (insert "\n"))
+
 
   ;; flycheck check on save
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
