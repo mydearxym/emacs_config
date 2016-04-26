@@ -606,6 +606,7 @@ layers configuration."
 "  post-name (format-time-string "%Y-%m-%d %H:%M:%S"))))
 
 
+  ;; 博客截图
   (defun zilongshanren//insert-org-or-md-img-link (prefix imagename)
     (if (equal (file-name-extension (buffer-file-name)) "md")
         (insert (format "[[%s][%s%s]]" imagename prefix imagename)))
@@ -631,6 +632,9 @@ layers configuration."
       (zilongshanren//insert-org-or-md-img-link "/images/" (concat basename ".png")))
     (insert "\n"))
 
+  ;; turn on flychecking globally
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (flycheck-add-mode 'javascript-eslint 'react-mode)
 
   ;; flycheck check on save
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
