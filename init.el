@@ -399,7 +399,7 @@ layers configuration."
                         nil t)))
 
   (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
-
+  ;; (global-set-key (kbd "C-c C-p") 'zilongshanren/open-file-with-projectile-or-counsel-git)
 
   ;; (define-globalized-minor-mode global-highlight-parentheses-mode
   ;;   highlight-parentheses-mode
@@ -554,10 +554,10 @@ layers configuration."
                       (interactive)
                       (insert ", ")))
 
-  (global-set-key (kbd "=")
-                  #'(lambda ()
-                      (interactive)
-                      (insert " = ")))
+  ;; (global-set-key (kbd "=")
+  ;;                 #'(lambda ()
+  ;;                     (interactive)
+  ;;                     (insert " = ")))
 
   ;; (global-set-key (kbd ":")
   ;;                 #'(lambda ()
@@ -605,14 +605,14 @@ layers configuration."
 写点什么吧
 "  post-name (format-time-string "%Y-%m-%d %H:%M:%S"))))
 
-
   ;; 博客截图
-  (defun zilongshanren//insert-org-or-md-img-link (prefix imagename)
+  ;; {% fi /images/2016.04.25.23.53.jietu.png %}
+
+  (defun insert-org-or-md-img-link (prefix imagename)
     (if (equal (file-name-extension (buffer-file-name)) "md")
         (insert (format "[[%s][%s%s]]" imagename prefix imagename)))
-      (insert (format "{%s fi %s%s %s}" "%" prefix (concat (format-time-string "%Y.%m.%d.%H.%M") "." imagename) "%")))
+    (insert (format "{%s fi %s%s}" "%" prefix (concat (format-time-string "%Y.%m.%d.%H.%M") "." imagename " %"))))
 
-  ;; ![bbb.png](/images/bbb.png)
 
   (defun capture-screenshot (basename)
     "Take a screenshot into a time stamped unique-named file in the
@@ -628,9 +628,10 @@ layers configuration."
     (progn
       (call-process "screencapture" nil nil nil "-s"
                     (concat  "/Users/xieyiming/blog/source/images/"  (format-time-string "%Y.%m.%d.%H.%M") "."  basename  ".png"))
-      ;; (call-process "screencapture" nil nil nil "-s" "/Users/xieyiming/blog/source/images/bbb.png" )
-      (zilongshanren//insert-org-or-md-img-link "/images/" (concat basename ".png")))
+      (insert-org-or-md-img-link "/images/" (concat basename ".png")))
     (insert "\n"))
+
+  ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
 
   ;; turn on flychecking globally
   (add-hook 'after-init-hook #'global-flycheck-mode)
