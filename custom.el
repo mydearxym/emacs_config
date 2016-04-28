@@ -68,7 +68,7 @@
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2 t)
+ '(web-mode-markup-indent-offset 2)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -133,6 +133,9 @@
  '(magit-blame-name ((t (:background "gray31" :foreground "pale violet red"))))
  '(magit-blame-summary ((t (:inherit magit-blame-heading :foreground "dark gray"))))
  '(minibuffer-prompt ((t (:foreground "aquamarine"))))
+ '(org-level-1 ((t (:foreground "orange"))))
+ '(org-level-2 ((t (:foreground "yellow green"))))
+ '(org-link ((t (:inherit link :foreground "turquoise"))))
  '(sp-pair-overlay-face ((t nil)))
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
