@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : this.props
+# --
+this.props.$0

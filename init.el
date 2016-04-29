@@ -385,7 +385,7 @@ layers configuration."
 
   ;; (set-background-color "#385063")
   (set-background-color "#334452")
-  (linum-relative-global-mode t)
+  (linum-relative-global-mode -1)
 
   (setq default-tab-width 2)
   (modify-syntax-entry ?_ "w")
@@ -406,6 +406,9 @@ layers configuration."
   ;;   (lambda ()
   ;;     (highlight-parentheses-mode -1)))
   ;; (global-highlight-parentheses-mode -1)
+
+  (global-set-key (kbd "C-;") 'yas-expand)
+  ;; (setq-default mode-require-final-newline t)
 
   ;; vim surround staff
   (global-evil-surround-mode 1)
@@ -639,6 +642,18 @@ layers configuration."
 
   ;; flycheck check on save
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
+
+  (set-language-environment "UTF-8")
+
+  ;; Company-mode 中使用 C-n 与 C-p 来选择补全项，
+  (with-eval-after-load 'company
+    (define-key company-active-map (kbd "M-n") nil)
+    (define-key company-active-map (kbd "M-p") nil)
+    (define-key company-active-map (kbd "C-n") #'company-select-next)
+    (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode)
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题

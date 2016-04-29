@@ -41,8 +41,8 @@
         helm-gtags
         persp-mode
         json-mode
-        racket-mode
-        ;; yasnippet
+        ;; racket-mode
+        yasnippet
         helm-ag
         hungry-delete
         ;; flyspell
@@ -815,7 +815,7 @@ be global."
     (setq save-abbrevs 'silently)
     (setq-default abbrev-mode t)
 
-    (bind-key* "C-;" 'zilongshanren/flyspell-goto-previous-error)
+    ;; (bind-key* "C-;" 'zilongshanren/flyspell-goto-previous-error)
     (global-set-key (kbd "C-c s") 'helm-flyspell-correct)))
 
 (defun zilongshanren/post-init-helm ()

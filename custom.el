@@ -60,6 +60,7 @@
    (quote
     ((:name "BigDict-01" :file "/Users/guanghui/.emacs.d/pyim/dicts/pyim-bigdict.pyim" :coding utf-8-unix)
      (:name "BigDict-01" :file "/Users/guanghui/.emacs.d/.cache/pyim-bigdict.pyim" :coding utf-8-unix))))
+ '(require-final-newline nil)
  '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values
    (quote
@@ -133,13 +134,14 @@
  '(magit-blame-name ((t (:background "gray31" :foreground "pale violet red"))))
  '(magit-blame-summary ((t (:inherit magit-blame-heading :foreground "dark gray"))))
  '(minibuffer-prompt ((t (:foreground "aquamarine"))))
- '(org-level-1 ((t (:foreground "orange"))))
+ '(org-level-1 ((t (:foreground "light goldenrod"))))
  '(org-level-2 ((t (:foreground "yellow green"))))
  '(org-link ((t (:inherit link :foreground "turquoise"))))
  '(sp-pair-overlay-face ((t nil)))
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
  '(speedbar-highlight-face ((t nil)))
+ '(vimish-fold-overlay ((t (:foreground "dark gray" :box (:line-width 2 :color "LightSkyBlue4")))))
  '(vr/match-separator-face ((t (:foreground "red"))))
  '(web-mode-constant-face ((t (:inherit font-lock-constant-face :foreground "tomato" :slant italic))))
  '(web-mode-function-call-face ((t (:inherit font-lock-function-name-face :foreground "cadet blue" :slant oblique))))
