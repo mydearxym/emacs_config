@@ -654,6 +654,20 @@ layers configuration."
 
   (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+  ;; css-mode
+  (add-hook 'scss-mode-hook
+            '(lambda()
+               (setq c-basic-offset 2)
+               (setq tab-with 2)
+               (setq indent-tabs-mode nil)))
+
+  (add-hook 'sass-mode-hook
+            '(lambda()
+               (setq c-basic-offset 2)
+               (setq tab-with 2)
+               (setq indent-tabs-mode nil)))
+
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
