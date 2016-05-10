@@ -431,7 +431,7 @@ layers configuration."
   (global-set-key (kbd "C-h") 'delete-backward-char)
   (global-set-key (kbd "C-e") 'end-of-line)
   ;; (global-set-key (kbd "C-l") 'recenter)
-  (global-set-key (kbd "C-j") 'newline-and-indent)
+  ;; (global-set-key (kbd "C-j") 'newline-and-indent)
   (global-set-key (kbd "C-s") 'evil-search-word-forward)
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
@@ -449,8 +449,14 @@ layers configuration."
     (define-key company-active-map (kbd "C-h") 'delete-backward-char))
 
   (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
+
   (with-eval-after-load 'evil
     ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
+    (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 3)))
+    (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -3)))
+
+    (define-key evil-insert-state-map (kbd "C-j") 'newline-and-indent)
+    (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
 
     (define-key evil-normal-state-map (kbd "C-<up>") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
