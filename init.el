@@ -495,8 +495,8 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "C-y") 'scroll-up-line)
     (define-key evil-insert-state-map (kbd "C-y") 'scroll-up-line)
 
-    ;; (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
-    ;; (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
+    (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
+    (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
 
     (define-key evil-insert-state-map (kbd "C-p") 'evil-previous-visual-line)
     (define-key evil-insert-state-map (kbd "C-n") 'evil-next-visual-line)
