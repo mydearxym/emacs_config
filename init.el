@@ -39,6 +39,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;; evil-visualstar
      spacemacs-helm
      spacemacs-ivy
      better-defaults
@@ -115,7 +116,7 @@ values."
                                     ace-jump-helm-line
                                     evil-tutor
                                     eyebrowse
-                                    emmet-mode
+                                    ;; emmet-mode
                                     stickyfunc-enhance
                                     flx-ido
                                     smooth-scrolling
@@ -147,7 +148,7 @@ values."
                                     lorem-ipsum
                                     solarized-theme
                                     beacon
-                                    spaceline
+                                    ;; spaceline
                                     )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
@@ -451,6 +452,9 @@ layers configuration."
   (with-eval-after-load 'evil
     ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
 
+    (define-key evil-normal-state-map (kbd "C-<up>") 'evil-numbers/inc-at-pt)
+    (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
+
     (define-key evil-normal-state-map (kbd "p") 'yank)
     (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
     ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
@@ -485,8 +489,8 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "C-y") 'scroll-up-line)
     (define-key evil-insert-state-map (kbd "C-y") 'scroll-up-line)
 
-    (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
-    (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
+    ;; (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
+    ;; (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
 
     (define-key evil-insert-state-map (kbd "C-p") 'evil-previous-visual-line)
     (define-key evil-insert-state-map (kbd "C-n") 'evil-next-visual-line)
@@ -657,18 +661,26 @@ layers configuration."
   (add-hook 'prog-mode-hook #'yas-minor-mode)
 
   ;; css-mode
-  (add-hook 'scss-mode-hook
-            '(lambda()
-               (setq c-basic-offset 2)
-               (setq tab-with 2)
-               (setq indent-tabs-mode nil)))
+  ;; (add-hook 'scss-mode-hook
+  ;;           '(lambda()
+  ;;              (setq c-basic-offset 2)
+  ;;              (setq tab-with 2)
+  ;;              (setq indent-tabs-mode nil)))
 
-  (add-hook 'sass-mode-hook
-            '(lambda()
-               (setq c-basic-offset 2)
-               (setq tab-with 2)
-               (setq indent-tabs-mode nil)))
+  ;; (add-hook 'sass-mode-hook
+  ;;           '(lambda()
+  ;;              (setq c-basic-offset 2)
+  ;;              (setq tab-with 2)
+  ;;              (setq indent-tabs-mode nil)))
 
+  ;; 添加国内的 elpa 源
+  ;; (setq configuration-layer--elpa-archives
+  ;;       '(("popkit" . "elpa.popkit.org/packages/")
+  ;;         ("org"   . "orgmode.org/elpa/")
+  ;;         ("gnu"   . "elpa.gnu.org/packages/")))
+
+  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
