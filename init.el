@@ -663,7 +663,7 @@ layers configuration."
     (define-key company-active-map (kbd "C-n") #'company-select-next)
     (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
-  (yas-reload-all)
+  ;; (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
 
   ;; css-mode
