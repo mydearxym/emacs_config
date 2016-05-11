@@ -75,8 +75,8 @@ values."
      ranger
      ;; racket
      ;; gtags
-     ;; (spacemacs-layouts :variables layouts-enable-autosave t
-     ;;                    layouts-autosave-delay 300)
+     (spacemacs-layouts :variables layouts-enable-autosave t
+                        layouts-autosave-delay 60000)
      ;; eyebrowse
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)

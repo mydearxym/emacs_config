@@ -37,6 +37,7 @@
  '(hl-paren-colors nil t)
  '(hl-paren-delay 0.5 t)
  '(ivy-height 18)
+ '(linum-eager nil)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
  '(magit-use-overlays nil)
  '(org-agenda-custom-commands nil)
