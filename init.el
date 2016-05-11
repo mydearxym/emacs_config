@@ -687,6 +687,9 @@ layers configuration."
 
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
   (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+
+  ;; 关掉spacemacs 在空字符串除 `Tab` 时出现的 `helm-complete`（无意义，且反应非常慢）
+  (setq tab-always-indent t)
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题

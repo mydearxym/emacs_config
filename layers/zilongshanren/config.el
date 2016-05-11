@@ -68,7 +68,7 @@
 ;; keep in mind known issues with zsh - see emacs wiki
 ;; (setq tramp-default-method "ssh")
 
-(set-default 'imenu-auto-rescan t)
+;; (set-default 'imenu-auto-rescan t)
 
 
 
