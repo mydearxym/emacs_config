@@ -32,7 +32,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     go
+     ;; go
      windows-scripts
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -48,7 +48,7 @@ values."
      (version-control :variables version-control-diff-tool 'git-gutter+
                       version-control-global-margin t)
      osx
-     semantic                           ; too slow
+     ;; semantic                           ; too slow
      markdown
      (vinegar :variables vinegar-reuse-dired-buffer t)
      org
@@ -58,7 +58,7 @@ values."
      (spell-checking :variables spell-checking-enable-by-default nil)
      yaml
      ;; (ruby :variables ruby-version-manager 'rvm)
-     python
+     ;; python
      ;; lua
      themes-megapack
      html
@@ -75,8 +75,8 @@ values."
      ranger
      ;; racket
      ;; gtags
-     (spacemacs-layouts :variables layouts-enable-autosave t
-                        layouts-autosave-delay 300)
+     ;; (spacemacs-layouts :variables layouts-enable-autosave t
+     ;;                    layouts-autosave-delay 300)
      ;; eyebrowse
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
@@ -89,16 +89,16 @@ values."
           ;; This is really creepy magit
           magit-revision-show-gravatars nil)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode)
+     ;; (c-c++ :variables
+     ;;        c-c++-default-mode-for-headers 'c++-mode)
      (auto-completion :variables auto-completion-enable-sort-by-usage t)
      (shell :variables
             shell-default-position 'full
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/bash")
-     (chinese :variables chinese-default-input-method 'wubi
-              chinese-enable-fcitx t
-              chinese-enable-youdao-dict t)
+     ;; (chinese :variables chinese-default-input-method 'wubi
+     ;;          chinese-enable-fcitx t
+     ;;          chinese-enable-youdao-dict t)
      zilongshanren
      guanghui)
    ;; List of additional packages that will be installed without being
