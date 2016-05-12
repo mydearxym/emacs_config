@@ -66,13 +66,13 @@ values."
      javascript
      ;; restclient
      emacs-lisp
-     (clojure :variables clojure-enable-fancify-symbols t)
+     ;; (clojure :variables clojure-enable-fancify-symbols t)
      ;; emoji
      ;; ycmd
      ;; fasd
      ;; deft
      ;; elfeed
-     ranger
+     (ranger :variables ranger-show-preview -1)
      ;; racket
      ;; gtags
      (spacemacs-layouts :variables layouts-enable-autosave t
@@ -400,7 +400,7 @@ layers configuration."
                             (delete-trailing-whitespace)))
                         nil t)))
 
-  (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file-dwim)
+  (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file)
   ;; (global-set-key (kbd "C-c C-p") 'zilongshanren/open-file-with-projectile-or-counsel-git)
 
   ;; (define-globalized-minor-mode global-highlight-parentheses-mode
@@ -436,7 +436,7 @@ layers configuration."
   ;; (global-set-key (kbd ",.") 'er/expand-region)
   (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
-  (global-set-key (kbd "C-c C-j") 'ace-jump-mode)
+  ;; (global-set-key (kbd "C-c C-j") 'ace-jump-mode)
 
   ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
   ;; (global-set-key (kbd "C-.") 'spacemacs/next-useful-buffer)
@@ -449,6 +449,11 @@ layers configuration."
     (define-key company-active-map (kbd "C-h") 'delete-backward-char))
 
   (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
+
+  (defun revert-buffer-no-confirm ()
+    "Revert buffer without confirmation."
+    (interactive)
+    (revert-buffer t t))
 
   (with-eval-after-load 'evil
     ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
@@ -481,8 +486,11 @@ layers configuration."
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
     (define-key evil-visual-state-map (kbd ",t") 'spacemacs/align-repeat-equal)
     (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat)
-    (define-key evil-normal-state-map (kbd ",f") 'neotree-find-project-root)
-    (define-key evil-normal-state-map (kbd "C-s-s") 'helm-swoop)
+    (define-key evil-normal-state-map (kbd ",f") 'ranger)
+    (define-key evil-normal-state-map (kbd ",g") 'evil-avy-goto-char-2)
+    ;; avy jump back 以后 auto highlight symbol 会失效，需要 reload buffer 才可以
+    (define-key evil-normal-state-map (kbd ",.") 'revert-buffer-no-confirm)
+    (define-key evil-normal-state-map (kbd "C-s-s") 'spacemacs/helm-swoop-region-or-symbol)
 
     (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
     (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
@@ -563,20 +571,11 @@ layers configuration."
 
   (global-company-mode -1)
 
-  (global-set-key (kbd ",")
-                  #'(lambda ()
-                      (interactive)
-                      (insert ", ")))
-
-  ;; (global-set-key (kbd "=")
+  ;; (global-set-key (kbd ",")
   ;;                 #'(lambda ()
   ;;                     (interactive)
-  ;;                     (insert " = ")))
+  ;;                     (insert ", ")))
 
-  ;; (global-set-key (kbd ":")
-  ;;                 #'(lambda ()
-  ;;                     (interactive)
-  ;;                     (insert " : ")))
   ;; disable backup
   (setq backup-inhibited t)
                                         ;disable auto save
@@ -690,6 +689,11 @@ layers configuration."
 
   ;; 关掉spacemacs 在空字符串除 `Tab` 时出现的 `helm-complete`（无意义，且反应非常慢）
   (setq tab-always-indent t)
+
+  (setq ranger-cleanup-eagerly t)
+  (setq-default cursor-type 'bar)
+  (setq helm-input-idle-delay 0.2)
+  ;; (setq helm-idle-delay 0.2)
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
