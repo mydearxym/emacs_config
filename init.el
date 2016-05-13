@@ -694,6 +694,20 @@ layers configuration."
   (setq-default cursor-type 'bar)
   (setq helm-input-idle-delay 0.2)
   ;; (setq helm-idle-delay 0.2)
+
+  ;; dim the parentheses when edit lisp code
+  (defface paren-face
+    '((((class color) (background dark))
+       (:foreground "dimgrey"))
+      (((class color) (background light))
+       (:foreground "grey80")))
+    "Face used to dim parentheses.")
+
+  (add-hook 'emacs-lisp-mode-hook
+            (lambda ()
+              (font-lock-add-keywords nil
+                                      '(("(\\|)" . 'paren-face)))))
+
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
