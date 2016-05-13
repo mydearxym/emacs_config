@@ -693,7 +693,6 @@ layers configuration."
   (setq ranger-cleanup-eagerly t)
   (setq-default cursor-type 'bar)
   (setq helm-input-idle-delay 0.2)
-  ;; (setq helm-idle-delay 0.2)
 
   ;; dim the parentheses when edit lisp code
   (defface paren-face
@@ -724,15 +723,15 @@ layers configuration."
     (while bindings
       (define-key keymap (pop bindings) (pop bindings))))
   (bb/define-key evil-normal-state-map
-    "+" 'spacemacs/evil-numbers-increase
-    "_" 'spacemacs/evil-numbers-decrease
-    "\\" 'evil-repeat-find-char-reverse
-    "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
-    "]s" (lambda (n) (interactive "p")
-           (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
+                 "+" 'spacemacs/evil-numbers-increase
+                 "_" 'spacemacs/evil-numbers-decrease
+                 "\\" 'evil-repeat-find-char-reverse
+                 "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
+                 "]s" (lambda (n) (interactive "p")
+                        (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
 
   (bb/define-key company-active-map
-    (kbd "C-w") 'evil-delete-backward-word)
+                 (kbd "C-w") 'evil-delete-backward-word)
 
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "C-w") 'evil-delete-backward-word))
@@ -838,8 +837,7 @@ layers configuration."
     ("q" nil "quit" :exit t)
     ("<escape>" nil nil :exit t))
   (spacemacs/set-leader-keys-for-major-mode 'gist-list-mode
-    "." 'spacemacs/gist-list-mode-transient-state/body)
-  )
+    "." 'spacemacs/gist-list-mode-transient-state/body))
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)

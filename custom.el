@@ -79,7 +79,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:foreground "gainsboro" :slant normal))))
- '(ahs-face ((t (:underline t))))
+ '(ahs-face ((t (:underline "dark gray"))))
  '(ahs-plugin-bod-face ((t nil)))
  '(ahs-plugin-defalt-face ((t (:underline t))))
  '(ahs-plugin-whole-buffer-face ((t (:underline t))))
