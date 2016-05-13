@@ -25,6 +25,7 @@
  '(expand-region-exclude-text-mode-expansions (quote (html-mode nxml-mode web-mode)))
  '(expand-region-reset-fast-key "r")
  '(flycheck-display-errors-delay 0.4)
+ '(global-command-log-mode nil)
  '(global-highlight-parentheses-mode nil)
  '(golden-ratio-exclude-modes
    (quote

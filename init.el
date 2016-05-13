@@ -409,7 +409,6 @@ layers configuration."
   ;;     (highlight-parentheses-mode -1)))
   ;; (global-highlight-parentheses-mode -1)
 
-  (global-set-key (kbd "C-;") 'yas-expand)
   ;; (setq-default mode-require-final-newline t)
 
   ;; vim surround staff
@@ -664,6 +663,8 @@ layers configuration."
 
   ;; (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
+  (global-set-key (kbd "C-;") 'yas-expand)
+
 
   ;; css-mode
   ;; (add-hook 'scss-mode-hook
@@ -703,9 +704,9 @@ layers configuration."
     "Face used to dim parentheses.")
 
   (add-hook 'emacs-lisp-mode-hook
-            (lambda ()
-              (font-lock-add-keywords nil
-                                      '(("(\\|)" . 'paren-face)))))
+     (lambda ()
+       (font-lock-add-keywords nil
+          '(("(\\|)" . 'paren-face)))))
 
   ;; mydearxym end
 
@@ -755,10 +756,6 @@ layers configuration."
         ;; invisible here anyway.
         (assq-delete-all 'which-func-mode mode-line-misc-info))
 
-  (add-hook 'prog-mode-hook
-            (lambda ()
-              (when (> (buffer-size) 100000)
-                (turn-off-show-smartparens-mode))))
 
   ;; improve the performance of opening large file
   (add-hook 'org-mode-hook (lambda () (spacemacs/toggle-line-numbers-off)) 'append)
