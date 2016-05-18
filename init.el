@@ -473,8 +473,8 @@ layers configuration."
     (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
     (define-key evil-insert-state-map (kbd "C-w") 'evil-delete-backward-word)
     (define-key evil-normal-state-map (kbd "C-w") 'evil-delete-backward-word)
-
-    (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
+    (define-key evil-normal-state-map (kbd "gc") 'spacemacs/comment-or-uncomment-lines-inverse)
+    (define-key evil-normal-state-map (kbd "gC") 'evilnc-comment-or-uncomment-lines)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
 
     (define-key evil-normal-state-map (kbd "C-l") 'recenter)
