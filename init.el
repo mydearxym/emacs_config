@@ -720,17 +720,19 @@ layers configuration."
       ;; (forward-line -1)
       ;; (indent-according-to-mode)))
 
-  ;; (sp-with-modes '(elixir-mode)
-    ;; (sp-local-pair "->" "end"
-                   ;; :when '(("RET"))
-                   ;; :post-handlers '(:add my-elixir-do-end-close-action)
-                   ;; :actions '(insert)))
+  ;; (with-eval-after-load 'smartparens
+    ;; (sp-with-modes '(elixir-mode)
+      ;; (sp-local-pair "->" "end"
+                     ;; :when '(("RET"))
+                     ;; :post-handlers '(:add my-elixir-do-end-close-action)
+                     ;; :actions '(insert)))
 
-  ;; (sp-with-modes '(elixir-mode)
-    ;; (sp-local-pair "do" "end"
-                   ;; :when '(("SPC" "RET"))
-                   ;; :post-handlers '(:add my-elixir-do-end-close-action)
-                   ;; :actions '(insert)))
+    ;; (sp-with-modes '(elixir-mode)
+      ;; (sp-local-pair "do" "end"
+                     ;; :when '(("SPC" "RET"))
+                     ;; :post-handlers '(:add my-elixir-do-end-close-action)
+                     ;; :actions '(insert))))
+
 
   ;; (require 'flycheck-elixir)
   ;; (add-hook 'elixir-mode-hook 'flycheck-mode)
