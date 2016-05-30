@@ -32,6 +32,9 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     erlang
+     elixir
+     python
      ;; go
      windows-scripts
      ;; ----------------------------------------------------------------
@@ -64,6 +67,7 @@ values."
      html
      command-log
      javascript
+     ;; elixir
      ;; restclient
      emacs-lisp
      ;; (clojure :variables clojure-enable-fancify-symbols t)
@@ -704,9 +708,32 @@ layers configuration."
     "Face used to dim parentheses.")
 
   (add-hook 'emacs-lisp-mode-hook
-     (lambda ()
-       (font-lock-add-keywords nil
-          '(("(\\|)" . 'paren-face)))))
+            (lambda ()
+              (font-lock-add-keywords nil
+                                      '(("(\\|)" . 'paren-face)))))
+
+  (add-hook 'prog-mode-hook 'highlight-numbers-mode)
+
+  ;; (defun my-elixir-do-end-close-action (id action context)
+    ;; (when (eq action 'insert)
+      ;; (newline-and-indent)
+      ;; (forward-line -1)
+      ;; (indent-according-to-mode)))
+
+  ;; (sp-with-modes '(elixir-mode)
+    ;; (sp-local-pair "->" "end"
+                   ;; :when '(("RET"))
+                   ;; :post-handlers '(:add my-elixir-do-end-close-action)
+                   ;; :actions '(insert)))
+
+  ;; (sp-with-modes '(elixir-mode)
+    ;; (sp-local-pair "do" "end"
+                   ;; :when '(("SPC" "RET"))
+                   ;; :post-handlers '(:add my-elixir-do-end-close-action)
+                   ;; :actions '(insert)))
+
+  ;; (require 'flycheck-elixir)
+  ;; (add-hook 'elixir-mode-hook 'flycheck-mode)
 
   ;; mydearxym end
 
@@ -724,15 +751,15 @@ layers configuration."
     (while bindings
       (define-key keymap (pop bindings) (pop bindings))))
   (bb/define-key evil-normal-state-map
-                 "+" 'spacemacs/evil-numbers-increase
-                 "_" 'spacemacs/evil-numbers-decrease
-                 "\\" 'evil-repeat-find-char-reverse
-                 "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
-                 "]s" (lambda (n) (interactive "p")
-                        (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
+    "+" 'spacemacs/evil-numbers-increase
+    "_" 'spacemacs/evil-numbers-decrease
+    "\\" 'evil-repeat-find-char-reverse
+    "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
+    "]s" (lambda (n) (interactive "p")
+           (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
 
   (bb/define-key company-active-map
-                 (kbd "C-w") 'evil-delete-backward-word)
+    (kbd "C-w") 'evil-delete-backward-word)
 
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "C-w") 'evil-delete-backward-word))
