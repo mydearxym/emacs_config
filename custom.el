@@ -35,8 +35,8 @@
  '(helm-ls-git-fuzzy-match t)
  '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(hl-paren-background-colors nil)
- '(hl-paren-colors nil)
- '(hl-paren-delay 0.5)
+ '(hl-paren-colors nil t)
+ '(hl-paren-delay 0.5 t)
  '(ivy-height 18)
  '(linum-eager nil)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
@@ -71,7 +71,7 @@
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2)
+ '(web-mode-markup-indent-offset 2 t)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -80,7 +80,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:foreground "gainsboro" :slant normal))))
- '(ahs-face ((t (:inherit nil :underline "dark gray"))))
+ '(ahs-face ((t (:inherit nil :background "#4B6275"))))
  '(ahs-plugin-bod-face ((t nil)))
  '(ahs-plugin-defalt-face ((t (:inherit nil :underline t))))
  '(ahs-plugin-whole-buffer-face ((t (:inherit nil :underline t))))
@@ -105,7 +105,7 @@
  '(flycheck-fringe-error ((t (:foreground "orange red" :weight bold))))
  '(flycheck-fringe-warning ((t (:foreground "gold" :weight bold))))
  '(font-lock-comment-delimiter-face ((t (:foreground "gray38"))))
- '(font-lock-function-name-face ((t (:inherit font-lock-function-name-face :foreground "LightSkyBlue3"))))
+ '(font-lock-function-name-face ((t (:inherit font-lock-function-name-face :foreground "LightSkyBlue3" :height 1.1))))
  '(font-lock-type-face ((t (:foreground "cadet blue" :slant italic))))
  '(font-lock-variable-name-face ((t (:inherit nil :foreground "tomato"))))
  '(fringe ((t (:background "#334452" :foreground "#ffffff"))))
