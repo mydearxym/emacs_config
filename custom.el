@@ -79,11 +79,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ahs-definition-face ((t (:foreground "gainsboro" :slant normal))))
+ '(ahs-definition-face ((t (:slant normal))))
  '(ahs-face ((t (:inherit nil :background "#4B6275"))))
  '(ahs-plugin-bod-face ((t nil)))
- '(ahs-plugin-defalt-face ((t (:inherit nil :underline t))))
- '(ahs-plugin-whole-buffer-face ((t (:inherit nil :underline t))))
+ '(ahs-plugin-defalt-face ((t nil)))
+ '(ahs-plugin-whole-buffer-face ((t nil)))
  '(comint-highlight-input ((t (:foreground "gold" :weight bold))))
  '(company-echo-common ((t (:foreground "salmon"))))
  '(company-preview ((t (:foreground "wheat"))))
