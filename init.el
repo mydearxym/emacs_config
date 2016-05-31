@@ -737,6 +737,10 @@ layers configuration."
   ;; (require 'flycheck-elixir)
   ;; (add-hook 'elixir-mode-hook 'flycheck-mode)
 
+  ;; (defun my-elixir-hook ()
+    ;; (local-set-key "->" '(lambda () (interactive) (insert "do \n\t end"))))
+
+  ;; (add-hook 'elixir-mode-hook 'my-elixir-hook)
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题
