@@ -487,8 +487,8 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
     ;; (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
-    (define-key evil-visual-state-map (kbd ",t") 'spacemacs/align-repeat-equal)
-    (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat)
+    (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat-equal)
+    (define-key evil-visual-state-map (kbd "C-s-t") 'spacemacs/align-repeat)
     (define-key evil-normal-state-map (kbd ",f") 'ranger)
     (define-key evil-normal-state-map (kbd ",g") 'evil-avy-goto-char-2)
     ;; avy jump back 以后 auto highlight symbol 会失效，需要 reload buffer 才可以
