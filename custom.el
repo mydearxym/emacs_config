@@ -162,7 +162,8 @@
  '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue2"))))
  '(web-mode-html-tag-face ((t (:foreground "SteelBlue2"))))
  '(web-mode-variable-name-face ((t (:foreground "LightSkyBlue3"))))
- '(which-key-command-description-face ((t (:foreground "PaleTurquoise3"))))
+ '(which-key-command-description-face ((t (:foreground "burlywood"))))
+ '(which-key-group-description-face ((t (:inherit font-lock-keyword-face :foreground "LightBlue4"))))
  '(which-key-highlighted-command-face ((t (:foreground "DarkSlateGray3" :underline t))))
  '(which-key-local-map-description-face ((t (:foreground "medium aquamarine")))))
 ;; Do not write anything past this comment. This is where Emacs will
