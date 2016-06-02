@@ -158,7 +158,7 @@
  '(vr/match-separator-face ((t (:foreground "red"))))
  '(web-mode-constant-face ((t (:inherit font-lock-constant-face :foreground "tomato" :slant italic))))
  '(web-mode-function-call-face ((t (:foreground "cadet blue" :slant oblique :height 1.1))))
- '(web-mode-html-attr-name-face ((t (:foreground "dark gray"))))
+ '(web-mode-html-attr-name-face ((t (:foreground "#DEB887"))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue2"))))
  '(web-mode-html-tag-face ((t (:foreground "SteelBlue2"))))
  '(web-mode-variable-name-face ((t (:foreground "LightSkyBlue3"))))
