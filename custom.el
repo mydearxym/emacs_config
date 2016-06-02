@@ -100,7 +100,7 @@
  '(company-tooltip-search ((t (:foreground "forest green" :weight bold))))
  '(company-tooltip-selection ((t (:background "dark olive green" :foreground "light gray"))))
  '(elixir-atom-face ((t (:foreground "burlywood"))))
- '(elixir-attribute-face ((t (:foreground "tomato"))))
+ '(elixir-attribute-face ((t (:foreground "#F89900"))))
  '(eval-sexp-fu-flash-error ((t (:foreground "tomato" :weight bold))))
  '(evil-search-highlight-persist-highlight-face ((t (:background "light blue" :foreground "dim gray"))))
  '(flycheck-error ((t (:background "OrangeRed3" :foreground "cornsilk" :underline (:color "orange red" :style wave)))))
