@@ -466,6 +466,8 @@ layers configuration."
     (define-key evil-insert-state-map (kbd "C-j") 'newline-and-indent)
     (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
 
+    (define-key evil-normal-state-map (kbd "C-x C-b") 'ivy-switch-buffer)
+
     (define-key evil-normal-state-map (kbd "C-<up>") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
 
