@@ -71,7 +71,7 @@
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2 t)
+ '(web-mode-markup-indent-offset 2)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -157,7 +157,7 @@
  '(vimish-fold-overlay ((t (:foreground "dark gray" :box (:line-width 2 :color "LightSkyBlue4")))))
  '(vr/match-separator-face ((t (:foreground "red"))))
  '(web-mode-constant-face ((t (:inherit font-lock-constant-face :foreground "tomato" :slant italic))))
- '(web-mode-function-call-face ((t (:inherit font-lock-function-name-face :foreground "cadet blue" :slant oblique))))
+ '(web-mode-function-call-face ((t (:foreground "cadet blue" :slant oblique :height 1.1))))
  '(web-mode-html-attr-name-face ((t (:foreground "dark gray"))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "SteelBlue2"))))
  '(web-mode-html-tag-face ((t (:foreground "SteelBlue2"))))
