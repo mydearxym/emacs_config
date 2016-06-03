@@ -489,6 +489,8 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
     ;; (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
+    (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+
     (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat-equal)
     (define-key evil-visual-state-map (kbd "C-s-t") 'spacemacs/align-repeat)
     (define-key evil-normal-state-map (kbd ",f") 'ranger)
