@@ -99,7 +99,7 @@ values."
      (shell :variables
             shell-default-position 'full
             shell-default-shell 'ansi-term
-            shell-default-term-shell "/bin/bash")
+            shell-default-term-shell "/usr/local/bin/fish")
      ;; (chinese :variables chinese-default-input-method 'wubi
      ;;          chinese-enable-fcitx t
      ;;          chinese-enable-youdao-dict t)
