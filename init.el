@@ -489,7 +489,6 @@ layers configuration."
     (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
     ;; (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
     (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
-    (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 
     (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat-equal)
     (define-key evil-visual-state-map (kbd "C-s-t") 'spacemacs/align-repeat)
@@ -693,8 +692,10 @@ layers configuration."
   ;;         ("org"   . "orgmode.org/elpa/")
   ;;         ("gnu"   . "elpa.gnu.org/packages/")))
 
-  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+
+  ;; (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-surround-region)
+  ;; (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
 
   ;; 关掉spacemacs 在空字符串除 `Tab` 时出现的 `helm-complete`（无意义，且反应非常慢）
   (setq tab-always-indent t)
