@@ -113,8 +113,9 @@
 
 ;; vim surround staff
 (global-evil-surround-mode 1)
-(evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-(evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+;; (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+;; (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+(evil-define-key 'visual evil-surround-mode-map "s" 'evil-surround-region)
 
 ;; mark-history
 (spacemacs/set-leader-keys "rm" 'helm-global-mark-ring)
