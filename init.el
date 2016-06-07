@@ -378,16 +378,6 @@ in `dotspacemacs/user-config'."
 layers configuration."
 
   ;; mydearxym
-  ;; (require 'sublimity)
-  ;; (sublimity-mode 1)
-  ;; (setq mouse-wheel-scroll-amount '(10 ((shift) . 10) ((control) . nil)))
-  ;; (setq mouse-wheel-progressive-speed 1)
-  ;; (setq scroll-step 10)
-  ;; (setq scroll-conservatively 1000)
-  ;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
-  ;; (setq mouse-wheel-progressive-speed nil)
-  ;; (setq mouse-wheel-follow-mouse t)
-  ;; (global-highlight-parentheses-mode nil) ;; not work
 
   ;; (set-background-color "#385063")
   (set-background-color "#334452")
@@ -404,125 +394,10 @@ layers configuration."
                             (delete-trailing-whitespace)))
                         nil t)))
 
-  (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file)
-  ;; (global-set-key (kbd "C-c C-p") 'zilongshanren/open-file-with-projectile-or-counsel-git)
-
-  ;; (define-globalized-minor-mode global-highlight-parentheses-mode
-  ;;   highlight-parentheses-mode
-  ;;   (lambda ()
-  ;;     (highlight-parentheses-mode -1)))
-  ;; (global-highlight-parentheses-mode -1)
-
-  ;; (setq-default mode-require-final-newline t)
-
-  ;; vim surround staff
-  (global-evil-surround-mode 1)
-  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
-
-  ;; multi cursors
-  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-  (setq-default evil-escape-key-sequence "fd")
   ;; disable auto-recenter
   (setq scroll-step 1)
   (setq scroll-conservatively 10000)
   (setq auto-window-vscroll nil)
-
-  (global-set-key (kbd "C-h") 'delete-backward-char)
-  (global-set-key (kbd "C-e") 'end-of-line)
-  ;; (global-set-key (kbd "C-l") 'recenter)
-  ;; (global-set-key (kbd "C-j") 'newline-and-indent)
-  (global-set-key (kbd "C-s") 'evil-search-word-forward)
-  ;; (global-set-key (kbd ",.") 'er/expand-region)
-  (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
-
-  ;; (global-set-key (kbd "C-c C-j") 'ace-jump-mode)
-
-  ;; (global-set-key (kbd "C-,") 'spacemacs/previous-useful-buffer)
-  ;; (global-set-key (kbd "C-.") 'spacemacs/next-useful-buffer)
-
-  (with-eval-after-load 'helm
-    (define-key helm-map (kbd "C-h") 'delete-backward-char)
-    (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char))
-
-  (with-eval-after-load 'company
-    (define-key company-active-map (kbd "C-h") 'delete-backward-char))
-
-  (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
-
-  (defun revert-buffer-no-confirm ()
-    "Revert buffer without confirmation."
-    (interactive)
-    (revert-buffer t t))
-
-  (with-eval-after-load 'evil
-    ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
-    (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 5)))
-    (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -5)))
-
-    (define-key evil-insert-state-map (kbd "C-j") 'newline-and-indent)
-    (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
-
-    (define-key evil-normal-state-map (kbd "C-x C-b") 'ivy-switch-buffer)
-
-    (define-key evil-normal-state-map (kbd "C-<up>") 'evil-numbers/inc-at-pt)
-    (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
-
-    (define-key evil-normal-state-map (kbd "p") 'yank)
-    (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
-    ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
-    (define-key evil-normal-state-map (kbd "C-d") 'evil-delete-char)
-    (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
-    (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
-    (define-key evil-insert-state-map (kbd "C-w") 'evil-delete-backward-word)
-    (define-key evil-normal-state-map (kbd "C-w") 'evil-delete-backward-word)
-    (define-key evil-normal-state-map (kbd "gc") 'spacemacs/comment-or-uncomment-lines-inverse)
-    (define-key evil-normal-state-map (kbd "gC") 'evilnc-comment-or-uncomment-lines)
-    (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
-
-    (define-key evil-normal-state-map (kbd "C-l") 'recenter)
-    (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
-
-    (define-key evil-normal-state-map (kbd "C-.") 'helm-projectile-switch-to-buffer)
-    ;; (define-key evil-normal-state-map (kbd "C-,") 'er/expand-region)
-    (define-key evil-normal-state-map (kbd ",l") 'evil-search-highlight-persist-remove-all)
-
-    (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat-equal)
-    (define-key evil-visual-state-map (kbd "C-s-t") 'spacemacs/align-repeat)
-    (define-key evil-normal-state-map (kbd ",f") 'ranger)
-    (define-key evil-normal-state-map (kbd ",g") 'evil-avy-goto-char-2)
-    ;; avy jump back 以后 auto highlight symbol 会失效，需要 reload buffer 才可以
-    (define-key evil-normal-state-map (kbd ",.") 'revert-buffer-no-confirm)
-    (define-key evil-normal-state-map (kbd "C-s-s") 'spacemacs/helm-swoop-region-or-symbol)
-
-    (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)
-    (define-key evil-visual-state-map (kbd "C-f") 'evil-forward-char)
-    (define-key evil-insert-state-map (kbd "C-f") 'evil-forward-char)
-
-    (define-key evil-normal-state-map (kbd "C-b") 'evil-backward-char)
-    (define-key evil-visual-state-map (kbd "C-b") 'evil-backward-char)
-    (define-key evil-insert-state-map (kbd "C-b") 'evil-backward-char)
-
-    (define-key evil-normal-state-map (kbd "C-y") 'scroll-up-line)
-    (define-key evil-insert-state-map (kbd "C-y") 'scroll-up-line)
-
-    (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-up)
-    (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-down)
-
-    (define-key evil-insert-state-map (kbd "C-p") 'evil-previous-visual-line)
-    (define-key evil-insert-state-map (kbd "C-n") 'evil-next-visual-line)
-
-    ;; (define-key evil-insert-state-map (kbd "C-p") 'evil-scroll-up)
-    ;; (define-key evil-insert-state-map (kbd "C-n") 'evil-scroll-down)
-    (define-key evil-visual-state-map (kbd "C-p") 'evil-scroll-up)
-    (define-key evil-visual-state-map (kbd "C-n") 'evil-scroll-down)
-
-    (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-visual-line)
-    (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
-
 
   (global-hl-line-mode t)
   (global-linum-mode t)
@@ -561,21 +436,11 @@ layers configuration."
 
   (setq js2-bounce-indent-p t)
 
-  ;; (with-eval-after-load 'react-mode
-  ;;   (progn
-  ;;     (setq-default js2-bounce-indent nil)
-  ;;     (setq-default js-indent-level 2)
-  ;;     (setq-default js2-indent-level 2)
-  ;;     (setq-default js2-basic-offset 2)
-
-  ;;     ))
-
-
   ;; (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))
   ;; (add-hook 'web-mode-hook (lambda ()
   ;;          (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))))
 
-  (global-company-mode -1)
+  (global-company-mode t)
 
   ;; (global-set-key (kbd ",")
   ;;                 #'(lambda ()
@@ -661,17 +526,9 @@ layers configuration."
 
   (set-language-environment "UTF-8")
 
-  ;; Company-mode 中使用 C-n 与 C-p 来选择补全项，
-  (with-eval-after-load 'company
-    (define-key company-active-map (kbd "M-n") nil)
-    (define-key company-active-map (kbd "M-p") nil)
-    (define-key company-active-map (kbd "C-n") #'company-select-next)
-    (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
   ;; (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
-  (global-set-key (kbd "C-;") 'yas-expand)
-
 
   ;; css-mode
   ;; (add-hook 'scss-mode-hook
@@ -692,10 +549,6 @@ layers configuration."
   ;;         ("org"   . "orgmode.org/elpa/")
   ;;         ("gnu"   . "elpa.gnu.org/packages/")))
 
-
-  ;; (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-surround-region)
-  ;; (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
 
   ;; 关掉spacemacs 在空字符串除 `Tab` 时出现的 `helm-complete`（无意义，且反应非常慢）
   (setq tab-always-indent t)
@@ -719,33 +572,6 @@ layers configuration."
 
   (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 
-  ;; (defun my-elixir-do-end-close-action (id action context)
-    ;; (when (eq action 'insert)
-      ;; (newline-and-indent)
-      ;; (forward-line -1)
-      ;; (indent-according-to-mode)))
-
-  ;; (with-eval-after-load 'smartparens
-    ;; (sp-with-modes '(elixir-mode)
-      ;; (sp-local-pair "->" "end"
-                     ;; :when '(("RET"))
-                     ;; :post-handlers '(:add my-elixir-do-end-close-action)
-                     ;; :actions '(insert)))
-
-    ;; (sp-with-modes '(elixir-mode)
-      ;; (sp-local-pair "do" "end"
-                     ;; :when '(("SPC" "RET"))
-                     ;; :post-handlers '(:add my-elixir-do-end-close-action)
-                     ;; :actions '(insert))))
-
-
-  ;; (require 'flycheck-elixir)
-  ;; (add-hook 'elixir-mode-hook 'flycheck-mode)
-
-  ;; (defun my-elixir-hook ()
-    ;; (local-set-key "->" '(lambda () (interactive) (insert "do \n\t end"))))
-
-  ;; (add-hook 'elixir-mode-hook 'my-elixir-hook)
   ;; mydearxym end
 
   ;;解决org表格里面中英文对齐的问题

@@ -12,6 +12,12 @@
 
 (setq octopress-workdir (expand-file-name "~/4gamers.cn/"))
 
+(defun xym/revert-buffer-no-confirm ()
+  "Revert buffer without confirmation."
+  (interactive)
+  (revert-buffer t t))
+
+;; learn to use hexo instead
 (defun zilongshanren/octopress-rake (command)
   "run rake commands"
   (let ((command-str (format "/bin/bash -l -c 'source $HOME/.rvm/scripts/rvm && rvm use ruby 2.0.0  && cd %s && rake %s'" octopress-workdir command)))
@@ -50,27 +56,6 @@
   (let ((parent (file-name-directory (directory-file-name directory))))
     (if (not (equal directory parent))
         parent)))
-
-(defun zilongshanren/jekyll-serve ()
-  (interactive)
-  (let* ((default-directory
-           (if (string-match "_posts/$" default-directory)
-               (zilongshanren/directory-parent (zilongshanren/directory-parent default-directory))
-             (zilongshanren/directory-parent default-directory)))
-         (buffer (if (get-buffer "*jekyll*")
-                     (switch-to-buffer "*jekyll*")
-                   (ansi-term "/bin/zsh" "jekyll")))
-         (proc (get-buffer-process buffer)))
-    (term-send-string proc "rake generate && rake preview\n")
-    (sit-for 4)
-    (browse-url "http://localhost:4000")))
-
-(defun zilongshanren/hotspots ()
-  "helm interface to my hotspots, which includes my locations,
-org-files and bookmarks"
-  (interactive)
-  (helm :buffer "*helm: utities*"
-        :sources `(,(zilongshanren//hotspots-sources))))
 
 (defun zilongshanren//hotspots-sources ()
   "Construct the helm sources for my hotspots"
