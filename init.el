@@ -486,7 +486,7 @@ layers configuration."
 #+CATEGORIES: 默认分类
 
 
-写点什么吧
+注意排版哈注意排版哈注意排版哈注意排版哈注意排版哈注意排版哈注意排版哈注意排版哈注意排版|
 "  post-name (format-time-string "%Y-%m-%d %H:%M:%S"))))
 
   ;; 博客截图
