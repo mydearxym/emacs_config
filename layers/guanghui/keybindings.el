@@ -143,8 +143,8 @@
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
 (with-eval-after-load 'evil
   ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
-  (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 5)))
-  (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -5)))
+  (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 4)))
+  (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -4)))
 
   (define-key evil-insert-state-map (kbd "C-j") 'newline-and-indent)
   (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
