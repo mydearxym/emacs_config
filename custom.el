@@ -11,6 +11,8 @@
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
  '(beacon-blink-delay 0.3)
+ '(beacon-blink-when-window-scrolls nil)
+ '(beacon-mode t)
  '(cfs--current-profile-name "profile1" t)
  '(company-dabbrev-minimum-length 3)
  '(company-dabbrev-other-buffers nil)
