@@ -100,6 +100,18 @@
 (global-set-key (kbd "C-s") 'evil-search-word-forward)
 (global-set-key (kbd "C-c C-p") 'helm-projectile-find-file)
 
+;; org mode // todo add it to org-mode only
+(global-set-key (kbd "s-e")
+                #'(lambda ()
+                    (interactive)
+                    (insert "emacs-lisp")))
+
+;; special key
+(global-set-key (kbd "s-/")
+                #'(lambda ()
+                    (interactive)
+                    (insert "\\")))
+
 ;; Company-mode 中使用 C-n 与 C-p 来选择补全项，
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "M-n") nil)
@@ -108,6 +120,7 @@
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 ;; snippets
+
 (global-set-key (kbd "C-;") 'yas-expand)
 
 
