@@ -1272,3 +1272,9 @@ be global."
   (use-package plain-org-wiki
     :init
     (setq pow-directory "~/org-notes")))
+
+
+
+(setq ivy-initial-inputs-alist nil)
+(setq ivy-re-builders-alist
+     '((t . ivy--regex-fuzzy)))
