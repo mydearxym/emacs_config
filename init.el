@@ -378,7 +378,7 @@ in `dotspacemacs/user-config'."
 layers configuration."
 
   ;; mydearxym
-
+  (setq x-select-enable-clipboard nil)
   ;; (set-background-color "#385063")
   (set-background-color "#334452")
   (linum-relative-global-mode -1)

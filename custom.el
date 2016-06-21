@@ -73,7 +73,7 @@
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2 t)
+ '(web-mode-markup-indent-offset 2)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -118,6 +118,7 @@
  '(font-lock-type-face ((t (:foreground "cadet blue" :slant italic))))
  '(font-lock-variable-name-face ((t (:inherit nil :foreground "light coral"))))
  '(fringe ((t (:background "#334452" :foreground "#ffffff"))))
+ '(git-commit-summary ((t (:foreground "wheat"))))
  '(git-gutter-fr:added ((t (:foreground "#859900" :weight bold :width extra-expanded))))
  '(helm-action ((t (:foreground "orange" :underline t))))
  '(helm-ff-directory ((t (:foreground "light sea green"))))
