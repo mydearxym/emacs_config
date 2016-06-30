@@ -43,8 +43,8 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;; evil-visualstar
-     spacemacs-helm
-     spacemacs-ivy
+     ;; spacemacs-helm
+     ;; spacemacs-ivy
      better-defaults
      react
      github
@@ -60,23 +60,12 @@ values."
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      (spell-checking :variables spell-checking-enable-by-default nil)
      yaml
-     ;; (ruby :variables ruby-version-manager 'rvm)
-     ;; python
-     ;; lua
      themes-megapack
      html
      command-log
      javascript
-     ;; elixir
-     ;; restclient
      emacs-lisp
-     ;; (clojure :variables clojure-enable-fancify-symbols t)
-     ;; emoji
-     ;; ycmd
-     ;; fasd
-     ;; deft
-     ;; elfeed
-     (ranger :variables ranger-show-preview -1)
+     ;; (ranger :variables ranger-show-preview -1)
      ;; racket
      ;; gtags
      (spacemacs-layouts :variables layouts-enable-autosave t
