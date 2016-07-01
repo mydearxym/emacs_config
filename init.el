@@ -371,6 +371,8 @@ layers configuration."
   ;; (set-background-color "#385063")
 
   (set-background-color "#334452")
+  (setq-default line-height 1.1)
+  (setq-default line-spacing 0.20)
   ;; (set-background-color "#002B37")
   (linum-relative-global-mode -1)
 
@@ -568,7 +570,7 @@ layers configuration."
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (and (spacemacs/system-is-mac) window-system)
-      (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
+      (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 15 17)))
 
   ;; (global-company-mode t)
   (setq-default powerline-default-separator 'arrow)
