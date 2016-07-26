@@ -370,6 +370,12 @@ layers configuration."
   ;; (setq x-select-enable-clipboard nil)
   ;; (set-background-color "#385063")
 
+  (add-hook 'css-mode-hook
+            '(lambda()
+               (setq tab-width 2)))
+
+  (setq css-indent-offset 2)
+
   (set-background-color "#334452")
   (setq-default line-height 1.1)
   (setq-default line-spacing 0.20)
