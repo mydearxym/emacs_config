@@ -3,104 +3,68 @@
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
-  "Configuration Layers declaration.
-You should not put any user code in this function besides modifying the variable
-values."
   (setq-default
-   ;; Base distribution to use. This is a layer contained in the directory
-   ;; `+distribution'. For now available distributions are `spacemacs-base'
-   ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
-   ;; Lazy installation of layers (i.e. layers are installed only when a file
-   ;; with a supported type is opened). Possible values are `all', `unused'
-   ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
-   ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
-   ;; lazy install any layer that support lazy installation even the layers
-   ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
-   ;; installation feature and you have to explicitly list a layer in the
-   ;; variable `dotspacemacs-configuration-layers' to install it.
-   ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
-   ;; If non-nil then Spacemacs will ask for confirmation before installing
-   ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
-   ;; If non-nil layers with lazy install support are lazy installed.
-   ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
-   ;; List of configuration layers to load. If it is the symbol `all' instead
-   ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     erlang
-     elixir
-     python
-     ;; go
-     windows-scripts
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     ;; evil-visualstar
-     ;; spacemacs-helm
-     ;; spacemacs-ivy
-     better-defaults
+     ivy
+     helm
      react
+     better-defaults
      github
-     (version-control :variables version-control-diff-tool 'git-gutter+
-                      version-control-global-margin t)
      osx
-     ;; semantic                           ; too slow
      markdown
      (vinegar :variables vinegar-reuse-dired-buffer t)
      org
      prodigy
      search-engine
-     (syntax-checking :variables syntax-checking-enable-by-default nil)
+     (syntax-checking :variables syntax-checking-enable-by-default nil
+                      syntax-checking-enable-tooltips nil)
      (spell-checking :variables spell-checking-enable-by-default nil)
+
+
+     erlang
+     elixir
+     python
+     ;; go
+     windows-scripts
+
      yaml
-     themes-megapack
      html
-     command-log
      javascript
+
+     themes-megapack
+     command-log
      emacs-lisp
-     ;; (ranger :variables ranger-show-preview -1)
-     ;; racket
-     ;; gtags
+
      (spacemacs-layouts :variables layouts-enable-autosave t
                         layouts-autosave-delay 60000)
-     ;; eyebrowse
-     (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
+     colors
      (git :variables
           git-magit-status-fullscreen t
           magit-push-always-verify nil
           magit-save-repository-buffers 'dontask
           magit-revert-buffers 'silent
           magit-refs-show-commit-count 'all
-          ;; This is really creepy magit
           magit-revision-show-gravatars nil)
+
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      ;; (c-c++ :variables
      ;;        c-c++-default-mode-for-headers 'c++-mode)
-     (auto-completion :variables auto-completion-enable-sort-by-usage t)
-     (shell :variables
-            shell-default-position 'full
-            shell-default-shell 'ansi-term
-            shell-default-term-shell "/usr/local/bin/fish")
-     ;; (chinese :variables chinese-default-input-method 'wubi
-     ;;          chinese-enable-fcitx t
-     ;;          chinese-enable-youdao-dict t)
-     zilongshanren
-     guanghui)
+     (auto-completion :variables auto-completion-enable-sort-by-usage t
+                      :disabled-for org markdown)
+     mydearxym)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(magit-gh-pulls
+   dotspacemacs-excluded-packages '(counsel-projectile
+                                    magit-gh-pulls
                                     magit-gitflow
                                     evil-mc
                                     skewer-mode
@@ -143,9 +107,6 @@ values."
                                     )
 
    dotspacemacs-install-packages 'used-only
-   ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
-   ;; are declared in a layer which is not a member of
-   ;; the list `dotspacemacs-configuration-layers'. (default t)
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
@@ -430,26 +391,8 @@ values."
   (setq-default powerline-default-separator 'arrow)
 
   ;; Utility functions
-  (defun bb/define-key (keymap &rest bindings)
-    (declare (indent 1))
-    (while bindings
-      (define-key keymap (pop bindings) (pop bindings))))
-  (bb/define-key evil-normal-state-map
-    "+" 'spacemacs/evil-numbers-increase
-    "_" 'spacemacs/evil-numbers-decrease
-    "\\" 'evil-repeat-find-char-reverse
-    "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
-    "]s" (lambda (n) (interactive "p")
-           (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
-
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
-
-  (with-eval-after-load 'helm
-    (define-key helm-map (kbd "C-w") 'evil-delete-backward-word))
-
-  (with-eval-after-load 'helm-swoop
-    (define-key helm-swoop-map (kbd "C-w") 'evil-delete-backward-word))
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
@@ -545,7 +488,11 @@ values."
     ("q" nil "quit" :exit t)
     ("<escape>" nil nil :exit t))
   (spacemacs/set-leader-keys-for-major-mode 'gist-list-mode
-    "." 'spacemacs/gist-list-mode-transient-state/body))
+    "." 'spacemacs/gist-list-mode-transient-state/body)
+
+  (when (configuration-layer/layer-usedp 'ivy)
+    (setq projectile-switch-project-action
+          'zilongshanren/open-file-with-projectile-or-counsel-git)))
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
