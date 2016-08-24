@@ -221,8 +221,7 @@ e.g. Sunday, September 17, 2000."
   global-shadowsocks-proxy-mode shadowsocks-proxy-mode shadowsocks-proxy-mode
   :group 'shadowsocks-proxy)
 
-
-(defun mydearxym/open-file-with-projectile-or-counsel-git ()
+(defun zilongshanren/open-file-with-projectile-or-counsel-git ()
   (interactive)
   (if (zilongshanren/vcs-project-root)
       (counsel-git)

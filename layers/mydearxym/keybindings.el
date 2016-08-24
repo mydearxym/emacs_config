@@ -301,5 +301,4 @@
   (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-visual-line)
   (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
 
-
-(spacemacs/set-leader-keys "pf" 'mydearxym/open-file-with-projectile-or-counsel-git)
+(spacemacs/set-leader-keys "pf" 'zilongshanren/open-file-with-projectile-or-counsel-git)
