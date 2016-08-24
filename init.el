@@ -215,20 +215,22 @@ values."
    ))
 
 (defun dotspacemacs/user-init ()
-  ;; https://github.com/syl20bnr/spacemacs/issues/2705
-  ;; (setq tramp-mode nil)
-  (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+
+  (setq configuration-layer--elpa-archives
+        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
+          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
+          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
   ;; ss proxy. But it will cause anacond-mode failed.
   (setq socks-server '("Default server" "127.0.0.1" 1080 5))
   (setq evil-shift-round nil)
+  (setq byte-compile-warnings '(not obsolete))
   )
 
 (defun dotspacemacs/user-config ()
-  "Configuration function.
- This function is called at the very end of Spacemacs initialization after
-layers configuration."
-
   ;; mydearxym
   ;; (setq x-select-enable-clipboard nil)
   ;; (set-background-color "#385063")
@@ -394,26 +396,6 @@ layers configuration."
 
   ;; (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
-
-  ;; css-mode
-  ;; (add-hook 'scss-mode-hook
-  ;;           '(lambda()
-  ;;              (setq c-basic-offset 2)
-  ;;              (setq tab-with 2)
-  ;;              (setq indent-tabs-mode nil)))
-
-  ;; (add-hook 'sass-mode-hook
-  ;;           '(lambda()
-  ;;              (setq c-basic-offset 2)
-  ;;              (setq tab-with 2)
-  ;;              (setq indent-tabs-mode nil)))
-
-  ;; 添加国内的 elpa 源
-  ;; (setq configuration-layer--elpa-archives
-  ;;       '(("popkit" . "elpa.popkit.org/packages/")
-  ;;         ("org"   . "orgmode.org/elpa/")
-  ;;         ("gnu"   . "elpa.gnu.org/packages/")))
-
 
   ;; 关掉spacemacs 在空字符串除 `Tab` 时出现的 `helm-complete`（无意义，且反应非常慢）
   (setq tab-always-indent t)
