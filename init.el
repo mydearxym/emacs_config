@@ -429,6 +429,9 @@ layers configuration."
   ;; (push '("\\.js\\'" . web-mode) auto-mode-alist)
   (push '("\\.js\\'" . react-mode) auto-mode-alist)
 
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (eval-after-load 'flycheck
+    '(add-to-list 'flycheck-checkers 'stylelint))
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'react-mode)
   (add-hook 'react-mode-hook 'smartparens-mode)
