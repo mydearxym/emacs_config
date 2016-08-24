@@ -181,7 +181,6 @@
       (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
       (add-hook 'ielm-mode-hook (lambda () (lispy-mode 1)))
       (add-hook 'inferior-emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
-      ;; (add-hook 'spacemacs-mode-hook (lambda () (lispy-mode 1)))
       (add-hook 'clojure-mode-hook (lambda () (lispy-mode 1)))
       (add-hook 'scheme-mode-hook (lambda () (lispy-mode 1)))
       (add-hook 'cider-repl-mode-hook (lambda () (lispy-mode 1))))

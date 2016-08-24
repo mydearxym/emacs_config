@@ -196,6 +196,8 @@
   ;; (setq x-select-enable-clipboard nil)
   ;; (set-background-color "#385063")
 
+  (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
+
   (add-hook 'css-mode-hook
             '(lambda()
                (setq tab-width 2)))
