@@ -65,7 +65,7 @@
     ((:name "BigDict-01" :file "/Users/guanghui/.emacs.d/pyim/dicts/pyim-bigdict.pyim" :coding utf-8-unix)
      (:name "BigDict-01" :file "/Users/guanghui/.emacs.d/.cache/pyim-bigdict.pyim" :coding utf-8-unix))))
  '(require-final-newline nil)
- '(ring-bell-function (quote ignore) t)
+ '(ring-bell-function (quote ignore))
  '(safe-local-variable-values
    (quote
     ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin"))))
@@ -73,7 +73,7 @@
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2)
+ '(web-mode-markup-indent-offset 2 t)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -157,6 +157,7 @@
  '(org-level-1 ((t (:foreground "light goldenrod"))))
  '(org-level-2 ((t (:foreground "yellow green"))))
  '(org-link ((t (:inherit link :foreground "turquoise"))))
+ '(region ((t (:background "#864c4c"))))
  '(sp-pair-overlay-face ((t nil)))
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
