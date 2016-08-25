@@ -73,7 +73,7 @@
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2 t)
+ '(web-mode-markup-indent-offset 2)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -82,7 +82,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ahs-definition-face ((t (:slant normal))))
- '(ahs-face ((t (:inherit nil :background "#4B6275"))))
+ '(ahs-face ((t (:inherit nil :underline "#7f7f7f"))))
  '(ahs-plugin-bod-face ((t nil)))
  '(ahs-plugin-defalt-face ((t nil)))
  '(ahs-plugin-whole-buffer-face ((t nil)))
@@ -157,7 +157,7 @@
  '(org-level-1 ((t (:foreground "light goldenrod"))))
  '(org-level-2 ((t (:foreground "yellow green"))))
  '(org-link ((t (:inherit link :foreground "turquoise"))))
- '(region ((t (:background "#864c4c"))))
+ '(region ((t (:background "#58687d"))))
  '(sp-pair-overlay-face ((t nil)))
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
