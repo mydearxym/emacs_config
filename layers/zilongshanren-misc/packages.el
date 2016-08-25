@@ -9,7 +9,7 @@
 ;;
 ;;; License: GPLv3
 
-(setq mydearxym-misc-packages
+(setq zilongshanren-misc-packages
       '(
         projectile
         prodigy

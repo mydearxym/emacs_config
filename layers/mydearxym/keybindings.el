@@ -237,6 +237,7 @@
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
 (with-eval-after-load 'evil
   ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
+  (define-key evil-normal-state-map (kbd ".") 'nil) ;; use it for lispy bound
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 4)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -4)))
 
@@ -270,7 +271,7 @@
 
   (define-key evil-visual-state-map (kbd ",T") 'spacemacs/align-repeat-equal)
   (define-key evil-visual-state-map (kbd "C-s-t") 'spacemacs/align-repeat)
-  (define-key evil-normal-state-map (kbd ",f") 'ranger)
+  ;; (define-key evil-normal-state-map (kbd ",f") 'ranger)
   (define-key evil-normal-state-map (kbd ",g") 'evil-avy-goto-char-2)
   ;; avy jump back 以后 auto highlight symbol 会失效，需要 reload buffer 才可以
   (define-key evil-normal-state-map (kbd ",.") 'xym/revert-buffer-no-confirm)

@@ -12,7 +12,7 @@
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
 
-(setq mydearxym-programming-packages
+(setq zilongshanren-programming-packages
       '(
         css-mode
         paredit
@@ -175,7 +175,7 @@
 (defun zilongshanren-programming/init-lispy ()
   (use-package lispy
     :defer t
-    :diminish (lispy-mode)
+    ;; :diminish (lispy-mode)
     :init
     (progn
       (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))

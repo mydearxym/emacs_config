@@ -9,7 +9,7 @@
 ;;
 ;;; License: GPLv3
 
-(defconst mydearxym-better-defaults-packages
+(defconst zilongshanren-better-defaults-packages
   '(
     (dired-mode :location built-in)
     (profiler :location built-in)
