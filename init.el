@@ -455,12 +455,12 @@
 
   (add-hook 'minibuffer-inactive-mode-hook '(lambda() (set (make-local-variable 'semantic-mode) nil)))
   ;; http://trey-jackson.blogspot.com/2010/04/emacs-tip-36-abort-minibuffer-when.html
-  (defun zilongshanren/stop-using-minibuffer ()
+  (defun mydearxym/stop-using-minibuffer ()
     "kill the minibuffer"
     (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
       (abort-recursive-edit)))
 
-  (add-hook 'mouse-leave-buffer-hook 'zilongshanren/stop-using-minibuffer)
+  (add-hook 'mouse-leave-buffer-hook 'mydearxym/stop-using-minibuffer)
 
   (spacemacs/declare-prefix "ot" "Toggle")
 
@@ -494,7 +494,7 @@
 
   (when (configuration-layer/layer-usedp 'ivy)
     (setq projectile-switch-project-action
-          'zilongshanren/open-file-with-projectile-or-counsel-git)))
+          'mydearxym/open-file-with-projectile-or-counsel-git)))
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
