@@ -1,7 +1,7 @@
-#+TITLE: zilongshanren layer
+#+TITLE: mydearxym layer
 
 # The maximum height of the logo should be 200 pixels.
-[[img/zilongshanren.png]]
+[[img/mydearxym.png]]
 
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
@@ -15,7 +15,7 @@ This layer does wonderful things:
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
-add =zilongshanren= to the existing =dotspacemacs-configuration-layers= list in this
+add =mydearxym= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
 * Key bindings

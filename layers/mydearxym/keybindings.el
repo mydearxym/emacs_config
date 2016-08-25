@@ -17,7 +17,7 @@
 (define-key 'help-command (kbd "C-l") 'find-library)
 (define-key 'help-command (kbd "C-i") 'info-display-manual)
 
-(global-set-key [(shift return)] 'zilongshanren/smart-open-line)
+(global-set-key [(shift return)] 'mydearxym/smart-open-line)
 (global-set-key (kbd "s-/") 'hippie-expand)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c y") 'youdao-dictionary-search-at-point+)
@@ -45,16 +45,16 @@
 (global-set-key (kbd "s-l") 'goto-line)
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "C-`") 'toggle-input-method)
-(global-set-key (kbd "s-d") 'zilongshanren/my-mc-mark-next-like-this)
+(global-set-key (kbd "s-d") 'mydearxym/my-mc-mark-next-like-this)
 (bind-key* "s-r" 'mc/reverse-regions)
-(global-set-key (kbd "<f5>") 'zilongshanren/run-current-file)
+(global-set-key (kbd "<f5>") 'mydearxym/run-current-file)
 
 ;; "http://endlessparentheses.com/transposing-keybinds-in-emacs.html?source=rss"
 ;; (global-set-key "\C-t" #'transpose-lines)
 ;; (define-key ctl-x-map "\C-t" #'transpose-chars)
 
 (when (spacemacs/system-is-mac)
- (spacemacs/set-leader-keys "o!" 'zilongshanren/iterm-shell-command))
+ (spacemacs/set-leader-keys "o!" 'mydearxym/iterm-shell-command))
 
 (spacemacs|add-toggle toggle-shadowsocks-proxy-mode
   :status shadowsocks-proxy-mode
@@ -67,15 +67,15 @@
 ;; (bind-key* "s-k" 'scroll-other-window-down)
 ;; (bind-key* "s-j"  'scroll-other-window)
 (bind-key* "C-c /" 'company-files)
-;; (bind-key* "s-r" 'zilongshanren/browser-refresh--chrome-applescript)
-(bind-key* "s-;" 'zilongshanren/insert-semicolon-at-the-end-of-this-line)
-(bind-key* "C-s-;" 'zilongshanren/delete-semicolon-at-the-end-of-this-line)
-(bind-key* "s-," 'zilongshanren/insert-comma-at-the-end-of-this-line)
-;; (bind-key* "C-s-," 'zilongshanren/delete-comma-at-the-end-of-this-line)
-(bind-key* "C-c l" 'zilongshanren/insert-chrome-current-tab-url)
+;; (bind-key* "s-r" 'mydearxym/browser-refresh--chrome-applescript)
+(bind-key* "s-;" 'mydearxym/insert-semicolon-at-the-end-of-this-line)
+(bind-key* "C-s-;" 'mydearxym/delete-semicolon-at-the-end-of-this-line)
+(bind-key* "s-," 'mydearxym/insert-comma-at-the-end-of-this-line)
+;; (bind-key* "C-s-," 'mydearxym/delete-comma-at-the-end-of-this-line)
+(bind-key* "C-c l" 'mydearxym/insert-chrome-current-tab-url)
 (bind-key* "M-s o" 'occur-dwim)
 (bind-key* "C-=" 'er/expand-region)
-(bind-key* "M--" 'zilongshanren/goto-match-paren)
+(bind-key* "M--" 'mydearxym/goto-match-paren)
 (bind-key* "C-c k" 'which-key-show-top-level)
 (bind-key* "C-M-s-y" 'aya-expand)
 ;; (bind-key* "C-l" 'recenter)
@@ -109,12 +109,12 @@
 
 
 (if (configuration-layer/layer-usedp 'helm)
-    (progn (global-set-key (kbd "<f1>") 'zilongshanren/helm-hotspots)
-           (spacemacs/set-leader-keys "oo" 'zilongshanren/helm-hotspots)))
+    (progn (global-set-key (kbd "<f1>") 'mydearxym/helm-hotspots)
+           (spacemacs/set-leader-keys "oo" 'mydearxym/helm-hotspots)))
 
 (spacemacs/set-leader-keys "oc" 'my-auto-update-tags-when-save)
-(spacemacs/set-leader-keys "op" 'zilongshanren/org-save-and-export)
-(spacemacs/set-leader-keys "fR" 'zilongshanren/rename-file-and-buffer)
+(spacemacs/set-leader-keys "op" 'mydearxym/org-save-and-export)
+(spacemacs/set-leader-keys "fR" 'mydearxym/rename-file-and-buffer)
 
 ;;Must set key to nil to prevent error: Key sequence b m s starts with non-prefix key b m
 (spacemacs/set-leader-keys "bm" nil)
@@ -127,7 +127,7 @@
 
 (spacemacs/set-leader-keys "od" 'occur-dwim)
 (spacemacs/set-leader-keys "ox" 'org-open-at-point)
-(spacemacs/set-leader-keys "oac" 'zilongshanren/browser-refresh--chrome-applescript)
+(spacemacs/set-leader-keys "oac" 'mydearxym/browser-refresh--chrome-applescript)
 
 ;; helm specific keybindings
 (if (configuration-layer/layer-usedp 'helm)
@@ -155,12 +155,12 @@
 (spacemacs/set-leader-keys "ri" 'ivy-resume)
 (spacemacs/set-leader-keys "fh" 'ffap-hexl-mode)
 (spacemacs/set-leader-keys "nl" 'spacemacs/evil-search-clear-highlight)
-(spacemacs/set-leader-keys "oll" 'zilongshanren/load-my-layout)
-(spacemacs/set-leader-keys "ols" 'zilongshanren/save-my-layout)
+(spacemacs/set-leader-keys "oll" 'mydearxym/load-my-layout)
+(spacemacs/set-leader-keys "ols" 'mydearxym/save-my-layout)
 (spacemacs/set-leader-keys "ob" 'popwin:display-last-buffer)
 
 (bind-key* "s-p" 'find-file-in-project)
-(spacemacs/set-leader-keys "os" 'zilongshanren/search-in-fireball)
+(spacemacs/set-leader-keys "os" 'mydearxym/search-in-fireball)
 
 (spacemacs/set-leader-keys "pa" 'projectile-find-other-file)
 (spacemacs/set-leader-keys "pA" 'projectile-find-other-file-other-window)
@@ -302,4 +302,4 @@
   (define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-visual-line)
   (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line))
 
-(spacemacs/set-leader-keys "pf" 'zilongshanren/open-file-with-projectile-or-counsel-git)
+(spacemacs/set-leader-keys "pf" 'mydearxym/open-file-with-projectile-or-counsel-git)

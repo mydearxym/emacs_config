@@ -1,15 +1,15 @@
-;;; funcs.el --- zilongshanren Layer packages File for Spacemacs
+;;; funcs.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2015-2016 zilongshanren 
+;; Copyright (c) 2015-2016 mydearxym 
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
 
-(defun zilongshanren/comment-box (b e)
+(defun mydearxym/comment-box (b e)
   "Draw a box comment around the region but arrange for the region
 to extend to at least the fill column. Place the point after the
 comment box."
@@ -25,7 +25,7 @@ comment box."
 
 
 ;; "http://stackoverflow.com/questions/2242572/emacs-todo-indicator-at-left-side"
-(defun zilongshanren/annotate-todo ()
+(defun mydearxym/annotate-todo ()
   "put fringe marker on TODO: lines in the curent buffer"
   (interactive)
   (save-excursion
@@ -37,14 +37,14 @@ comment box."
 
 
 ;;js2-mode enhancement
-(defun zilongshanren/js2-which-function ()
+(defun mydearxym/js2-which-function ()
   ;; clean the imenu cache
   ;; @see http://stackoverflow.com/questions/13426564/how-to-force-a-rescan-in-imenu-by-a-function
   (setq imenu--index-alist nil)
   (which-function-mode t)
   (which-function))
 
-(defun zilongshanren/run-current-file ()
+(defun mydearxym/run-current-file ()
   "Execute the current file.
 For example, if the current buffer is the file x.py, then it'll call 「python x.py」 in a shell.
 The file can be emacs lisp, php, perl, python, ruby, javascript, bash, ocaml, Visual Basic.
@@ -87,7 +87,7 @@ version 2015-08-21"
       (if ξprog-name
           (progn
             (message "Running…")
-            (async-shell-command ξcmd-str "*zilongshanren/run-current-file output*"))
+            (async-shell-command ξcmd-str "*mydearxym/run-current-file output*"))
         (message "No recognized program file suffix for this file.")))))
 
 
@@ -117,7 +117,7 @@ version 2015-08-21"
 
   (setq indent-tabs-mode nil))
 
-(defun zilongshanren/load-yasnippet ()
+(defun mydearxym/load-yasnippet ()
   (interactive)
   (unless yas-global-mode
     (progn
@@ -143,7 +143,7 @@ version 2015-08-21"
     (setq new-buffer-name (concat "cmake-" parent-dir))
     (rename-buffer new-buffer-name t)))
 
-(defun zilongshanren/impatient-mode-hook ()
+(defun mydearxym/impatient-mode-hook ()
   "my web mode hook for HTML REPL"
   (interactive)
   (impatient-mode)

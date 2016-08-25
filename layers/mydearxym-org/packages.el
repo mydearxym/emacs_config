@@ -1,9 +1,9 @@
 ;;; packages.el --- zilong-ui layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2014-2016 zilongshanren
+;; Copyright (c) 2014-2016 mydearxym
 ;;
 ;; Author: guanghui <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -26,17 +26,17 @@
     )
 )
 
-(defun zilongshanren-org/post-init-org-pomodoro ()
+(defun mydearxym-org/post-init-org-pomodoro ()
   (progn
-    (add-hook 'org-pomodoro-finished-hook '(lambda () (zilongshanren/growl-notification "Pomodoro Finished" "☕️ Have a break!" t)))
-    (add-hook 'org-pomodoro-short-break-finished-hook '(lambda () (zilongshanren/growl-notification "Short Break" "🐝 Ready to Go?" t)))
-    (add-hook 'org-pomodoro-long-break-finished-hook '(lambda () (zilongshanren/growl-notification "Long Break" " 💪 Ready to Go?" t)))
+    (add-hook 'org-pomodoro-finished-hook '(lambda () (mydearxym/growl-notification "Pomodoro Finished" "☕️ Have a break!" t)))
+    (add-hook 'org-pomodoro-short-break-finished-hook '(lambda () (mydearxym/growl-notification "Short Break" "🐝 Ready to Go?" t)))
+    (add-hook 'org-pomodoro-long-break-finished-hook '(lambda () (mydearxym/growl-notification "Long Break" " 💪 Ready to Go?" t)))
     ))
 
 ;;In order to export pdf to support Chinese, I should install Latex at here: https://www.tug.org/mactex/
 ;; http://freizl.github.io/posts/2012-04-06-export-orgmode-file-in-Chinese.html
 ;;http://stackoverflow.com/questions/21005885/export-org-mode-code-block-and-result-with-different-styles
-(defun zilongshanren-org/post-init-org ()
+(defun mydearxym-org/post-init-org ()
   (add-hook 'org-mode-hook (lambda () (spacemacs/toggle-line-numbers-off)) 'append)
   (with-eval-after-load 'org
     (progn
@@ -107,7 +107,7 @@
                                   ;; keybinding for editing source code blocks
                                   ;; keybinding for inserting code blocks
                                   (local-set-key (kbd "C-c i s")
-                                                 'zilongshanren/org-insert-src-block)))
+                                                 'mydearxym/org-insert-src-block)))
       (require 'ox-publish)
       (add-to-list 'org-latex-classes '("ctexart" "\\documentclass[11pt]{ctexart}
                                         [NO-DEFAULT-PACKAGES]
@@ -237,7 +237,7 @@ unwanted space when exporting org-mode to html."
                "* TODO [#A] %?\n  %i\n %U"
                :empty-lines 1)
               ("c" "Chrome" entry (file+headline "~/org-notes/notes.org" "Quick notes")
-               "* TODO [#C] %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i\n %U"
+               "* TODO [#C] %?\n %(mydearxym/retrieve-chrome-current-tab-url)\n %i\n %U"
                :empty-lines 1)
               ("l" "links" entry (file+headline "~/org-notes/notes.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %a \n %U"
@@ -258,20 +258,20 @@ unwanted space when exporting org-mode to html."
               ("b" "Blog" tags-todo "BLOG")
               ("p" . "项目安排")
               ("pw" tags-todo "PROJECT+WORK+CATEGORY=\"cocos2d-x\"")
-              ("pl" tags-todo "PROJECT+DREAM+CATEGORY=\"zilongshanren\"")
+              ("pl" tags-todo "PROJECT+DREAM+CATEGORY=\"mydearxym\"")
               ("W" "Weekly Review"
                ((stuck "") ;; review stuck projects as designated by org-stuck-projects
                 (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
                 ))))
 
-      (defvar zilongshanren-website-html-preamble
+      (defvar mydearxym-website-html-preamble
         "<div class='nav'>
 <ul>
-<li><a href='http://zilongshanren.com'>博客</a></li>
+<li><a href='http://mydearxym.com'>博客</a></li>
 <li><a href='/index.html'>Wiki目录</a></li>
 </ul>
 </div>")
-      (defvar zilongshanren-website-html-blog-head
+      (defvar mydearxym-website-html-blog-head
         " <link rel='stylesheet' href='css/site.css' type='text/css'/> \n
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/worg.css\"/>")
       (setq org-publish-project-alist
@@ -282,15 +282,15 @@ unwanted space when exporting org-mode to html."
                :publishing-directory "~/org-notes/public_html/"
 
                :recursive t
-               :html-head , zilongshanren-website-html-blog-head
+               :html-head , mydearxym-website-html-blog-head
                :publishing-function org-html-publish-to-html
                :headline-levels 4       ; Just the default for this project.
                :auto-preamble t
                :exclude "gtd.org"
                :exclude-tags ("ol" "noexport")
                :section-numbers nil
-               :html-preamble ,zilongshanren-website-html-preamble
-               :author "zilongshanren"
+               :html-preamble ,mydearxym-website-html-preamble
+               :author "mydearxym"
                :email "guanghui8827@gmail.com"
                :auto-sitemap t          ; Generate sitemap.org automagically...
                :sitemap-filename "index.org" ; ... call it sitemap.org (it's the default)...
@@ -399,7 +399,7 @@ holding contextual information."
 
       )))
 
-(defun zilongshanren-org/init-org-mac-link ()
+(defun mydearxym-org/init-org-mac-link ()
   (use-package org-mac-link
     :commands org-mac-grab-link
     :init
@@ -409,10 +409,10 @@ holding contextual information."
                   (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link))))
     :defer t))
 
-(defun zilongshanren-org/post-init-ox-reveal ()
+(defun mydearxym-org/post-init-ox-reveal ()
   (setq org-reveal-root "file:///Users/guanghui/.emacs.d/reveal-js"))
 
-(defun zilongshanren-org/init-org-octopress ()
+(defun mydearxym-org/init-org-octopress ()
   (use-package org-octopress
     :commands (org-octopress org-octopress-setup-publish-project)
     :init
@@ -430,30 +430,30 @@ holding contextual information."
       )))
 
 
-(defun zilongshanren-org/init-org-tree-slide ()
+(defun mydearxym-org/init-org-tree-slide ()
   (use-package org-tree-slide
     :init
     (spacemacs/set-leader-keys "oto" 'org-tree-slide-mode)))
 
 
-(defun zilongshanren-org/init-org-download ()
+(defun mydearxym-org/init-org-download ()
   (use-package org-download
     :defer t
     :init
     (org-download-enable)))
 
-(defun zilongshanren-org/init-plain-org-wiki ()
+(defun mydearxym-org/init-plain-org-wiki ()
   (use-package plain-org-wiki
     :init
     (setq pow-directory "~/org-notes")))
 
-(defun zilongshanren-org/init-worf ()
+(defun mydearxym-org/init-worf ()
   (use-package worf
     :defer t
     :init
     (add-hook 'org-mode-hook 'worf-mode)))
 
-(defun zilongshanren-org/post-init-deft ()
+(defun mydearxym-org/post-init-deft ()
   (progn
     (setq deft-use-filter-string-for-filename t)
     (spacemacs/set-leader-keys-for-major-mode 'deft-mode "q" 'quit-window)

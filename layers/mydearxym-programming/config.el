@@ -1,9 +1,9 @@
-;;; config.el --- zilongshanren Layer packages File for Spacemacs
+;;; config.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2015-2016 zilongshanren
+;; Copyright (c) 2015-2016 mydearxym
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -27,7 +27,7 @@
   :documentation "Enable iimage mode"
   :evil-leader "oti")
 
-(add-hook 'term-mode-hook 'zilongshanren/ash-term-hooks)
+(add-hook 'term-mode-hook 'mydearxym/ash-term-hooks)
 
 
 ;; reformat your json file, it requires python
@@ -58,7 +58,7 @@
 
 
 ;; return nil to write content to file
-(defun zilongshanren/untabify-buffer ()
+(defun mydearxym/untabify-buffer ()
   (interactive)
   (save-excursion
     (untabify (point-min) (point-max)) nil))
@@ -66,7 +66,7 @@
 (add-hook 'c++-mode-hook
           '(lambda ()
              (add-hook 'write-contents-hooks
-                       'zilongshanren/untabify-buffer nil t)))
+                       'mydearxym/untabify-buffer nil t)))
 
 (setq auto-mode-alist
       (append
@@ -74,7 +74,7 @@
        auto-mode-alist))
 
 
-(defmacro zilongshanren|toggle-company-backends (backend)
+(defmacro mydearxym|toggle-company-backends (backend)
   "Push or delete the backend to company-backends"
   (let ((funsymbol (intern (format "zilong/company-toggle-%S" backend))))
     `(defun ,funsymbol ()

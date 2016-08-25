@@ -1,9 +1,9 @@
-;;; config.el --- zilongshanren Layer packages File for Spacemacs
+;;; config.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2015-2016 zilongshanren
+;; Copyright (c) 2015-2016 mydearxym
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -148,12 +148,12 @@ Single Capitals as you type."
           '(lambda() (set (make-local-variable 'semantic-mode) nil)))
 
 ;; http://trey-jackson.blogspot.com/2010/04/emacs-tip-36-abort-minibuffer-when.html
-(defun zilongshanren/stop-using-minibuffer ()
+(defun mydearxym/stop-using-minibuffer ()
   "kill the minibuffer"
   (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
     (abort-recursive-edit)))
 
-(add-hook 'mouse-leave-buffer-hook 'zilongshanren/stop-using-minibuffer)
+(add-hook 'mouse-leave-buffer-hook 'mydearxym/stop-using-minibuffer)
 
 (setq tags-add-tables nil)
 

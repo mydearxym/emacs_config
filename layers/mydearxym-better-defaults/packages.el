@@ -1,15 +1,15 @@
-;;; packages.el --- zilongshanren Layer packages File for Spacemacs
+;;; packages.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2014-2016 zilongshanren
+;; Copyright (c) 2014-2016 mydearxym
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
 
-(defconst zilongshanren-better-defaults-packages
+(defconst mydearxym-better-defaults-packages
   '(
     (dired-mode :location built-in)
     (profiler :location built-in)
@@ -17,7 +17,7 @@
 )
 
 
-(defun zilongshanren-better-defaults/init-dired-mode ()
+(defun mydearxym-better-defaults/init-dired-mode ()
   (use-package dired-mode
     :defer t
     :init
@@ -49,7 +49,7 @@
       (evilified-state-evilify-map dired-mode-map
         :mode dired-mode
         :bindings
-        (kbd "C-k") 'zilongshanren/dired-up-directory
+        (kbd "C-k") 'mydearxym/dired-up-directory
         "<RET>" 'dired-find-alternate-file
         "E" 'dired-toggle-read-only
         "C" 'dired-do-copy
@@ -64,7 +64,7 @@
     ))
 
 
-(defun zilongshanren-better-defaults/init-profiler ()
+(defun mydearxym-better-defaults/init-profiler ()
   (use-package profiler
     :init
     (evilified-state-evilify profiler-report-mode profiler-report-mode-map)))

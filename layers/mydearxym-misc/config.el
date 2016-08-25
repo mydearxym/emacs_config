@@ -1,21 +1,13 @@
-;;; config.el --- zilongshanren Layer packages File for Spacemacs
+;;; config.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2015-2016 zilongshanren
+;; Copyright (c) 2014-2016 mydearxym
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
-
-
-;; more useful frame title, that show either a file or a
-;; buffer name (if the buffer isn't visiting a file)
-(setq frame-title-format
-      '("" " Guanghui - "
-        (:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name)) "%b"))))
 
 
 (define-abbrev-table 'global-abbrev-table '(
@@ -44,9 +36,10 @@
                                             ("82dx" "Cocos2D-X")
 
                                             ;; signature
-                                            ("8zl" "zilongshanren")
+                                            ("8zl" "mydearxym")
                                             ;; emacs regex
                                             ("8d" "\\([0-9]+?\\)")
                                             ("8str" "\\([^\"]+?\\)\"")))
 
-(setq user-mail-address "mydearxym@qq.com")
+
+(setq user-mail-address "guanghui8827@gmail.com")

@@ -1,15 +1,15 @@
-;;; packages.el --- zilongshanren Layer packages File for Spacemacs
+;;; packages.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2014-2016 zilongshanren
+;; Copyright (c) 2014-2016 mydearxym
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
 
-(setq zilongshanren-misc-packages
+(setq mydearxym-misc-packages
       '(
         projectile
         prodigy
@@ -40,13 +40,13 @@
         hydra
         ))
 
-(defun zilongshanren-misc/post-init-hydra ()
+(defun mydearxym-misc/post-init-hydra ()
   (progn
     (defhydra hydra-hotspots (:color blue)
       "Hotspots"
       ("b" org-octopress "blog")
       ("g" helm-github-stars "helm github stars")
-      ("r" zilongshanren/run-current-file "run current file"))
+      ("r" mydearxym/run-current-file "run current file"))
 
     (defhydra multiple-cursors-hydra (:hint nil)
       "
@@ -99,7 +99,7 @@
 
     ))
 
-(defun zilongshanren-misc/post-init-gist ()
+(defun mydearxym-misc/post-init-gist ()
   (use-package gist
     :defer t
     :init
@@ -135,7 +135,7 @@
         "." 'spacemacs/gist-list-mode-transient-state/body))
     ))
 
-(defun zilongshanren-misc/init-peep-dired ()
+(defun mydearxym-misc/init-peep-dired ()
   ;;preview files in dired
   (use-package peep-dired
     :defer t
@@ -145,13 +145,13 @@
                 ("P" . peep-dired))))
 
 
-(defun zilongshanren-misc/post-init-flyspell-correct ()
+(defun mydearxym-misc/post-init-flyspell-correct ()
   (progn
     (with-eval-after-load 'flyspell
       (define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previous-word-generic))
     (setq flyspell-correct-interface 'flyspell-correct-ivy)))
 
-(defun zilongshanren-misc/post-init-smartparens ()
+(defun mydearxym-misc/post-init-smartparens ()
   (use-package smartparens
     :defer t
     :init
@@ -167,13 +167,13 @@
         (kbd "(>") 'sp-backward-barf-sexp
         (kbd "(<") 'sp-backward-slurp-sexp))))
 
-(defun zilongshanren-misc/init-tiny ()
+(defun mydearxym-misc/init-tiny ()
   (use-package tiny
     :defer t
     :init
     (spacemacs/set-leader-keys "oe" 'tiny-expand)))
 
-(defun zilongshanren-misc/post-init-helm ()
+(defun mydearxym-misc/post-init-helm ()
   (with-eval-after-load 'helm
     (progn
       ;; limit max number of matches displayed for speed
@@ -186,7 +186,7 @@
       )
     ))
 
-(defun zilongshanren-misc/init-youdao-dictionary ()
+(defun mydearxym-misc/init-youdao-dictionary ()
   (use-package youdao-dictionary
     :defer t
     :init
@@ -195,7 +195,7 @@
 
 
 
-(defun zilongshanren-misc/init-helm-github-stars ()
+(defun mydearxym-misc/init-helm-github-stars ()
   (use-package helm-github-stars
     :commands (helm-github-stars)
     :init
@@ -204,10 +204,10 @@
 
 
 
-(defun zilongshanren-misc/post-init-fcitx ()
+(defun mydearxym-misc/post-init-fcitx ()
   (fcitx-aggressive-setup))
 
-(defun zilongshanren-misc/post-init-command-log ()
+(defun mydearxym-misc/post-init-command-log ()
   (with-eval-after-load 'global-command-log-mode
     (setq clm/log-command-exceptions* (append clm/log-command-exceptions*
                                               '(evil-next-visual-line
@@ -215,12 +215,12 @@
 
 
 
-(defun zilongshanren-misc/init-litable ()
+(defun mydearxym-misc/init-litable ()
   (use-package litable
     :init
     :defer t))
 
-(defun zilongshanren-misc/init-osx-dictionary ()
+(defun mydearxym-misc/init-osx-dictionary ()
   (use-package osx-dictionary
     :init
     (progn
@@ -230,7 +230,7 @@
       )))
 
 
-(defun zilongshanren-misc/init-4clojure ()
+(defun mydearxym-misc/init-4clojure ()
   (use-package 4clojure
     :init
     (progn
@@ -244,15 +244,15 @@
 
 
 
-(defun zilongshanren-misc/post-init-avy ()
+(defun mydearxym-misc/post-init-avy ()
   (progn
     (global-set-key (kbd "C-s-'") 'avy-goto-char-2)
     (global-set-key (kbd "M-'") 'avy-goto-char-2)))
 
-(defun zilongshanren-misc/post-init-ace-window ()
+(defun mydearxym-misc/post-init-ace-window ()
   (global-set-key (kbd "C-x C-o") #'ace-window))
 
-(defun zilongshanren-misc/init-discover-my-major ()
+(defun mydearxym-misc/init-discover-my-major ()
   (use-package discover-my-major
     :defer t
     :init
@@ -262,7 +262,7 @@
       )))
 
 
-(defun zilongshanren-misc/post-init-elfeed ()
+(defun mydearxym-misc/post-init-elfeed ()
   (use-package elfeed
     :init
     (global-set-key (kbd "C-x w") 'elfeed)
@@ -311,7 +311,7 @@
 
       (ad-activate 'elfeed-show-yank))))
 
-(defun zilongshanren-misc/post-init-evil ()
+(defun mydearxym-misc/post-init-evil ()
   (progn
     (setcdr evil-insert-state-map nil)
     (define-key evil-insert-state-map [escape] 'evil-normal-state)
@@ -340,7 +340,7 @@
     (define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 
     (define-key evil-normal-state-map
-      (kbd "Y") 'zilongshanren/yank-to-end-of-line)
+      (kbd "Y") 'mydearxym/yank-to-end-of-line)
 
     ;; rebind g,k to gj and gk
     ;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
@@ -371,7 +371,7 @@
     (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
     ;; (define-key evil-visual-state-map (kbd "x") 'er/expand-region)
     ;; (define-key evil-visual-state-map (kbd "X") 'er/contract-region)
-    (define-key evil-visual-state-map (kbd "C-r") 'zilongshanren/evil-quick-replace)
+    (define-key evil-visual-state-map (kbd "C-r") 'mydearxym/evil-quick-replace)
     (define-key evil-visual-state-map (kbd "mn") 'mc/mark-next-like-this)
     (define-key evil-visual-state-map (kbd "mp") 'mc/mark-previous-like-this)
     (define-key evil-visual-state-map (kbd "ma") 'mc/mark-all-like-this)
@@ -402,11 +402,11 @@
           evil-motion-state-tag   (propertize "[M]" 'face '((:background "plum3") :foreground "white"))
           evil-visual-state-tag   (propertize "[V]" 'face '((:background "gray" :foreground "black")))
           evil-operator-state-tag (propertize "[O]" 'face '((:background "purple"))))
-    (setq evil-insert-state-cursor '("chartreuse3" box))
+    (setq evil-insert-state-cursor '("chartreuse3" bar))
     (define-key evil-insert-state-map (kbd "C-z") 'evil-emacs-state)
     ;; This will break visual column edit
     ;; enable hybrid editing style
-    ;; (defadvice evil-insert-state (around zilongshanren/holy-mode activate)
+    ;; (defadvice evil-insert-state (around mydearxym/holy-mode activate)
     ;;   "Preparing the holy water flasks."
     ;;   (evil-emacs-state))
     ;; disable c-[ temporally
@@ -416,11 +416,11 @@
     ;; (define-key evil-emacs-state-map [escape] 'evil-normal-state)
     ))
 
-(defun zilongshanren-misc/init-visual-regexp ()
+(defun mydearxym-misc/init-visual-regexp ()
   (use-package visual-regexp
     :commands (vr/replace vr/query-replace)))
 
-(defun zilongshanren-misc/init-visual-regexp-steroids ()
+(defun mydearxym-misc/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
     :commands (vr/select-replace vr/select-query-replace)
     :init
@@ -428,7 +428,7 @@
       (define-key global-map (kbd "C-c r") 'vr/replace)
       (define-key global-map (kbd "C-c q") 'vr/query-replace))))
 
-(defun zilongshanren-misc/init-multiple-cursors ()
+(defun mydearxym-misc/init-multiple-cursors ()
   (use-package multiple-cursors
     :init
     (progn
@@ -463,7 +463,7 @@
     (setq mc/cmds-to-run-once
           '(
             counsel-M-x
-            zilongshanren/my-mc-mark-next-like-this))
+            mydearxym/my-mc-mark-next-like-this))
     (setq mc/cmds-to-run-for-all
           '(
             electric-newline-and-maybe-indent
@@ -500,7 +500,7 @@
             sp-remove-active-pair-overlay))
     ))
 
-(defun zilongshanren-misc/post-init-persp-mode ()
+(defun mydearxym-misc/post-init-persp-mode ()
   (when (fboundp 'spacemacs|define-custom-layout)
     (spacemacs|define-custom-layout "@Cocos2D-X"
       :binding "c"
@@ -509,7 +509,7 @@
       (split-window-right)
       (find-file "~/cocos2d-x/cocos/cocos2d.cpp"))))
 
-(defun zilongshanren-misc/post-init-chinese-wbim ()
+(defun mydearxym-misc/post-init-chinese-wbim ()
   (progn
     (bind-key* ";" 'chinese-wbim-insert-ascii)
     (setq chinese-wbim-punc-translate-p nil)
@@ -524,14 +524,14 @@
                   (define-key map "=" 'chinese-wbim-next-page))))
     ))
 
-(defun zilongshanren-misc/post-init-youdao-dictionary ()
+(defun mydearxym-misc/post-init-youdao-dictionary ()
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+))
 
 
-(defun zilongshanren-misc/post-init-evil-escape ()
+(defun mydearxym-misc/post-init-evil-escape ()
   (setq evil-escape-delay 0.2))
 
-(defun zilongshanren-misc/init-find-file-in-project ()
+(defun mydearxym-misc/init-find-file-in-project ()
   (use-package find-file-in-project
     :defer t
     :config
@@ -565,7 +565,7 @@
 
 
 
-(defun zilongshanren-misc/post-init-projectile ()
+(defun mydearxym-misc/post-init-projectile ()
   (progn
     (with-eval-after-load 'projectile
       (progn
@@ -583,12 +583,12 @@
       (if (projectile-project-p)
           (multi-occur (projectile-project-buffers) my-simple-todo-regex)
         (occur my-simple-todo-regex)))
-    (spacemacs/set-leader-keys "pf" 'zilongshanren/open-file-with-projectile-or-counsel-git)
+    (spacemacs/set-leader-keys "pf" 'mydearxym/open-file-with-projectile-or-counsel-git)
     (spacemacs/set-leader-keys "pt" 'my-simple-todo)))
 
 
 
-(defun zilongshanren-misc/post-init-prodigy ()
+(defun mydearxym-misc/post-init-prodigy ()
   (progn
     (prodigy-define-tag
       :name 'jekyll
@@ -650,23 +650,23 @@
       :kill-signal 'sigkill
       :kill-process-buffer-on-stop t)))
 
-(defun zilongshanren-misc/init-moz-controller ()
+(defun mydearxym-misc/init-moz-controller ()
   (use-package moz-controller
     :init
     (moz-controller-global-mode t)
     :diminish moz-controller-mode))
 
 
-(defun zilongshanren-misc/init-ag ()
+(defun mydearxym-misc/init-ag ()
   (use-package ag
     :init))
 
-(defun zilongshanren-misc/post-init-erc ()
+(defun mydearxym-misc/post-init-erc ()
   (progn
     (add-hook 'erc-text-matched-hook 'my-erc-hook)
     (spaceline-toggle-erc-track-off)))
 
-(defun zilongshanren-misc/init-wrap-region ()
+(defun mydearxym-misc/init-wrap-region ()
   (use-package wrap-region
     :init
     (progn
@@ -686,14 +686,14 @@
 
 
 
-(defun zilongshanren-misc/init-keyfreq ()
+(defun mydearxym-misc/init-keyfreq ()
   (use-package keyfreq
     :init
     (progn
       (keyfreq-mode t)
       (keyfreq-autosave-mode 1))))
 
-(defun zilongshanren-misc/post-init-swiper ()
+(defun mydearxym-misc/post-init-swiper ()
   "Initialize my package"
   (progn
     (setq ivy-use-virtual-buffers t)
@@ -743,7 +743,7 @@
     (define-key global-map (kbd "C-s") 'my-swiper-search)))
 
 
-(defun zilongshanren-misc/post-init-magit ()
+(defun mydearxym-misc/post-init-magit ()
   (progn
     (with-eval-after-load 'magit
       (progn
@@ -768,18 +768,18 @@
 
     (eval-after-load 'magit
       '(define-key magit-mode-map (kbd "C-c g")
-         #'zilongshanren/magit-visit-pull-request))
+         #'mydearxym/magit-visit-pull-request))
 
     (setq magit-process-popup-time 10)))
 
-(defun zilongshanren-misc/post-init-git-messenger ()
+(defun mydearxym-misc/post-init-git-messenger ()
   (use-package git-messenger
     :defer t
     :config
     (progn
       (define-key git-messenger-map (kbd "f") 'zilong/github-browse-commit))))
 
-(defun zilongshanren-misc/post-init-markdown-mode ()
+(defun mydearxym-misc/post-init-markdown-mode ()
   (progn
     (add-to-list 'auto-mode-alist '("\\.mdown\\'" . markdown-mode))
 
@@ -789,9 +789,9 @@
         ;;   (spacemacs|add-company-hook markdown-mode))
 
         (spacemacs/set-leader-keys-for-major-mode 'gfm-mode-map
-          "p" 'zilongshanren/markdown-to-html)
+          "p" 'mydearxym/markdown-to-html)
         (spacemacs/set-leader-keys-for-major-mode 'markdown-mode
-          "p" 'zilongshanren/markdown-to-html)
+          "p" 'mydearxym/markdown-to-html)
 
         (evil-define-key 'normal markdown-mode-map (kbd "TAB") 'markdown-cycle)
         ))

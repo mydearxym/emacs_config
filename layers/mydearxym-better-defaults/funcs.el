@@ -1,9 +1,9 @@
-;;; funcs.el --- zilongshanren Layer packages File for Spacemacs
+;;; funcs.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2015-2016 zilongshanren 
+;; Copyright (c) 2015-2016 mydearxym 
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -25,7 +25,7 @@
         (message "Indent buffer.")))))
 
 ;;http://emacsredux.com/blog/2013/03/26/smarter-open-line/
-(defun zilongshanren/smart-open-line ()
+(defun mydearxym/smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode."
   (interactive)
@@ -33,7 +33,7 @@ Position the cursor at its beginning, according to the current mode."
   (newline-and-indent))
 
 
-(defun zilongshanren/rename-file-and-buffer ()
+(defun mydearxym/rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
   (interactive)
   (let ((filename (buffer-file-name)))
@@ -46,7 +46,7 @@ Position the cursor at its beginning, according to the current mode."
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(defun zilongshanren/yank-to-end-of-line ()
+(defun mydearxym/yank-to-end-of-line ()
   "Yank to end of line."
   (interactive)
   (evil-yank (point) (point-at-eol)))
@@ -130,7 +130,7 @@ Position the cursor at its beginning, according to the current mode."
         (dired-find-alternate-file)
       (dired-find-file-other-window))))
 
-(defun zilongshanren/dired-do-command (command)
+(defun mydearxym/dired-do-command (command)
   "Run COMMAND on marked files. Any files not already open will be opened.
 After this command has been run, any buffers it's modified will remain
 open and unsaved."
@@ -141,7 +141,7 @@ open and unsaved."
             (call-interactively command))
           (dired-get-marked-files))))
 
-(defun zilongshanren/dired-up-directory()
+(defun mydearxym/dired-up-directory()
   "goto up directory and resue buffer"
   (interactive)
   (find-alternate-file ".."))

@@ -10,8 +10,8 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
-                                      zilongshanren-misc
-                                      zilongshanren-programming
-                                      zilongshanren-better-defaults
-                                      zilongshanren-ui
+                                      mydearxym-misc
+                                      mydearxym-programming
+                                      mydearxym-better-defaults
+                                      mydearxym-ui
                                       ))

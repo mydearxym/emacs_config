@@ -1,9 +1,9 @@
-;;; packages.el --- zilongshanren Layer packages File for Spacemacs
+;;; packages.el --- mydearxym Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2014-2016 zilongshanren
+;; Copyright (c) 2014-2016 mydearxym
 ;;
-;; Author: zilongshanren <guanghui8827@gmail.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; Author: mydearxym <guanghui8827@gmail.com>
+;; URL: https://github.com/mydearxym/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -12,7 +12,7 @@
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
 
-(setq zilongshanren-programming-packages
+(setq mydearxym-programming-packages
       '(
         css-mode
         paredit
@@ -42,27 +42,27 @@
         dumb-jump
         ))
 
-(defun zilongshanren-programming/post-init-dumb-jump ()
+(defun mydearxym-programming/post-init-dumb-jump ()
   (setq dumb-jump-selector 'ivy))
 
-(defun zilongshanren-programming/post-init-clojure-mode ()
+(defun mydearxym-programming/post-init-clojure-mode ()
   (use-package clojure-mode
     :defer t
     :config
     ))
 
-(defun zilongshanren-programming/post-init-emacs-lisp ()
+(defun mydearxym-programming/post-init-emacs-lisp ()
     (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode))
 
-(defun zilongshanren-programming/post-init-python ()
+(defun mydearxym-programming/post-init-python ()
   (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
   ;; if you use pyton3, then you could comment the following line
   (setq python-shell-interpreter "python"))
 
-(defun zilongshanren-programming/post-init-js-doc ()
+(defun mydearxym-programming/post-init-js-doc ()
   (setq js-doc-mail-address "guanghui8827@gmail.com"
         js-doc-author (format "Guanghui Qu <%s>" js-doc-mail-address)
-        js-doc-url "http://www.zilongshanren.com"
+        js-doc-url "http://www.mydearxym.com"
         js-doc-license "MIT")
 
  (defun my-js-doc-insert-function-doc-snippet ()
@@ -101,7 +101,7 @@
           js-doc-bottom-line))))))
 
 
-(defun zilongshanren-programming/init-ctags-update ()
+(defun mydearxym-programming/init-ctags-update ()
   (use-package ctags-update
     :init
     :defer t
@@ -109,7 +109,7 @@
     (spacemacs|hide-lighter ctags-auto-update-mode)))
 
 ;; nodejs-repl is much better now.
-;; (defun zilongshanren-programming/init-js-comint ()
+;; (defun mydearxym-programming/init-js-comint ()
 ;;   (use-package js-comint
 ;;     :init
 ;;     (progn
@@ -125,7 +125,7 @@
 ;;                  (replace-regexp-in-string "\033\\[[0-9]+[GKJ]" "" output)))))
 ;;       (setq inferior-js-program-command "node"))))
 
-(defun zilongshanren-programming/post-init-web-mode ()
+(defun mydearxym-programming/post-init-web-mode ()
   (setq company-backends-web-mode '((company-dabbrev-code
                                      company-keywords
                                      company-etags)
@@ -133,7 +133,7 @@
 
 
 
-(defun zilongshanren-programming/post-init-yasnippet ()
+(defun mydearxym-programming/post-init-yasnippet ()
   (progn
     (set-face-background 'secondary-selection "gray")
     (setq-default yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
@@ -141,12 +141,12 @@
                                                                       org-mode-hook
                                                                       markdown-mode-hook))
 
-    (spacemacs/add-to-hooks 'zilongshanren/load-yasnippet '(prog-mode-hook
+    (spacemacs/add-to-hooks 'mydearxym/load-yasnippet '(prog-mode-hook
                                                             markdown-mode-hook
                                                             org-mode-hook))
     ))
 
-(defun zilongshanren-programming/post-init-racket-mode ()
+(defun mydearxym-programming/post-init-racket-mode ()
   (progn
     (eval-after-load 'racket-repl-mode
       '(progn
@@ -158,21 +158,21 @@
     (add-hook 'racket-repl-mode-hook #'(lambda () (smartparens-mode t)))
     ))
 
-(defun zilongshanren-programming/post-init-json-mode ()
+(defun mydearxym-programming/post-init-json-mode ()
   (add-to-list 'auto-mode-alist '("\\.tern-project\\'" . json-mode))
   (spacemacs/set-leader-keys-for-major-mode 'json-mode
     "ti" 'my-toggle-web-indent))
 
 
-(defun zilongshanren-programming/init-nodejs-repl ()
+(defun mydearxym-programming/init-nodejs-repl ()
   (use-package nodejs-repl
     :init
     :defer t))
 
-(defun zilongshanren-programming/init-flycheck-package ()
+(defun mydearxym-programming/init-flycheck-package ()
   (use-package flycheck-package))
 
-(defun zilongshanren-programming/init-lispy ()
+(defun mydearxym-programming/init-lispy ()
   (use-package lispy
     :defer t
     ;; :diminish (lispy-mode)
@@ -197,15 +197,15 @@
       (define-key lispy-mode-map (kbd "s-2") 'lispy-arglist-inline))))
 
 
-(defun zilongshanren-programming/init-cmake-font-lock ()
+(defun mydearxym-programming/init-cmake-font-lock ()
   (use-package cmake-font-lock
     :defer t))
 
-(defun zilongshanren-programming/init-google-c-style ()
+(defun mydearxym-programming/init-google-c-style ()
   (use-package google-c-style
     :init (add-hook 'c-mode-common-hook 'google-set-c-style)))
 
-(defun zilongshanren-programming/post-init-cmake-mode ()
+(defun mydearxym-programming/post-init-cmake-mode ()
   (progn
     (spacemacs/declare-prefix-for-mode 'cmake-mode
                                        "mh" "docs")
@@ -214,23 +214,23 @@
     (add-hook 'cmake-mode-hook (function cmake-rename-buffer))))
 
 
-(defun zilongshanren-programming/post-init-flycheck ()
+(defun mydearxym-programming/post-init-flycheck ()
   (with-eval-after-load 'flycheck
     (progn
       (setq flycheck-display-errors-delay 0.9)
       (setq flycheck-idle-change-delay 2.0)
       )))
 
-(defun zilongshanren-programming/post-init-eldoc ()
+(defun mydearxym-programming/post-init-eldoc ()
   (setq eldoc-idle-delay 0.01))
 
 
-(defun zilongshanren-programming/init-impatient-mode ()
+(defun mydearxym-programming/init-impatient-mode ()
   "Initialize impatient mode"
   (use-package impatient-mode
     :init
     (progn
-      (add-hook 'web-mode-hook 'zilongshanren/impatient-mode-hook)
+      (add-hook 'web-mode-hook 'mydearxym/impatient-mode-hook)
       (spacemacs/set-leader-keys-for-major-mode 'web-mode
         "p" 'imp-visit-buffer)
       )))
@@ -238,20 +238,20 @@
 
 
 
-(defun zilongshanren-programming/post-init-js2-refactor ()
+(defun mydearxym-programming/post-init-js2-refactor ()
   (progn
     (spacemacs/set-leader-keys-for-major-mode 'js2-mode
       "r>" 'js2r-forward-slurp
       "r<" 'js2r-forward-barf)))
 
-(defun zilongshanren-programming/post-init-js2-mode ()
+(defun mydearxym-programming/post-init-js2-mode ()
   (progn
     (spacemacs|define-jump-handlers js2-mode)
 
     (setq company-backends-js2-mode '((company-dabbrev-code :with company-keywords company-etags)
                                       company-files company-dabbrev))
 
-    (zilongshanren|toggle-company-backends company-tern)
+    (mydearxym|toggle-company-backends company-tern)
 
     (spacemacs/set-leader-keys-for-major-mode 'js2-mode
       "tb" 'zilong/company-toggle-company-tern)
@@ -313,7 +313,7 @@
 
     ))
 
-(defun zilongshanren-programming/post-init-css-mode ()
+(defun mydearxym-programming/post-init-css-mode ()
   (progn
     (dolist (hook '(css-mode-hook sass-mode-hook less-mode-hook))
       (add-hook hook 'rainbow-mode))
@@ -326,12 +326,12 @@
               (lambda ()
                 (setq imenu-create-index-function 'css-imenu-make-index)))))
 
-(defun zilongshanren-programming/post-init-tagedit ()
+(defun mydearxym-programming/post-init-tagedit ()
   (add-hook 'web-mode-hook (lambda () (tagedit-mode 1))))
 
-;; For each extension, define a function zilongshanren/init-<extension-name>
+;; For each extension, define a function mydearxym/init-<extension-name>
 ;;
-(defun zilongshanren-programming/init-doxymacs ()
+(defun mydearxym-programming/init-doxymacs ()
   "Initialize doxymacs"
   (use-package doxymacs
     :init
@@ -342,7 +342,7 @@
       (spacemacs|hide-lighter doxymacs-mode))))
 
 ;; https://atlanis.net/blog/posts/nodejs-repl-eval.html
-(defun zilongshanren-programming/init-nodejs-repl-eval ()
+(defun mydearxym-programming/init-nodejs-repl-eval ()
   (use-package nodejs-repl-eval
     :commands (nodejs-repl-eval-buffer nodejs-repl-eval-dwim nodejs-repl-eval-function)
     :init
@@ -356,7 +356,7 @@
     :defer t
     ))
 
-(defun zilongshanren-programming/post-init-lua-mode ()
+(defun mydearxym-programming/post-init-lua-mode ()
   (progn
     (add-hook 'lua-mode-hook 'evil-matchit-mode)
     (add-hook 'lua-mode-hook 'smartparens-mode)
@@ -375,7 +375,7 @@
 
     ))
 
-(defun zilongshanren-programming/post-init-cc-mode ()
+(defun mydearxym-programming/post-init-cc-mode ()
   (progn
     (setq company-backends-c-mode-common '((company-dabbrev-code :with company-keywords company-gtags company-etags)
                                            company-files company-dabbrev))
@@ -414,13 +414,13 @@
   ;; company backend should be grouped
   )
 
-(defun zilongshanren-programming/init-flycheck-clojure ()
+(defun mydearxym-programming/init-flycheck-clojure ()
   (use-package flycheck-clojure
     :defer t
     :init
     (eval-after-load 'flycheck '(flycheck-clojure-setup))))
 
-(defun zilongshanren-programming/post-init-ycmd ()
+(defun mydearxym-programming/post-init-ycmd ()
   (progn
     (setq ycmd-tag-files 'auto)
     (setq ycmd-request-message-level -1)
@@ -431,7 +431,7 @@
                                             company-gtags :with company-yasnippet)
                                            company-files company-dabbrev ))
 
-    (zilongshanren|toggle-company-backends company-ycmd)
+    (mydearxym|toggle-company-backends company-ycmd)
     (eval-after-load 'ycmd
       '(spacemacs|hide-lighter ycmd-mode))
 
@@ -441,7 +441,7 @@
       "tb" 'zilong/company-toggle-company-ycmd)))
 
 ;; when many project has the need to use tags, I will give etags-table and etags-update a try
-(defun zilongshanren-programming/init-etags-select ()
+(defun mydearxym-programming/init-etags-select ()
   (use-package etags-select
     :init
     (progn
@@ -457,7 +457,7 @@
       (spacemacs/set-leader-keys-for-major-mode 'js2-mode
         "gd" 'etags-select-find-tag-at-point))))
 
-(defun zilongshanren-programming/init-gulpjs ()
+(defun mydearxym-programming/init-gulpjs ()
   (use-package gulpjs
     :init
     (progn
@@ -470,7 +470,7 @@
       (spacemacs/set-leader-keys "agr" 'gulpjs-restart-task))))
 
 
-(defun zilongshanren-programming/init-paredit ()
+(defun mydearxym-programming/init-paredit ()
   (use-package paredit
     :commands (paredit-wrap-round
                paredit-wrap-square
@@ -486,7 +486,7 @@
       (bind-key* "s-{" #'paredit-wrap-curly)
       )))
 
-(defun zilongshanren-programming/post-init-company ()
+(defun mydearxym-programming/post-init-company ()
   (progn
     (setq company-minimum-prefix-length 1
           company-idle-delay 0.08)
@@ -502,7 +502,7 @@
       )
     ))
 
-(defun zilongshanren-programming/post-init-company-c-headers ()
+(defun mydearxym-programming/post-init-company-c-headers ()
   (progn
     (setq company-c-headers-path-system
           (quote
