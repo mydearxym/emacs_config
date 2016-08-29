@@ -18,13 +18,8 @@
 (define-key 'help-command (kbd "C-i") 'info-display-manual)
 
 (global-set-key [(shift return)] 'mydearxym/smart-open-line)
-(global-set-key (kbd "s-/") 'hippie-expand)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c y") 'youdao-dictionary-search-at-point+)
-(define-key global-map (kbd "<f9>") 'org-capture)
-(global-set-key (kbd "C-M-=") 'spacemacs/scale-up-font)
-(global-set-key (kbd "C-M--") 'spacemacs/scale-down-font)
-(global-set-key (kbd "C-M-0") 'spacemacs/reset-font-size)
 
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c i e") 'spacemacs/auto-yasnippet-expand)
@@ -36,17 +31,7 @@
 
 ;; (global-set-key (kbd "C-.") 'company-capf)
 
-;; some easy functions for navigate functions
-;;C-M-a beginning-of-defun
-;;C-M-e end-of-defun
-;;C-M-h mark-defun
-(global-set-key (kbd "C-s-h") 'mark-defun)
-
-(global-set-key (kbd "s-l") 'goto-line)
-(global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "C-`") 'toggle-input-method)
-(global-set-key (kbd "s-d") 'mydearxym/my-mc-mark-next-like-this)
-(bind-key* "s-r" 'mc/reverse-regions)
 (global-set-key (kbd "<f5>") 'mydearxym/run-current-file)
 
 ;; "http://endlessparentheses.com/transposing-keybinds-in-emacs.html?source=rss"
