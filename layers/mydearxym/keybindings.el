@@ -220,8 +220,16 @@
   (define-key helm-swoop-map (kbd "C-w") 'evil-delete-backward-word))
 
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
+
+(defun evil-paste-after-from-0 ()
+  (interactive)
+  (let ((evil-this-register ?0))
+    (call-interactively 'evil-paste-after)))
+
+
 (with-eval-after-load 'evil
   ;; (define-key evil-normal-state-map (kbd "C-o") 'evil-jump-backward)
+  (define-key evil-visual-state-map "p" 'evil-paste-after-from-0)
   (define-key evil-normal-state-map (kbd ".") 'nil) ;; use it for lispy bound
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 4)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -4)))

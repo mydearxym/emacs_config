@@ -5,11 +5,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ahs-case-fold-search nil t)
- '(ahs-default-range (quote ahs-range-whole-buffer) t)
- '(ahs-idle-interval 0.5 t)
+ '(ahs-case-fold-search nil)
+ '(ahs-default-range (quote ahs-range-whole-buffer))
+ '(ahs-idle-interval 0.5)
  '(ahs-idle-timer 0 t)
- '(ahs-inhibit-face-list nil t)
+ '(ahs-inhibit-face-list nil)
  '(beacon-blink-delay 0.3)
  '(beacon-blink-when-window-scrolls nil)
  '(beacon-mode t)
@@ -37,8 +37,8 @@
  '(helm-ls-git-fuzzy-match t)
  '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(hl-paren-background-colors nil)
- '(hl-paren-colors nil t)
- '(hl-paren-delay 0.5 t)
+ '(hl-paren-colors nil)
+ '(hl-paren-delay 0.5)
  '(ivy-height 18)
  '(linum-eager nil)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
@@ -69,11 +69,11 @@
  '(safe-local-variable-values
    (quote
     ((eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin"))))
- '(sp-show-pair-from-inside t t)
+ '(sp-show-pair-from-inside t)
  '(tags-add-tables nil)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
- '(web-mode-markup-indent-offset 2)
+ '(web-mode-markup-indent-offset 2 t)
  '(ycmd-extra-conf-handler (quote load))
  '(ycmd-extra-conf-whitelist (quote ("~/cocos2d-x/*"))))
 (custom-set-faces
@@ -108,6 +108,8 @@
  '(elixir-attribute-face ((t (:foreground "#F89900"))))
  '(error ((t (:foreground "tomato" :weight bold))))
  '(eval-sexp-fu-flash-error ((t (:foreground "tomato" :weight bold))))
+ '(evil-ex-info ((t (:foreground "tomato" :slant italic))))
+ '(evil-ex-substitute-replacement ((t (:foreground "tomato" :underline t))))
  '(evil-search-highlight-persist-highlight-face ((t (:background "light blue" :foreground "dim gray"))))
  '(flycheck-error ((t (:background "OrangeRed3" :foreground "cornsilk" :underline (:color "orange red" :style wave)))))
  '(flycheck-fringe-error ((t (:foreground "orange red" :weight bold))))
