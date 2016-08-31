@@ -235,7 +235,7 @@
   (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
 
   ;; (define-key evil-normal-state-map (kbd "p") 'yank)
-  (define-key evil-normal-state-map "p" 'evil-paste-after)
+  ;; (define-key evil-normal-state-map "p" 'evil-paste-after)
   (define-key evil-normal-state-map (kbd "P") 'helm-show-kill-ring)
   (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
   ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
