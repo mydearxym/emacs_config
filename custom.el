@@ -164,6 +164,7 @@
  '(sp-show-pair-match-face ((t (:foreground "deep sky blue" :weight normal))))
  '(sp-wrap-overlay-opening-pair ((t (:foreground "cyan"))))
  '(speedbar-highlight-face ((t nil)))
+ '(vhl/default-face ((t (:inherit secondary-selection :background "#343D46"))))
  '(vimish-fold-overlay ((t (:foreground "dark gray" :box (:line-width 2 :color "LightSkyBlue4")))))
  '(vr/match-separator-face ((t (:foreground "red"))))
  '(web-mode-constant-face ((t (:inherit font-lock-constant-face :foreground "tomato" :slant italic))))
