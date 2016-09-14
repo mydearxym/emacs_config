@@ -202,7 +202,13 @@
             '(lambda()
                (setq tab-width 2)))
 
+  (add-hook 'json-mode-hook
+            (lambda ()
+              (make-local-variable 'js-indent-level)
+              (setq js-indent-level 2)))
+
   (setq css-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
 
   (set-background-color "#334452")
   (setq-default line-height 1.1)
