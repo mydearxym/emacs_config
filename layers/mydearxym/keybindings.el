@@ -234,6 +234,7 @@
   (define-key evil-normal-state-map (kbd "C-<up>") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
 
+  (define-key evil-normal-state-map (kbd "C-t") 'mydearxym/move-text-up)
   ;; (define-key evil-normal-state-map (kbd "p") 'yank)
   ;; (define-key evil-normal-state-map "p" 'evil-paste-after)
   (define-key evil-normal-state-map (kbd "P") 'helm-show-kill-ring)

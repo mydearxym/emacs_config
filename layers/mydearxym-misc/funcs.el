@@ -221,6 +221,33 @@ e.g. Sunday, September 17, 2000."
   global-shadowsocks-proxy-mode shadowsocks-proxy-mode shadowsocks-proxy-mode
   :group 'shadowsocks-proxy)
 
+(defun mydearxym/move-text-internal (arg)
+  (cond
+   ((and mark-active transient-mark-mode)
+    (if (> (point) (mark))
+        (exchange-point-and-mark))
+    (let ((column (current-column))
+          (text (delete-and-extract-region (point) (mark))))
+      (forward-line arg)
+      (move-to-column column t)
+      (set-mark (point))
+      (insert text)
+      (exchange-point-and-mark)
+      (setq deactivate-mark nil)))
+   (t
+    (beginning-of-line)
+    (when (or (> arg 0) (not (bobp)))
+      (forward-line)
+      (when (or (< arg 0) (not (eobp)))
+        (transpose-lines arg))
+      (forward-line -1)))))
+
+(defun mydearxym/move-text-up (arg)
+  "Move region (transient-mark-mode active) or current line
+  arg lines up."
+  (interactive "*p")
+  (mydearxym/move-text-internal (- arg)))
+
 (defun mydearxym/open-file-with-projectile-or-counsel-git ()
   (interactive)
   (if (mydearxym/vcs-project-root)
