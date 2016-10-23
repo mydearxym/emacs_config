@@ -194,7 +194,12 @@
 (defun dotspacemacs/user-config ()
   ;; mydearxym
   ;; (setq x-select-enable-clipboard nil)
-  ;; (set-background-color "#385063")
+  (set-background-color "#344451")
+  (push '("\\.js\\'" . react-mode) auto-mode-alist)
+
+  ;; 据说能加快启动速度
+  ;; https://github.com/lujun9972/emacs-document/blob/master/emacs-common/2%E4%B8%AA%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E6%8F%90%E9%AB%98Emacs%E5%90%AF%E5%8A%A8%E9%80%9F%E5%BA%A6%E7%9A%84%E6%AD%A5%E9%AA%A4.org?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
+  ;; (set gc-cons-threshold 100000000)
 
   (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 
@@ -210,7 +215,6 @@
   (setq css-indent-offset 2)
   (setq web-mode-attr-indent-offset 2)
 
-  (set-background-color "#334452")
   (setq-default line-height 1.1)
   (setq-default line-spacing 0.20)
   ;; (set-background-color "#002B37")
@@ -250,18 +254,17 @@
   ;; (setq react-mode-code-indent-offset 2)
 
   ;; (require 'web-mode)
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (if (equal web-mode-content-type "javascript")
-                  (web-mode-set-content-type "jsx")
-                (message "now set to: %s" web-mode-content-type))))
-  (setq web-mode-content-types-alist
-        '(("jsx" . "\\.js[x]?\\'")))
+  ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  ;; (add-hook 'web-mode-hook
+            ;; (lambda ()
+              ;; (if (equal web-mode-content-type "javascript")
+                  ;; (web-mode-set-content-type "jsx")
+                ;; (message "now set to: %s" web-mode-content-type))))
+  ;; (setq web-mode-content-types-alist
+        ;; '(("jsx" . "\\.js[x]?\\'")))
 
   ;; (push '("\\.js\\'" . web-mode) auto-mode-alist)
-  (push '("\\.js\\'" . react-mode) auto-mode-alist)
 
   (add-hook 'after-init-hook #'global-flycheck-mode)
   (eval-after-load 'flycheck
