@@ -403,7 +403,7 @@
 
   ;; Utility functions
   (bb/define-key company-active-map
-    (kbd "C-w") 'evil-delete-backward-word)
+    (kbd "C-w") 'mydearxym/backward-kill-word)
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)

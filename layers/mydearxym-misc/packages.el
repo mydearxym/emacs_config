@@ -366,7 +366,7 @@
     (define-key evil-ex-completion-map "\C-a" 'move-beginning-of-line)
     (define-key evil-ex-completion-map "\C-b" 'backward-char)
     (define-key evil-ex-completion-map "\C-k" 'kill-line)
-    (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
+    (define-key minibuffer-local-map (kbd "C-w") 'mydearxym/backward-kill-word)
 
     (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
     ;; (define-key evil-visual-state-map (kbd "x") 'er/expand-region)
@@ -384,7 +384,7 @@
     (setq evil-move-cursor-back nil)
 
     ;; (define-key evil-emacs-state-map (kbd "C-w h") 'evil-window-left)
-    (define-key evil-emacs-state-map (kbd "C-w") 'evil-delete-backward-word)
+    (define-key evil-emacs-state-map (kbd "C-w") 'mydearxym/backward-kill-word)
     ;; (define-key evil-emacs-state-map (kbd "C-w j") 'evil-window-down)
     ;; (define-key evil-emacs-state-map (kbd "C-w k") 'evil-window-up)
     ;; (define-key evil-emacs-state-map (kbd "C-w l") 'evil-window-right)
@@ -393,7 +393,7 @@
     ;; (define-key evil-emacs-state-map (kbd "s-b") 'ido-switch-buffer)
     ;; (define-key evil-emacs-state-map (kbd "s-f") 'ido-find-file)
     (evil-define-key 'emacs term-raw-map (kbd "C-w")
-      'evil-delete-backward-word)
+      'mydearxym/backward-kill-word)
 
 
     (setq evil-normal-state-tag   (propertize "[N]" 'face '((:background "DarkGoldenrod2" :foreground "black")))

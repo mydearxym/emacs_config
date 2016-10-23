@@ -85,7 +85,7 @@
 (with-eval-after-load 'company
   (progn
     (bb/define-key company-active-map
-      (kbd "C-w") 'evil-delete-backward-word)
+      (kbd "C-w") 'mydearxym/backward-kill-word)
 
     (bb/define-key company-active-map
       (kbd "s-w") 'company-show-location)))
@@ -214,10 +214,10 @@
 ;; remap evil
 
 (with-eval-after-load 'helm
-  (define-key helm-map (kbd "C-w") 'evil-delete-backward-word))
+  (define-key helm-map (kbd "C-w") 'mydearxym/backward-kill-word))
 
 (with-eval-after-load 'helm-swoop
-  (define-key helm-swoop-map (kbd "C-w") 'evil-delete-backward-word))
+  (define-key helm-swoop-map (kbd "C-w") 'mydearxym/backward-kill-word))
 
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
 
@@ -244,8 +244,8 @@
   (define-key evil-normal-state-map (kbd "C-d") 'evil-delete-char)
   (define-key evil-normal-state-map (kbd "H-i") 'er/expand-region)
   (define-key evil-insert-state-map (kbd "H-i") 'er/expand-region)
-  (define-key evil-insert-state-map (kbd "C-w") 'evil-delete-backward-word)
-  (define-key evil-normal-state-map (kbd "C-w") 'evil-delete-backward-word)
+  (define-key evil-insert-state-map (kbd "C-w") 'mydearxym/backward-kill-word)
+  (define-key evil-normal-state-map (kbd "C-w") 'mydearxym/backward-kill-word)
   (define-key evil-normal-state-map (kbd "gc") 'spacemacs/comment-or-uncomment-lines-inverse)
   (define-key evil-normal-state-map (kbd "gC") 'evilnc-comment-or-uncomment-lines)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-escape)
