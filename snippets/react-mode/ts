@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
 #name : this.state
 # --
-this.state.$0
+const $1 = this.state.$1

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : shouldComponentUpdate
+# --
+shouldComponentUpdate (nextProps, nextState) {
+  $1
+}

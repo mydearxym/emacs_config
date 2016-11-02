@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : componentWillReceiveProps
+# --
+componentWillReceiveProps (nextProps) {
+  $1
+}
