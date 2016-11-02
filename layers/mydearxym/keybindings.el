@@ -222,6 +222,8 @@
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
 
 (with-eval-after-load 'evil
+  (define-key evil-normal-state-map (kbd "SPC SPC") 'counsel-M-x)
+  (define-key evil-normal-state-map (kbd "SPC ;") 'counsel-M-x)
   (define-key evil-normal-state-map (kbd ".") 'nil) ;; use it for lispy bound
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 4)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -4)))
