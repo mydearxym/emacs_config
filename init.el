@@ -63,8 +63,7 @@
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(counsel-projectile
-                                    magit-gh-pulls
+   dotspacemacs-excluded-packages '(magit-gh-pulls
                                     magit-gitflow
                                     evil-mc
                                     skewer-mode
@@ -256,23 +255,6 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
 
-  ;; (setq react-mode-markup-indent-offset 2)
-  ;; (setq react-mode-css-indent-offset 2)
-  ;; (setq react-mode-code-indent-offset 2)
-
-  ;; (require 'web-mode)
-  ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-  ;; (add-hook 'web-mode-hook
-            ;; (lambda ()
-              ;; (if (equal web-mode-content-type "javascript")
-                  ;; (web-mode-set-content-type "jsx")
-                ;; (message "now set to: %s" web-mode-content-type))))
-  ;; (setq web-mode-content-types-alist
-        ;; '(("jsx" . "\\.js[x]?\\'")))
-
-  ;; (push '("\\.js\\'" . web-mode) auto-mode-alist)
-
   (add-hook 'after-init-hook #'global-flycheck-mode)
   (eval-after-load 'flycheck
     '(add-to-list 'flycheck-checkers 'stylelint))
@@ -372,7 +354,6 @@
 
   (set-language-environment "UTF-8")
 
-
   ;; (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
 
@@ -439,16 +420,6 @@
   (add-hook 'find-file-hook 'spacemacs/check-large-file)
   (spacemacs/toggle-automatic-symbol-highlight-on)
 
-  ;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
-  ;; (defun my-minibuffer-setup-hook ()
-  ;;   (setq gc-cons-threshold 100000000))
-
-  ;; (defun my-minibuffer-exit-hook ()
-  ;;   (setq gc-cons-threshold 800000))
-
-  ;; (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
-  ;; (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
-
   ;; For python
   (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
   ;; For ruby
@@ -506,11 +477,7 @@
     ("q" nil "quit" :exit t)
     ("<escape>" nil nil :exit t))
   (spacemacs/set-leader-keys-for-major-mode 'gist-list-mode
-    "." 'spacemacs/gist-list-mode-transient-state/body)
-
-  (when (configuration-layer/layer-usedp 'ivy)
-    (setq projectile-switch-project-action
-          'mydearxym/open-file-with-projectile-or-counsel-git)))
+    "." 'spacemacs/gist-list-mode-transient-state/body))
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)

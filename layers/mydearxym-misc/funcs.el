@@ -250,12 +250,10 @@ e.g. Sunday, September 17, 2000."
 
 (defun mydearxym/open-file-with-projectile-or-counsel-git ()
   (interactive)
-  (if (mydearxym/vcs-project-root)
-      (counsel-git)
-    (if (projectile-project-p)
-        (projectile-find-file)
-      (counsel-file-jump))))
-
+  (if (or (mydearxym/vcs-project-root)
+          (projectile-project-p))
+      (counsel-projectile-find-file)
+    (counsel-file-jump)))
 
 ;; http://blog.lojic.com/2009/08/06/send-growl-notifications-from-carbon-emacs-on-osx/
 (defun mydearxym/growl-notification (title message &optional sticky)
