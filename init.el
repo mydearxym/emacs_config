@@ -10,6 +10,7 @@
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     nginx
      ivy
      helm
      react
@@ -477,7 +478,11 @@
     ("q" nil "quit" :exit t)
     ("<escape>" nil nil :exit t))
   (spacemacs/set-leader-keys-for-major-mode 'gist-list-mode
-    "." 'spacemacs/gist-list-mode-transient-state/body))
+    "." 'spacemacs/gist-list-mode-transient-state/body)
+
+  (when (configuration-layer/layer-usedp 'ivy)
+    (setq projectile-switch-project-action
+          'mydearxym/open-file-with-projectile-or-counsel-git)))
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)

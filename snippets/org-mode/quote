@@ -1,0 +1,6 @@
+#contributor: mydearxym
+#name: quote
+#key: quote
+# --
+{% cq %} $1 {% endcq %}
+
