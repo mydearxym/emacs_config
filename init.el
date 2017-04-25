@@ -164,7 +164,7 @@
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling nil
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    dotspacemacs-folding-method 'origami
    dotspacemacs-smartparens-strict-mode t
    dotspacemacs-smart-closing-parenthesis nil
