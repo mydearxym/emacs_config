@@ -201,8 +201,8 @@
   ;; scroll one line at a time (less "jumpy" than defaults)
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
   (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-  (setq scroll-step 1) ;; keyboard scroll one line at a time
+  (setq mouse-wheel-follow-mouse 't)       ;; scroll window under mouse
+  (setq scroll-step 1)                     ;; keyboard scroll one line at a time
 
   ;; 据说能加快启动速度
   ;; https://github.com/lujun9972/emacs-document/blob/master/emacs-common/2%E4%B8%AA%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E6%8F%90%E9%AB%98Emacs%E5%90%AF%E5%8A%A8%E9%80%9F%E5%BA%A6%E7%9A%84%E6%AD%A5%E9%AA%A4.org?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
@@ -430,6 +430,17 @@
   (spacemacs/set-leader-keys "rh" 'helm-resume)
   (spacemacs/set-leader-keys "ri" 'ivy-resume)
   (spacemacs|add-company-hook 'text-mode)
+
+  ;; (require 'prettier-js)
+  ;; i put the souce code in mydearxym-misc/func.el
+  ;; https://github.com/prettier/prettier/blob/master/editors/emacs/prettier-js.el
+  (setq prettier-target-mode "react-mode")
+  (prettier-mode)
+  (setq prettier-args '(
+                        "--trailing-comma" "all"
+                        "--bracket-spacing" "true"
+                        "--single-quote"  "true"
+                        ))
 
   (defadvice find-file (before make-directory-maybe (filename &optional wildcards) activate)
     "Create parent directory if not exists while visiting file."
