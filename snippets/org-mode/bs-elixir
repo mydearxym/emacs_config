@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: bs-elixir
+# key: bs-elixir
+# --
+#+begin_src elixir
+$0
+#+end_src

@@ -98,7 +98,6 @@
            (spacemacs/set-leader-keys "oo" 'mydearxym/helm-hotspots)))
 
 (spacemacs/set-leader-keys "oc" 'my-auto-update-tags-when-save)
-(spacemacs/set-leader-keys "op" 'mydearxym/org-save-and-export)
 (spacemacs/set-leader-keys "fR" 'mydearxym/rename-file-and-buffer)
 
 ;;Must set key to nil to prevent error: Key sequence b m s starts with non-prefix key b m

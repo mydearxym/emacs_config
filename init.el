@@ -293,6 +293,23 @@
   ;;   (interactive)
   ;;    (hexo "~/blog/"))
 
+
+  ;; fix some org-mode + yasnippet conflicts:
+  ;; (defun mydearxym/org-very-safe-expand ()
+    ;; (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+
+  ;; Org-config
+  ;; improve the performance of opening large file
+  (add-hook 'org-mode-hook (lambda () (spacemacs/toggle-line-numbers-off)) 'append)
+  (add-hook 'org-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (make-variable-buffer-local 'yas/trigger-key)
+              (setq yas/trigger-key [tab])
+              (add-to-list 'org-tab-first-hook 'mydearxym/org-very-safe-expand)
+              (define-key yas/keymap [tab] 'yas/next-field)))
+  ;; Org-config end
+
   (setq hexo-dir "~/blog")
   (defun blog-deploy ()
     "git add . & git commit & git push & hexo d -g"
@@ -395,7 +412,6 @@
     (kbd "C-w") 'mydearxym/backward-kill-word)
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
-  (add-hook 'org-mode-hook 'auto-fill-mode)
 
   (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
   (with-eval-after-load 'helm-files
@@ -410,9 +426,6 @@
         ;; invisible here anyway.
         (assq-delete-all 'which-func-mode mode-line-misc-info))
 
-
-  ;; improve the performance of opening large file
-  (add-hook 'org-mode-hook (lambda () (spacemacs/toggle-line-numbers-off)) 'append)
   (defun spacemacs/check-large-file ()
     (when (> (buffer-size) 100000)
       (progn (fundamental-mode)
@@ -441,6 +454,8 @@
                         "--bracket-spacing" "true"
                         "--single-quote"  "true"
                         ))
+
+
 
   (defadvice find-file (before make-directory-maybe (filename &optional wildcards) activate)
     "Create parent directory if not exists while visiting file."

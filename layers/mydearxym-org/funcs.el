@@ -10,41 +10,9 @@
 ;;; License: GPLv3
 (require 'cl)
 
-(setq octopress-workdir (expand-file-name "~/4gamers.cn/"))
-
-(defun mydearxym/octopress-rake (command)
-  "run rake commands"
-  (let ((command-str (format "/bin/bash -l -c 'source $HOME/.rvm/scripts/rvm && rvm use ruby 2.0.0  && cd %s && rake %s'" octopress-workdir command)))
-    (shell-command-to-string command-str)))
-
-(defun mydearxym/octopress-qrsync (command)
-  (let ((command-str (format "/usr/local/bin/qrsync %s" command )))
-    (shell-command-to-string command-str)))
-
-(defun mydearxym/octopress-generate ()
-  "generate jekyll site"
+(defun mydearxym/org-very-safe-expand ()
   (interactive)
-  (mydearxym/octopress-rake "generate")
-  (message "Generate site OK"))
-
-(defun mydearxym/octopress-deploy ()
-  "default deploy task"
-  (interactive)
-  (mydearxym/octopress-rake "deploy")
-  (mydearxym/octopress-qrsync "/Users/guanghui/4gamers.cn/guanghui.json")
-  (message "Deploy site OK"))
-
-(defun mydearxym/octopress-gen-deploy ()
-  "generate website and deploy"
-  (interactive)
-  (mydearxym/octopress-rake "gen_deploy")
-  (mydearxym/octopress-qrsync "/Users/guanghui/4gamers.cn/guanghui.json")
-  (message "Generate and Deploy OK"))
-
-(defun mydearxym/octopress-upimg ()
-  (interactive)
-  (mydearxym/octopress-qrsync "/Users/guanghui/4gamers.cn/guanghui.json")
-  (message "Up Img to Qiniu"))
+  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
 (defun mydearxym/directory-parent (directory)
   (let ((parent (file-name-directory (directory-file-name directory))))

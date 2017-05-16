@@ -17,6 +17,9 @@
         ;; force update evil keymaps after git-timemachine-mode loaded
         (add-hook (quote ,(intern (concat m "-mode-hook"))) #'evil-normalize-keymaps))))
 
+;; (defun mydearxym/org-very-safe-expand ()
+  ;; (interactive)
+  ;; (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
 ;; insert ; at the end of current line
 (defun mydearxym/insert-semicolon-at-the-end-of-this-line ()

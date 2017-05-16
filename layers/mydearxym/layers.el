@@ -14,4 +14,5 @@
                                       mydearxym-programming
                                       mydearxym-better-defaults
                                       mydearxym-ui
+                                      mydearxym-org
                                       ))
