@@ -225,6 +225,8 @@
   (define-key evil-normal-state-map (kbd "SPC ;") 'counsel-M-x)
   (define-key evil-visual-state-map (kbd ",a") 'evil-indent)
 
+  (define-key evil-normal-state-map (kbd ",d") 'magit-diff-buffer-file)
+
   (define-key evil-normal-state-map (kbd ".") 'nil) ;; use it for lispy bound
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-visual-line 4)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-next-visual-line -4)))
