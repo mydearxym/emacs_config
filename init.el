@@ -224,7 +224,6 @@
 
   (setq-default line-height 1.1)
   (setq-default line-spacing 0.20)
-  ;; (set-background-color "#002B37")
   (linum-relative-global-mode -1)
 
   (setq default-tab-width 2)
@@ -396,6 +395,12 @@
                                       '(("(\\|)" . 'paren-face)))))
 
   (add-hook 'prog-mode-hook 'highlight-numbers-mode)
+
+  ;; (add-hook 'prog-mode-hook '(lambda ()
+                               ;; (highlight-regexp "@doc \"\"\" \\(.\\|\n\\)* \"\"\".")))
+
+  ;; (highlight-regexp "\"\"\"\\(.\\|\n\\)*\"\"\"")))
+  ;; (highlight-regexp "\"\"\"(.+)\"\"\"")))
 
   ;; mydearxym end
 
