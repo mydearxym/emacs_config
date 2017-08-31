@@ -37,8 +37,8 @@
  '(helm-ls-git-fuzzy-match t)
  '(helm-ls-git-show-abs-or-relative (quote absolute))
  '(hl-paren-background-colors nil)
- '(hl-paren-colors nil t)
- '(hl-paren-delay 0.5 t)
+ '(hl-paren-colors nil)
+ '(hl-paren-delay 0.5)
  '(ivy-height 18)
  '(linum-eager nil)
  '(lua-documentation-url "http://www.lua.org/manual/5.3/manual.html")
@@ -58,7 +58,7 @@
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (winum unfill madhat2r-theme fuzzy flycheck-credo nginx-mode counsel-projectile ob-elixir pug-mode osx-dictionary org hide-comnt stekene-theme jade-mode define-word colorsarenice-theme names visual-regexp-steroids visual-regexp tiny peep-dired find-file-in-project 4clojure nodejs-repl etags-select cmake-mode yapfify pytest py-isort powershell live-py-mode hy-mode anaconda-mode pythonic lispyville evil-lispy edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
+    (tide typescript-mode winum unfill madhat2r-theme fuzzy flycheck-credo nginx-mode counsel-projectile ob-elixir pug-mode osx-dictionary org hide-comnt stekene-theme jade-mode define-word colorsarenice-theme names visual-regexp-steroids visual-regexp tiny peep-dired find-file-in-project 4clojure nodejs-repl etags-select cmake-mode yapfify pytest py-isort powershell live-py-mode hy-mode anaconda-mode pythonic lispyville evil-lispy edn paredit queue peg json-rpc dash-functional web-completion-data makey anzu highlight goto-chg flx gh logito pcache pos-tip guide-key request parent-mode simple-httpd json-snatcher json-reformat multiple-cursors moz ctable orglue epic alert log4e gntp spinner epl hydra async deferred f s chinese-word-at-point dash youdao-dictionary ws-butler window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe use-package tagedit smooth-scrolling slim-mode scss-mode sass-mode rfringe reveal-in-finder rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pyenv-mode popwin pip-requirements persp-projectile pbcopy page-break-lines ox-reveal org-repo-todo org-present org-octopress org-mac-link org-download org-bullets open-junk-file neotree multi-term moz-controller move-text monokai-theme markdown-toc magit macrostep lispy linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc indent-guide impatient-mode ido-vertical-mode hungry-delete hl-anything highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-ls-git helm-gtags helm-gitignore helm-github-stars helm-flyspell helm-descbinds helm-css-scss helm-c-yasnippet helm-ag guide-key-tip google-translate golden-ratio github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags geiser fringe-helper flycheck-ycmd flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-args evil-anzu engine-mode emmet-mode elisp-slime-nav elfeed discover-my-major deft dash-at-point cython-mode company-ycmd company-web company-tern company-statistics company-quickhelp company-c-headers company-anaconda command-log-mode coffee-mode cmake-font-lock clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chinese-fonts-setup buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary align-cljlet aggressive-indent adaptive-wrap ace-jump-mode ac-ispell 2048-game)))
  '(paradox-github-token t)
  '(pyim-dicts
    (quote
@@ -110,7 +110,7 @@
  '(eval-sexp-fu-flash-error ((t (:foreground "tomato" :weight bold))))
  '(evil-ex-info ((t (:foreground "tomato" :slant italic))))
  '(evil-ex-substitute-replacement ((t (:foreground "tomato" :underline t))))
- '(evil-search-highlight-persist-highlight-face ((t (:background "#487577"))))
+ '(evil-search-highlight-persist-highlight-face ((t (:background "#3b5d5d"))))
  '(flycheck-error ((t (:background "OrangeRed3" :foreground "cornsilk" :underline (:color "orange red" :style wave)))))
  '(flycheck-fringe-error ((t (:foreground "orange red" :weight bold))))
  '(flycheck-fringe-warning ((t (:foreground "gold" :weight bold))))
@@ -143,6 +143,8 @@
  '(helm-swoop-target-word-face ((t (:background "gray26" :foreground "moccasin"))))
  '(helm-visible-mark ((t (:background "CadetBlue4" :foreground "light gray"))))
  '(hi-yellow ((t (:foreground "gray51"))))
+ '(highlight-changes ((t (:underline "yellowgreen"))))
+ '(highlight-changes-delete ((t (:foreground "tomato" :underline t))))
  '(highlight-numbers-number ((t (:foreground "medium purple" :slant italic))))
  '(hl-line ((t (:background "#343D46"))))
  '(hl-paren-face ((t nil)) t)

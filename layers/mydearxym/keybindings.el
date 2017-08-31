@@ -268,6 +268,7 @@
   (define-key evil-normal-state-map (kbd ",g") 'evil-avy-goto-char-2)
   ;; avy jump back 以后 auto highlight symbol 会失效，需要 reload buffer 才可以
   (define-key evil-normal-state-map (kbd ",.") 'xym/revert-buffer-no-confirm)
+
   (define-key evil-normal-state-map (kbd "C-s-s") 'spacemacs/helm-swoop-region-or-symbol)
 
   (define-key evil-normal-state-map (kbd "C-f") 'evil-forward-char)

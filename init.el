@@ -10,6 +10,7 @@
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     typescript
      nginx
      ivy
      helm
@@ -195,8 +196,13 @@
   ;; mydearxym
   ;; (setq x-select-enable-clipboard nil)
   (set-background-color "#344451")
+  (setq max-lisp-eval-depth 10000)
+  ;; debugger
+  ;; (setq max-specpdl-size 5)  ; default is 1000, reduce the backtrace level
+  ;; (setq debug-on-error t)
 
   (push '("\\.js\\'" . react-mode) auto-mode-alist)
+  (push '("\\.tsx\\'" . react-mode) auto-mode-alist)
 
   ;; scroll one line at a time (less "jumpy" than defaults)
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -255,13 +261,7 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
 
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  (eval-after-load 'flycheck
-    '(add-to-list 'flycheck-checkers 'stylelint))
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
-  (flycheck-add-mode 'javascript-eslint 'react-mode)
   (add-hook 'react-mode-hook 'smartparens-mode)
-
   (setq js2-bounce-indent-p t)
 
   ;; (setq imenu-generic-expression '((nil "^\\([A-Z_]+\\)=.*" 1)))
@@ -295,7 +295,7 @@
 
   ;; fix some org-mode + yasnippet conflicts:
   ;; (defun mydearxym/org-very-safe-expand ()
-    ;; (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+  ;; (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
   ;; Org-config
   ;; improve the performance of opening large file
@@ -363,11 +363,20 @@
   ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
 
   ;; turn on flychecking globally
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  (flycheck-add-mode 'javascript-eslint 'react-mode)
+  ;; (add-hook 'after-init-hook #'global-flycheck-mode)
+  ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
 
   ;; flycheck check on save
-  (setq flycheck-check-syntax-automatically '(mode-enabled save))
+  ;; (setq flycheck-check-syntax-automatically '(mode-enabled save))
+
+  ;; (eval-after-load 'flycheck
+  ;; '(add-to-list 'flycheck-checkers 'stylelint))
+  ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
+  ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
+
+
+  (with-eval-after-load 'flycheck
+    (setq-default flycheck-disabled-checkers '(javascript-standard)))
 
   (set-language-environment "UTF-8")
 
@@ -397,7 +406,7 @@
   (add-hook 'prog-mode-hook 'highlight-numbers-mode)
 
   ;; (add-hook 'prog-mode-hook '(lambda ()
-                               ;; (highlight-regexp "@doc \"\"\" \\(.\\|\n\\)* \"\"\".")))
+  ;; (highlight-regexp "@doc \"\"\" \\(.\\|\n\\)* \"\"\".")))
 
   ;; (highlight-regexp "\"\"\"\\(.\\|\n\\)*\"\"\"")))
   ;; (highlight-regexp "\"\"\"(.+)\"\"\"")))
@@ -454,13 +463,18 @@
   ;; https://github.com/prettier/prettier/blob/master/editors/emacs/prettier-js.el
   (setq prettier-target-mode "react-mode")
   (prettier-mode)
+
   (setq prettier-args '(
-                        "--trailing-comma" "all"
+                        "--trailing-comma"  "es5"
                         "--bracket-spacing" "true"
                         "--single-quote"  "true"
+                        "--no-semi"  "false"
+                        "--tab-Width"  "2"
                         ))
 
-
+  (setq-default dotspacemacs-configuration-layers '(
+                                                    (typescript :variables
+                                                                typescript-fmt-tool 'prettier)))
 
   (defadvice find-file (before make-directory-maybe (filename &optional wildcards) activate)
     "Create parent directory if not exists while visiting file."
