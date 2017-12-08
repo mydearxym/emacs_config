@@ -10,6 +10,7 @@
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     flycheck
      typescript
      nginx
      ivy
@@ -94,7 +95,7 @@
                                     ;;https://github.com/abo-abo/lispy/issues/137
                                     ;; evil-escape
                                     ;; clj-refactor
-                                    ;;remove from spacemacs distribution
+                                Other    ;;remove from spacemacs distribution
                                     ;; neotree
                                     leuven-theme
                                     gh-md
@@ -203,6 +204,7 @@
 
   (push '("\\.js\\'" . react-mode) auto-mode-alist)
   (push '("\\.tsx\\'" . react-mode) auto-mode-alist)
+  (push '("\\.ts\\'" . react-mode) auto-mode-alist)
 
   ;; scroll one line at a time (less "jumpy" than defaults)
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -363,16 +365,15 @@
   ;; (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
 
   ;; turn on flychecking globally
-  ;; (add-hook 'after-init-hook #'global-flycheck-mode)
-  ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (add-hook 'react-mode-hook 'flycheck-mode)
+
 
   ;; flycheck check on save
-  ;; (setq flycheck-check-syntax-automatically '(mode-enabled save))
+  (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
   ;; (eval-after-load 'flycheck
-  ;; '(add-to-list 'flycheck-checkers 'stylelint))
-  ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
-  ;; (flycheck-add-mode 'javascript-eslint 'react-mode)
+  ;; (flycheck-add-mode 'javascript-eslint 'react-mode))
 
 
   (with-eval-after-load 'flycheck
