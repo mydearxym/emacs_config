@@ -104,6 +104,7 @@
                                     doc-view
                                     lorem-ipsum
                                     solarized-theme
+                                    brin
                                     beacon
                                     ;; spaceline
                                     )
@@ -122,7 +123,7 @@
    dotspacemacs-startup-lists '((recents . 5)
                                 (projects . 7))
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(brin solarized-dark solarized-light leuven)
+   dotspacemacs-themes '(brin wilson solarized-dark solarized-light leuven)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
@@ -196,7 +197,13 @@
 (defun dotspacemacs/user-config ()
   ;; mydearxym
   ;; (setq x-select-enable-clipboard nil)
+  ;; 这是设置背景色
   (set-background-color "#344451")
+  ;; paste 之后的反色是 ~/.spacemacs.d/layers/mydearxym-programming/packages.el 中的这个函数中定义
+  ;; (defun mydearxym-programming/post-init-yasnippet ()
+  ;; linum 的 sidebar 由 custom-faces 中 的 fringe 定义
+
+
   (setq max-lisp-eval-depth 10000)
   ;; debugger
   ;; (setq max-specpdl-size 5)  ; default is 1000, reduce the backtrace level
