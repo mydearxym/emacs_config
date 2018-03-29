@@ -222,6 +222,7 @@
 
 (with-eval-after-load 'evil
   (define-key evil-normal-state-map (kbd "SPC SPC") 'counsel-M-x)
+  (define-key evil-normal-state-map (kbd "SPC ji") 'helm-imenu)
   (define-key evil-normal-state-map (kbd "SPC ;") 'counsel-M-x)
   (define-key evil-visual-state-map (kbd ",a") 'evil-indent)
 
@@ -234,7 +235,8 @@
   (define-key evil-insert-state-map (kbd "C-j") 'newline-and-indent)
   (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
 
-  (define-key evil-normal-state-map (kbd "C-x C-b") 'ivy-switch-buffer)
+  ;; (define-key evil-normal-state-map (kbd "C-x C-b") 'ivy-switch-buffer)
+  (define-key evil-normal-state-map (kbd "C-x C-b") 'helm-buffers-list)
 
   (define-key evil-normal-state-map (kbd "C-<up>") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-<down>") 'evil-numbers/dec-at-pt)
