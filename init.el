@@ -180,9 +180,9 @@
 (defun dotspacemacs/user-init ()
 
   (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+      ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+      ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
