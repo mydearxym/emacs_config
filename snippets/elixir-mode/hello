@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : hello
+# --
+IO.inspect hello, label: "hello"
