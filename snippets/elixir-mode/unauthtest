@@ -6,7 +6,7 @@ test "unauth user $0 fails", ~m(user_conn guest_conn)a do
   variables = %{$1}
   rule_conn = simu_conn(:user, cms: %{"what.ever" => true})
 
-  assert user_conn |> mutation_get_error?(@$2query, variables)
-  assert guest_conn |> mutation_get_error?(@$2query, variables)
-  assert rule_conn |> mutation_get_error?(@$3query, variables)
+  assert user_conn |> mutation_get_error?(@$2query, variables, ecode(:passport))
+  assert guest_conn |> mutation_get_error?(@$2query, variables, ecode(:account_login))
+  assert rule_conn |> mutation_get_error?(@$3query, variables, ecode(:passport))
 end
