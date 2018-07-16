@@ -213,6 +213,13 @@
   (push '("\\.tsx\\'" . react-mode) auto-mode-alist)
   (push '("\\.ts\\'" . react-mode) auto-mode-alist)
 
+
+  (eval-after-load 'flycheck
+    '(flycheck-credo-setup))
+  (add-hook 'elixir-mode-hook 'flycheck-mode)
+
+  (setq flycheck-elixir-credo-strict t)
+
   ;; scroll one line at a time (less "jumpy" than defaults)
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
   (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
