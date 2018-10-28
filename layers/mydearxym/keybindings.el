@@ -221,6 +221,10 @@
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
 
 (with-eval-after-load 'evil
+  ;; fold
+  (define-key evil-normal-state-map (kbd "z,") 'origami-recursively-toggle-node)
+  (define-key evil-normal-state-map (kbd "z<") 'origami-show-only-node)
+  ;; ..
   (define-key evil-normal-state-map (kbd "SPC SPC") 'counsel-M-x)
   (define-key evil-normal-state-map (kbd "SPC ji") 'helm-imenu)
   (define-key evil-normal-state-map (kbd "SPC ;") 'counsel-M-x)
