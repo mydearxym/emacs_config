@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : component-file
+# --
+import React from 'react'
+
+// import { ICON_CMD } from '../../config'
+// import { Wrapper } from './styles'
+
+const $1 = () => (
+  <Wrapper>
+    <div>$1</div>
+  </Wrapper>
+)
+
+export default $1

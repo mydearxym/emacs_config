@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: err
+# key: err
+# --
+{:error, _} = $0

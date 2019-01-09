@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : componentWillMount
+# --
+componentWillMount () {
+  $1
+}

@@ -397,6 +397,8 @@
 
   ;; (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode)
+  ;; load all is too slow
+  (setq yas-snippet-dirs '("~/.spacemacs.d/shortcuts"))
 
   ;; 关掉spacemacs 在空字符串除 `Tab` 时出现的 `helm-complete`（无意义，且反应非常慢）
   (setq tab-always-indent t)

@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : this.props
+# --
+const $1 = this.props.$1
