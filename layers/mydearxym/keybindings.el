@@ -222,8 +222,14 @@
 
 (with-eval-after-load 'evil
   ;; fold
-  (define-key evil-normal-state-map (kbd "z,") 'origami-recursively-toggle-node)
-  (define-key evil-normal-state-map (kbd "z<") 'origami-show-only-node)
+  ;; (define-key evil-normal-state-map (kbd "z,") 'origami-recursively-toggle-node)
+  ;; (define-key evil-normal-state-map (kbd "z<") 'origami-show-only-node)
+  (define-key evil-normal-state-map (kbd ",f") 'hs-toggle-hiding)
+  (define-key evil-normal-state-map (kbd ",F") 'hs-hide-all)
+  (define-key evil-normal-state-map (kbd ",o") 'hs-show-all)
+  ;; ..
+  ;; file-tree
+  (define-key evil-normal-state-map (kbd ",t") 'neotree-toggle)
   ;; ..
   (define-key evil-normal-state-map (kbd "SPC SPC") 'counsel-M-x)
   (define-key evil-normal-state-map (kbd "SPC ji") 'helm-imenu)

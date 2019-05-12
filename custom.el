@@ -186,6 +186,8 @@
  '(linum-relative-current-face ((t (:inherit linum :background "#354450" :foreground "#70808e" :weight bold))))
  '(mc/cursor-bar-face ((t (:height 1))))
  '(mc/cursor-face ((t nil)))
+ '(neo-dir-link-face ((t (:foreground "#6D9C9A"))))
+ '(neo-file-link-face ((t (:foreground "#BBC0C9"))))
  '(popup-isearch-match ((t (:inherit default))))
  '(sp-pair-overlay-face ((t nil)))
  '(sp-show-pair-match-face ((t (:background "#4F5B66" :weight normal))))
